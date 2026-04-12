@@ -13,7 +13,7 @@ const tabs = [
 const Demo = () => {
     const [activeTab, setActiveTab] = useState('Dashboard');
     const [searchQuery, setSearchQuery] = useState('');
-    
+
     // Interactive State Management
     const [orders, setOrders] = useState([
         { id: '#2843', name: 'Sami K.', status: 'Confirmé', color: 'bg-emerald-50 text-emerald-600', amount: '12,500 DA' },
@@ -31,7 +31,7 @@ const Demo = () => {
     // Handlers
     const deleteOrder = (id) => setOrders(orders.filter(o => o.id !== id));
     const deleteClient = (id) => setClients(clients.filter(c => c.id !== id));
-    
+
     const addOrder = () => {
         const newId = `#${Math.floor(Math.random() * 9000) + 1000}`;
         setOrders([{ id: newId, name: 'Nouveau Client', status: 'En Attente', color: 'bg-orange-50 text-orange-600', amount: '0 DA' }, ...orders]);
@@ -66,7 +66,7 @@ const Demo = () => {
                                     <div className="w-2 h-2 rounded-full bg-slate-200" />
                                 </div>
                             </div>
-                            
+
                             {/* Grid Lines */}
                             <div className="absolute inset-x-6 top-20 bottom-12 flex flex-col justify-between pointer-events-none">
                                 {[1, 2, 3].map(li => <div key={li} className="w-full h-[1px] bg-slate-50" />)}
@@ -74,7 +74,7 @@ const Demo = () => {
 
                             <div className="relative h-28 flex items-end gap-3 px-2">
                                 {[
-                                    { d: 'L', h: 42 }, { d: 'M', h: 68 }, { d: 'M', h: 45 }, 
+                                    { d: 'L', h: 42 }, { d: 'M', h: 68 }, { d: 'M', h: 45 },
                                     { d: 'J', h: 92 }, { d: 'V', h: 74 }, { d: 'S', h: 88 }, { d: 'D', h: 56 }
                                 ].map((day, i) => (
                                     <div key={i} className="flex-1 flex flex-col items-center gap-3">
@@ -82,14 +82,14 @@ const Demo = () => {
                                             {/* Bar Background */}
                                             <div className="absolute inset-0 bg-slate-50/50 rounded-t-md" />
                                             {/* Data Bar */}
-                                            <div 
+                                            <div
                                                 className={`w-full ${i === 3 ? 'bg-primary shadow-lg shadow-primary/20' : 'bg-primary/20 group-hover/bar:bg-primary/40'} rounded-t-md transition-all duration-1000 ease-out relative overflow-hidden`}
                                                 style={{ height: `${day.h}%`, transitionDelay: `${i * 0.05}s` }}
                                             >
                                                 {/* Shimmer Effect */}
                                                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover/bar:opacity-100 transition-opacity" />
                                             </div>
-                                            
+
                                             {/* Tooltip on hover */}
                                             <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded opacity-0 group-hover/bar:opacity-100 transition-all pointer-events-none z-10">
                                                 {day.h}%
@@ -110,9 +110,9 @@ const Demo = () => {
                                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
                                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                 </span>
-                                <input 
-                                    type="text" 
-                                    placeholder="Chercher ID ou client..." 
+                                <input
+                                    type="text"
+                                    placeholder="Chercher ID ou client..."
                                     className="w-full pl-9 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -141,11 +141,11 @@ const Demo = () => {
                                                 <span className={`px-2 py-0.5 rounded-md font-bold ${row.color}`}>{row.status}</span>
                                             </td>
                                             <td className="p-4 text-right">
-                                                <button 
+                                                <button
                                                     onClick={() => deleteOrder(row.id)}
-                                                    className="text-rose-400 hover:text-rose-600 p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                                                    className="text-rose-400 hover:text-rose-600 p-1.5 hover:bg-rose-50 rounded-lg transition-all"
                                                 >
-                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" strokeWidth={2}/></svg>
+                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" strokeWidth={2} /></svg>
                                                 </button>
                                             </td>
                                         </tr>
@@ -194,9 +194,9 @@ const Demo = () => {
                             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             </span>
-                            <input 
-                                type="text" 
-                                placeholder="Chercher un client..." 
+                            <input
+                                type="text"
+                                placeholder="Chercher un client..."
                                 className="w-full pl-9 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -216,7 +216,7 @@ const Demo = () => {
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className={`text-[9px] font-bold uppercase tracking-widest ${client.color} bg-white shadow-sm px-2 py-0.5 rounded-lg border border-slate-50`}>{client.score}</div>
-                                        <button onClick={() => deleteClient(client.id)} className="text-slate-300 hover:text-rose-500 opacity-0 group-hover:opacity-100 transition-all">
+                                        <button onClick={() => deleteClient(client.id)} className="text-slate-300 hover:text-rose-500 p-1.5 hover:bg-rose-50 rounded-lg transition-all">
                                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                                         </button>
                                     </div>
