@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative pt-32 pb-20 lg:pt-32 lg:pb-40 overflow-hidden"
+      className="relative pt-32 pb-20 lg:pt-32 lg:pb-40 overflow-x-clip"
       onMouseMove={handleMouseMove}
     >
       {/* Background Blobs for that premium feel */}
@@ -36,10 +36,10 @@ const Hero = () => {
 
             {/* Heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-extrabold leading-[1.15] text-heading animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 Pilote ton e-commerce <br />
                 <span className="text-heading">avec un vrai système.</span> <br />
-                <span className="text-primary">Pas avec des fichiers <br /> dispersés.</span>
+                <span className="text-primary tracking-tight">Pas avec des fichiers <br /> dispersés.</span>
               </h1>
               <p className="text-lg lg:text-xl text-body max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
                 RiseManager centralise commandes, stock, logistique, équipe et rentabilité dans une seule interface pensée pour le terrain algérien.

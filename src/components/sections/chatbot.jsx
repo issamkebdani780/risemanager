@@ -45,7 +45,6 @@ const ChatBot = () => {
   `;
 
   useEffect(() => {
-    // Load local history
     const savedHistory = localStorage.getItem('rise_chat_history');
     if (savedHistory) {
       setMessages(JSON.parse(savedHistory));
@@ -59,7 +58,6 @@ const ChatBot = () => {
     }
   }, []);
 
-  // Save to local storage whenever messages update
   useEffect(() => {
     if (messages.length > 0) {
       localStorage.setItem('rise_chat_history', JSON.stringify(messages));
@@ -85,7 +83,7 @@ const ChatBot = () => {
       - Tu es proactif, professionnel et tu utilises un ton "Executive" mais chaleureux.
 
       DONNÉES DE RÉFÉRENCE :
-      \${context}
+      ${context}
 
       CONSIGNES :
       1. Si l'utilisateur a des problèmes de retours, explique la gestion des retours de RiseManager.
@@ -112,7 +110,7 @@ const ChatBot = () => {
         }),
       });
 
-      if (!response.ok) throw new Error(`API Error: \${response.status}`);
+      if (!response.ok) throw new Error(`API Error: ${response.status}`);
 
       const data = await response.json();
       const assistantMessage = {
@@ -143,7 +141,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] font-sans">
+    <div className="fixed bottom-6 right-6 z-[9999] font-sans flex flex-col items-end">
       {/* Chat Toggle Button */}
       {!isOpen && (
         <button
@@ -158,9 +156,9 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[380px] sm:w-[440px] h-[640px] bg-white rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 duration-500">
+        <div className="w-[calc(100vw-3rem)] sm:w-[440px] max-w-[440px] h-[640px] max-h-[85vh] bg-white rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 duration-500">
           {/* Header */}
-          <div className="p-8 bg-white border-b border-slate-50 flex items-center justify-between">
+          <div className="p-6 sm:p-8 bg-white border-b border-slate-50 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center border border-blue-100">
                 <Sparkles className="size-6 text-blue-600" />
@@ -187,11 +185,11 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-8 overflow-y-auto space-y-6 bg-white custom-scrollbar">
+          <div className="flex-1 p-6 sm:p-8 overflow-y-auto space-y-6 bg-white custom-scrollbar">
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex gap-4 \${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex gap-4 ${message.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {message.role === "assistant" && (
                   <div className="size-8 rounded-xl bg-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-600/20">
@@ -199,11 +197,11 @@ const ChatBot = () => {
                   </div>
                 )}
                 <div
-                  className={`max-w-[85%] rounded-[24px] px-5 py-4 text-sm leading-relaxed \${
+                  className={`max-w-[85%] rounded-[24px] px-5 py-4 text-sm leading-relaxed ${
                     message.role === "user"
                       ? "bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/10"
                       : "bg-slate-50 text-slate-700 font-medium border border-slate-100/50"
-                  } \${message.role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'}`}
+                  } ${message.role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'}`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
                 </div>
@@ -227,7 +225,7 @@ const ChatBot = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="px-8 py-4 bg-white flex gap-2 overflow-x-auto no-scrollbar border-t border-slate-50">
+          <div className="px-6 sm:px-8  bg-white flex gap-2 overflow-x-auto no-scrollbar">
             {[
               "Comment automatiser mon COD ?",
               "RiseCart vs Shopify",
@@ -245,12 +243,12 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSendMessage} className="p-8 pt-4 bg-white">
+          <form onSubmit={handleSendMessage} className="p-6 sm:p-8  bg-white">
             <div className="relative">
               <input
                 type="text"
                 value={input}
-                onChange={(e) => set1nput(e.target.value)}
+                onChange={(e) => setInput(e.target.value)}
                 placeholder="Posez votre question à Rise..."
                 disabled={isLoading}
                 className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/50 transition-all pr-14"

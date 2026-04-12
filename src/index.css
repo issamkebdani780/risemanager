@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
 
 @theme {
   --color-primary: #00a2ff;
@@ -13,6 +12,9 @@
   --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
 
   --breakpoint-xs: 420px;
+
+  --container-center: true;
+  --container-padding: 1.5rem;
 }
 
 @layer base {
