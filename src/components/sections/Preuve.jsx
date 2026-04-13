@@ -67,13 +67,11 @@ const Preuve = () => {
         {/* Logos Clients / Partenaires */}
         <div className="max-w-5xl mx-auto mb-20 animate-slide-up" style={{ animationDelay: '0.15s' }}>
           <p className="text-center text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.2em] mb-8">Plus de 200 marques e-commerce locales gèrent leur flux via notre plateforme</p>
-          <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-20 opacity-50 grayscale hover:grayscale-0 transition-opacity duration-300 pointer-events-none">
-             {/* Text-based generic logos to reinforce credibility */}
-             <div className="text-xl font-black text-slate-800 tracking-tighter flex items-center gap-1"><div className="w-5 h-5 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px]">D</div>DZ<span className="text-blue-600">Shop</span></div>
-             <div className="text-xl font-extrabold text-slate-800 font-serif italic">Cosmetica<span className="text-rose-500">.</span></div>
-             <div className="flex items-center gap-1.5 text-xl font-bold text-slate-800"><div className="w-4 h-4 bg-emerald-500 rotate-45 rounded-sm" />TechStore</div>
-             <div className="text-xl font-bold text-slate-800 tracking-wider">LIFESTYLE<sup className="text-xs">TM</sup></div>
-             <div className="text-xl font-black text-slate-800 uppercase flex flex-col leading-none"><span>Trend</span><span className="text-[10px] font-bold tracking-widest">Afrique</span></div>
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14 opacity-60 transition-all duration-500">
+             <img src="/confiance/conf1.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 hover:brightness-100 transition-all cursor-default" />
+             <img src="/confiance/conf2.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 hover:brightness-100 transition-all cursor-default" />
+             <img src="/confiance/conf3.webp" alt="Client Logo" className="h-8 lg:h-11 w-auto object-contain brightness-75 hover:brightness-100 transition-all cursor-default" />
+             <img src="/confiance/conf4.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 hover:brightness-100 transition-all cursor-default" />
           </div>
         </div>
 
@@ -177,7 +175,9 @@ const Preuve = () => {
                   </svg>
                 </div>
                 <div>
-                   <div className="text-xl font-bold text-heading leading-tight">100%</div>
+                   <div className="text-xl font-bold text-heading leading-tight">
+                     <AnimatedCounter end={100} suffix="%" />
+                   </div>
                    <div className="text-[9px] text-slate-400 uppercase font-extrabold">Retours tracés</div>
                 </div>
              </div>

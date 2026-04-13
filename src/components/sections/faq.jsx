@@ -38,7 +38,7 @@ const FAQ = () => {
         },
         {
             q: "RiseManager s'intègre-t-il avec les sociétés de livraison en Afrique ?",
-            a: "Oui ! RiseManager est connecté via API aux principaux transporteurs locaux (Yalidine, ZR Express, Maystro, Guepex...). Générez vos bordereaux, expédiez vos commandes et suivez tous les statuts en temps réel, sans jamais quitter la plateforme."
+            a: "Oui ! RiseManager est connecté via API aux principaux transporteurs locaux (Yalidine, ZR Express, Maystro, Guepex, DHD...). Générez vos bordereaux, expédiez vos commandes et suivez tous les statuts en temps réel, sans jamais quitter la plateforme."
         },
         {
             q: "Comment garantissez-vous la sécurité de mes données (clients, CA) ?",

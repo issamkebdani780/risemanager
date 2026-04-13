@@ -34,14 +34,14 @@ const Hero = () => {
                 </span>
                 Conçu pour le marché africain
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm shadow-sm backdrop-blur-sm">
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-green-50 text-green-600 border border-green-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-600 font-medium text-sm shadow-sm backdrop-blur-sm">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white">
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
-                <span className="text-slate-600 font-medium">
-                  <span className="font-bold text-slate-900">+12 000</span> commandes traitées chaque jour
+                <span>
+                  <span className="font-extrabold text-emerald-700">+12 000</span> commandes traitées chaque jour
                 </span>
               </div>
             </div>

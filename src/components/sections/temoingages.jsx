@@ -2,8 +2,29 @@ import React from 'react';
 
 const CountUp = ({ end, duration = 2000, decimals = 0 }) => {
     const [count, setCount] = React.useState(0);
+    const [isVisible, setIsVisible] = React.useState(false);
+    const countRef = React.useRef(null);
 
     React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (countRef.current) {
+            observer.observe(countRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    React.useEffect(() => {
+        if (!isVisible) return;
+
         let startTime = null;
         const step = (timestamp) => {
             if (!startTime) startTime = timestamp;
@@ -15,9 +36,9 @@ const CountUp = ({ end, duration = 2000, decimals = 0 }) => {
             }
         };
         window.requestAnimationFrame(step);
-    }, [end, duration]);
+    }, [isVisible, end, duration]);
 
-    return <span>{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>;
+    return <span ref={countRef}>{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>;
 };
 
 const Testimonials = () => {
@@ -123,12 +144,11 @@ const Testimonials = () => {
                 {/* Short Logos Section */}
                 <div className="mt-20 text-center space-y-8 animate-slide-up" style={{ animationDelay: '0.5s' }}>
                     <div className="text-[10px] font-extrabold text-slate-300 uppercase tracking-[0.2em]">Ils nous font confiance</div>
-                    <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-                        {/* Fake placeholders for professional logos */}
-                        <div className="text-xl font-black tracking-tighter">BRAND ALPHA</div>
-                        <div className="text-xl font-black tracking-tighter">LOGIX</div>
-                        <div className="text-xl font-black tracking-tighter">ELITE COD</div>
-                        <div className="text-xl font-black tracking-tighter">EXPRESSWAY</div>
+                    <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-40  transition-all duration-700">
+                        <img src="/confiance/conf1.webp" alt="Client Logo" className="h-6 lg:h-8 w-auto object-contain" />
+                        <img src="/confiance/conf2.webp" alt="Client Logo" className="h-6 lg:h-8 w-auto object-contain" />
+                        <img src="/confiance/conf3.webp" alt="Client Logo" className="h-7 lg:h-9 w-auto object-contain" />
+                        <img src="/confiance/conf4.webp" alt="Client Logo" className="h-6 lg:h-8 w-auto object-contain" />
                     </div>
                 </div>
             </div>

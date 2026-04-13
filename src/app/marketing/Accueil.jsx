@@ -7,6 +7,7 @@ import UseCases from '../../components/sections/casdusage';
 import Features from '../../components/sections/fonctionnalites';
 import Differentiation from '../../components/sections/differenciation';
 import Ecosystem from '../../components/sections/ecosysteme';
+import WhatsAppAI from '../../components/sections/whatsapp';
 import Testimonials from '../../components/sections/temoingages';
 import FAQ from '../../components/sections/faq';
 import FinalCTA from '../../components/sections/cta';
@@ -24,6 +25,7 @@ const Accueil = () => {
         <Features />
         <Differentiation />
         <Ecosystem />
+        <WhatsAppAI />
         <UseCases />
         <Demo />
         <Testimonials />

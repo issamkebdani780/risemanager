@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from '../ui/Logo';
 
 const DetailSidebar = ({ selectedOrder, isMobile, onClose }) => (
     <div className={`${isMobile ? 'flex flex-col h-full pointer-events-auto' : 'hidden lg:block w-70 border-l border-slate-50 bg-[#fbfcfd] overflow-auto custom-scrollbar'} p-5 space-y-6 animate-slide-up`} key={`${selectedOrder.id}-${isMobile}`}>
@@ -58,26 +59,26 @@ const Features = () => {
     const [isDetailOpenMobile, setIsDetailOpenMobile] = useState(false);
 
     const agents = [
-        { 
+        {
             rank: 1, name: 'Anissa H.', volume: 142, confirm: '88%', delivery: '72%', trend: 'up',
             details: { errors: 2, products: 'Mode / Beauté', topSource: 'TikTok' }
         },
-        { 
+        {
             rank: 2, name: 'Laila S.', volume: 128, confirm: '82%', delivery: '68%', trend: 'up',
             details: { errors: 0, products: 'Cuisine', topSource: 'Facebook' }
         },
-        { 
+        {
             rank: 3, name: 'Sami K.', volume: 95, confirm: '74%', delivery: '61%', trend: 'down',
             details: { errors: 5, products: 'Électronique', topSource: 'Instagram' }
         }
     ];
 
     const orders = [
-        { 
-            id: '2843', 
-            name: 'Sami Khitem', 
-            status: 'Confirmé', 
-            color: 'text-green-600 bg-green-50', 
+        {
+            id: '2843',
+            name: 'Sami Khitem',
+            status: 'Confirmé',
+            color: 'text-green-600 bg-green-50',
             amount: '12,500 DA',
             assignee: { name: 'Anissa Hitem', initial: 'AK' },
             note: '"Client confirmé au téléphone, demande livraison après 16h."',
@@ -86,11 +87,11 @@ const Features = () => {
                 { title: 'Appel reçu', time: 'Hier, 18:45', status: 'pending' }
             ]
         },
-        { 
-            id: '2842', 
-            name: 'Amine Dj. ', 
-            status: 'En attente', 
-            color: 'text-orange-600 bg-orange-50', 
+        {
+            id: '2842',
+            name: 'Amine Dj. ',
+            status: 'En attente',
+            color: 'text-orange-600 bg-orange-50',
             amount: '8,200 DA',
             assignee: { name: 'Sami K.', initial: 'SK' },
             note: '"En attente de confirmation de la taille de chaussure."',
@@ -98,11 +99,11 @@ const Features = () => {
                 { title: 'Tentative d\'appel', time: 'Hier, 10:30', status: 'pending' }
             ]
         },
-        { 
-            id: '2841', 
-            name: 'Lydia M. ', 
-            status: 'En livraison', 
-            color: 'text-blue-600 bg-blue-50', 
+        {
+            id: '2841',
+            name: 'Lydia M. ',
+            status: 'En livraison',
+            color: 'text-blue-600 bg-blue-50',
             amount: '15,000 DA',
             assignee: { name: 'Bachir V.', initial: 'BV' },
             note: '"Colis confié au livreur. Destination : Oran."',
@@ -111,21 +112,21 @@ const Features = () => {
                 { title: 'Confirmé', time: '07/04, 11:20', status: 'complete' }
             ]
         },
-        { 
-            id: '2840', 
-            name: 'Bachir V. ', 
-            status: 'Retour', 
-            color: 'text-red-600 bg-red-50', 
+        {
+            id: '2840',
+            name: 'Bachir V. ',
+            status: 'Retour',
+            color: 'text-red-600 bg-red-50',
             amount: '5,400 DA',
             assignee: { name: 'Anissa H.', initial: 'AH' },
             note: '"Retour demandé par le client (Taille non conforme)."',
             history: [{ title: 'Retour Initié', time: 'Aujourd\'hui, 11:45', status: 'pending' }]
         },
-        { 
-            id: '2839', 
-            name: 'Faycal R. ', 
-            status: 'Confirmé', 
-            color: 'text-green-600 bg-green-50', 
+        {
+            id: '2839',
+            name: 'Faycal R. ',
+            status: 'Confirmé',
+            color: 'text-green-600 bg-green-50',
             amount: '22,400 DA',
             assignee: { name: 'Laila S.', initial: 'LS' },
             note: '"Commande VIP. Vérification double du packaging."',
@@ -163,16 +164,18 @@ const Features = () => {
                     {/* 1. Gestion des commandes - Horizontal Large */}
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 animate-slide-up px-2 sm:px-0" style={{ animationDelay: '0.2s' }}>
                         <div className="w-full lg:w-2/5 space-y-6">
-                            <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary border border-blue-100 mb-8">
-                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 11-8 0m8 4v2a2 2 0 11-4 0m4-2V9m-8 2V7a4 4 0 118 0m-8 4v2a2 2 0 114 0m-4-2V9m-4 12h16a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary border border-blue-100 shrink-0">
+                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 11-8 0m8 4v2a2 2 0 11-4 0m4-2V9m-8 2V7a4 4 0 118 0m-8 4v2a2 2 0 114 0m-4-2V9m-4 12h16a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl lg:text-3xl font-extrabold text-heading">Gestion des commandes</h3>
                             </div>
-                            <h3 className="text-2xl lg:text-3xl font-extrabold text-heading">Gestion des commandes</h3>
                             <p className="text-body leading-relaxed">
                                 Centralisez tous vos canaux de vente. De la réception à la confirmation finale, chaque étape est structurée.
                             </p>
-                            
+
                             {/* Mini Benefit */}
                             <div className="flex items-start gap-3 mt-2">
                                 <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
@@ -181,19 +184,71 @@ const Features = () => {
                                 <span className="text-sm font-bold text-heading">Divisez votre temps de traitement par 2.</span>
                             </div>
 
-                            {/* Carrier Integrations */}
-                            <div className="mt-8 border-t border-slate-100 pt-6">
-                                <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">Intégrés nativement pour l'Afrique :</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {['Yalidine', 'ZR Express', 'Maystro', 'Guepex'].map(carrier => (
-                                        <span key={carrier} className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-[11px] font-bold text-slate-600 shadow-sm flex items-center gap-1.5">
-                                            <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_5px_rgba(34,197,94,0.5)]" />
-                                            {carrier}
-                                        </span>
-                                    ))}
+                            {/* Integration Ecosystem */}
+                            <div className="mt-12 border-t border-slate-100 pt-8 relative">
+                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-10 text-center lg:text-left">Écosystème d'intégration complet :</p>
+                                
+                                <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 relative">
+                                    {/* Vertical Integrated Flow */}
+                                    <div className="flex flex-col items-center gap-6 w-full max-w-[280px] mx-auto lg:mx-0">
+                                        
+                                        {/* Top: Sales Channels */}
+                                        <div className="flex flex-col items-center gap-3">
+                                            <div className="flex -space-x-4 group/icons">
+                                                {[
+                                                    { name: 'Shopify', logo: '/vente/shopify.png' },
+                                                    { name: 'Lightfunnel', logo: '/vente/lightfunnel.png' },
+                                                    { name: 'RiseCart', logo: '/vente/risecart.png', extraPadding: 'p-1' },
+                                                    { name: 'YouCan', logo: '/vente/youcan.png' }
+                                                ].map((vente, i) => (
+                                                    <div key={vente.name} className="w-12 h-12 bg-white rounded-full border-2 border-white shadow-lg flex items-center justify-center p-2.5 hover:translate-y-[-4px] transition-all">
+                                                        <img 
+                                                            src={vente.logo} 
+                                                            alt={vente.name} 
+                                                            className="w-full h-full object-contain"
+                                                            onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${vente.name}&background=f3f4f6&color=94a3b8&bold=true&length=2&font-size=0.33`; }}
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Entrant : Ventes</span>
+                                        </div>
+
+                                        {/* Connection Line 1 */}
+                                        <div className="h-8 w-px border-l border-dashed border-primary/30" />
+
+                                        {/* Middle: Core Hub */}
+                                        <div className="relative group/hub">
+                                            <div className="w-20 h-20 bg-white rounded-3xl border border-primary/10 shadow-2xl shadow-primary/10 flex items-center justify-center p-4 relative transition-transform duration-500 group-hover/hub:scale-105">
+                                                <Logo showText={false} iconClassName="w-12 h-12" />
+                                                <div className="absolute inset-0 bg-primary/5 rounded-3xl animate-pulse -z-10" />
+                                            </div>
+                                           
+                                        </div>
+
+                                        {/* Connection Line 2 */}
+                                        <div className="h-8 w-px border-l border-dashed border-primary/30" />
+
+                                        {/* Bottom: Carriers */}
+                                        <div className="flex flex-col items-center gap-3">
+                                            <div className="flex -space-x-4 group/icons">
+                                                {[
+                                                    { name: 'Yalidine', logo: '/delivery/yalidine.jpg' },
+                                                    { name: 'Maystro', logo: '/delivery/maystro.png' },
+                                                    { name: 'Guepex', logo: '/delivery/guepex.png' },
+                                                    { name: 'DHD', logo: '/delivery/dhd.png' }
+                                                ].map((carrier, i) => (
+                                                    <div key={carrier.name} className="w-12 h-12 bg-white rounded-full border-2 border-white shadow-lg flex items-center justify-center p-2.5 hover:translate-y-[-4px] transition-all">
+                                                        <img src={carrier.logo} alt={carrier.name} className="w-full h-full object-contain" />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Sortant : Livraisons</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <div className="p-4 bg-blue-50/50 rounded-2xl border-l-[3px] border-primary mt-8">
                                 <p className="text-sm italic text-blue-700 font-medium">
                                     "Chaque commande a un statut, un historique et une logique."
@@ -208,15 +263,15 @@ const Features = () => {
                             </div>
 
                             <div className="relative bg-white rounded-[24px] sm:rounded-[40px] border border-slate-100 shadow-2xl overflow-hidden flex flex-col h-[400px] lg:h-[520px]">
-                                
+
                                 {/* Top Bar: Search & Filters */}
                                 <div className="p-4 sm:p-5 border-b border-slate-50 flex items-center justify-between bg-slate-50/30 gap-4">
                                     <div className="flex items-center gap-3 flex-1 min-w-0">
                                         <div className="relative w-full max-w-[280px]">
-                                           <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400">
-                                               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                                           </div>
-                                           <input 
+                                            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400">
+                                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                            </div>
+                                            <input
                                                 type="text"
                                                 placeholder="Rechercher..."
                                                 className="w-full bg-white border border-slate-100 rounded-xl py-2 pl-9 pr-3 text-[11px] text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium shadow-sm"
@@ -238,7 +293,7 @@ const Features = () => {
                                             )}
                                         </div>
                                         <div className="flex gap-2 relative">
-                                            <button 
+                                            <button
                                                 onClick={() => setIsFilterOpen(!isFilterOpen)}
                                                 className="px-3 sm:px-4 py-2 bg-white border border-slate-100 rounded-xl text-[10px] sm:text-[11px] font-bold text-slate-500 hover:border-primary/30 transition-all flex items-center gap-2 min-w-[100px] sm:min-w-[140px] justify-between shadow-sm"
                                             >
@@ -253,7 +308,7 @@ const Features = () => {
                                             {isFilterOpen && (
                                                 <div className="absolute top-full right-0 sm:left-0 mt-2 w-[160px] sm:w-[180px] bg-white rounded-2xl border border-slate-100 shadow-2xl z-50 overflow-hidden animate-slide-up" style={{ animationDuration: '0.2s' }}>
                                                     {['Tous', 'Confirmé', 'En attente', 'En livraison', 'Retour'].map((status) => (
-                                                        <div 
+                                                        <div
                                                             key={status}
                                                             onClick={() => {
                                                                 setStatusFilter(status);
@@ -287,8 +342,8 @@ const Features = () => {
                                             <tbody className="divide-y divide-slate-50/50">
                                                 {filteredOrders.length > 0 ? (
                                                     filteredOrders.map((order, i) => (
-                                                        <tr 
-                                                            key={i} 
+                                                        <tr
+                                                            key={i}
                                                             onClick={() => {
                                                                 setSelectedOrderId(order.id);
                                                                 if (window.innerWidth < 1024) setIsDetailOpenMobile(true);
@@ -348,7 +403,7 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Gestion de stock 2.0</h3>
                             </div>
-                            
+
                             <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-md mb-8 hover:shadow-lg transition-transform hover:-translate-y-1">
                                 <div className="flex justify-between items-center mb-8">
                                     <div>
@@ -373,7 +428,7 @@ const Features = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Mini Benefit */}
                             <div className="flex items-start gap-3 mb-6">
                                 <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
@@ -397,7 +452,7 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Le scan de la vérité</h3>
                             </div>
-                            
+
                             <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-md mb-8 font-mono hover:shadow-lg transition-transform hover:-translate-y-1">
                                 <div className="flex justify-between items-center text-xs mb-6">
                                     <span className="text-primary font-bold flex items-center gap-2">
@@ -471,7 +526,7 @@ const Features = () => {
                                 <div className="divide-y divide-slate-50">
                                     {agents.map((agent, i) => (
                                         <div key={i} className="group">
-                                            <div 
+                                            <div
                                                 onClick={() => setExpandedAgent(expandedAgent === i ? null : i)}
                                                 className={`p-4 flex items-center justify-between hover:bg-slate-50 transition-all cursor-pointer ${expandedAgent === i ? 'bg-slate-50/50' : ''}`}
                                             >
@@ -504,7 +559,7 @@ const Features = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             {/* Expandable Content */}
                                             <div className={`overflow-hidden transition-all duration-300 bg-slate-50/30 ${expandedAgent === i ? 'max-h-[120px] opacity-100 border-t border-slate-100' : 'max-h-0 opacity-0'}`}>
                                                 <div className="p-4 grid grid-cols-3 gap-4">
@@ -627,7 +682,7 @@ const Features = () => {
                                 <div className="relative">
                                     {/* Main Flow: Vente to Net */}
                                     <div className="flex flex-col sm:flex-row items-center justify-between relative group gap-8 sm:gap-0">
-                                        
+
                                         {/* Start: Vente */}
                                         <div className="text-center z-10 transition-transform group-hover:scale-105 shrink-0">
                                             <div className="w-16 h-16 sm:w-14 sm:h-14 bg-blue-500 rounded-[20px] sm:rounded-2xl flex items-center justify-center text-white font-extrabold text-base sm:text-sm shadow-xl sm:shadow-lg mb-2">VENTE</div>
@@ -667,29 +722,29 @@ const Features = () => {
                                     </div>
                                 </div>
 
-                                    {/* Specialized Sub-block: Audit des frais */}
-                                    <div className="pt-8 border-t border-slate-50 mt-8">
-                                        <div className="bg-emerald-50/30 rounded-2xl p-5 border border-emerald-50 group/audit transition-all hover:bg-emerald-50/50">
-                                            <div className="flex items-center justify-between mb-4">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-sm">
-                                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-[11px] font-extrabold text-heading uppercase tracking-wide">Audit des frais de livraison</h4>
-                                                        <p className="text-[9px] text-emerald-600 font-medium font-outfit">Recouvrement automatisé des écarts financiers.</p>
-                                                    </div>
+                                {/* Specialized Sub-block: Audit des frais */}
+                                <div className="pt-8 border-t border-slate-50 mt-8">
+                                    <div className="bg-emerald-50/30 rounded-2xl p-5 border border-emerald-50 group/audit transition-all hover:bg-emerald-50/50">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-sm">
+                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                                 </div>
-                                                <div className="text-[10px] font-bold text-emerald-700 bg-white px-3 py-1 rounded-full border border-emerald-100 shadow-sm animate-pulse-slow">Actif</div>
+                                                <div>
+                                                    <h4 className="text-[11px] font-extrabold text-heading uppercase tracking-wide">Audit des frais de livraison</h4>
+                                                    <p className="text-[9px] text-emerald-600 font-medium font-outfit">Recouvrement automatisé des écarts financiers.</p>
+                                                </div>
                                             </div>
-                                            <div className="text-[9px] text-slate-500 leading-relaxed italic border-l-2 border-emerald-200 pl-3">
-                                                RiseManager compare chaque centime facturé par vos livreurs avec les tarifs contractuels. Chaque anomalie est signalée.
-                                            </div>
+                                            <div className="text-[10px] font-bold text-emerald-700 bg-white px-3 py-1 rounded-full border border-emerald-100 shadow-sm animate-pulse-slow">Actif</div>
+                                        </div>
+                                        <div className="text-[9px] text-slate-500 leading-relaxed italic border-l-2 border-emerald-200 pl-3">
+                                            RiseManager compare chaque centime facturé par vos livreurs avec les tarifs contractuels. Chaque anomalie est signalée.
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                     {/* 7. Analytics & Pilotage - Horizontal Large */}
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 animate-slide-up" style={{ animationDelay: '0.8s' }}>
@@ -703,7 +758,7 @@ const Features = () => {
                             <p className="text-body leading-relaxed">
                                 Transformez vos données en décisions. Suivez l'évolution de vos ventes, identifiez vos produits stars et mesurez la rentabilité de chaque source publicitaire.
                             </p>
-                            
+
                             {/* Mini Benefit */}
                             <div className="flex items-start gap-3 mt-2 mb-6">
                                 <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">

@@ -50,7 +50,7 @@ const Ecosystem = () => {
                                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-slate-200 bg-white z-10 lg:hidden shadow-sm" />
                                 )}
 
-                                <div 
+                                <div
                                     className={`group relative p-8 bg-white rounded-[40px] border transition-all duration-500 animate-slide-up ${module.active ? 'border-primary shadow-2xl shadow-primary/10' : 'border-slate-50 shadow-xl shadow-slate-100/50 hover:border-slate-200 hover:shadow-2xl'}`}
                                     style={{ animationDelay: `${0.3 + i * 0.1}s` }}
                                 >
@@ -65,7 +65,7 @@ const Ecosystem = () => {
                                             <div className="text-sm font-medium text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-widest text-[10px]">{module.desc}</div>
                                         </div>
                                     </div>
-                                    
+
                                     {module.active && (
                                         <div className="absolute top-6 right-8">
                                             <div className="flex h-3 w-3">

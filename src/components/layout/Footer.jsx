@@ -83,16 +83,16 @@ const Footer = () => {
                                     </div>
                                     <div>
                                         <div className="text-[10px] font-bold text-slate-400 uppercase leading-none mb-1">Siège Social</div>
-                                        <div className="text-xs font-bold text-slate-600">Bab Ezzouar, Alger, Algeria</div>
+                                        <div className="text-xs font-bold text-slate-600">Oran, Algeria</div>
                                     </div>
                                 </div>
-                                <a href="mailto:contact@risemanager.dz" className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
+                                <a href="mailto:contact@rise.dz" className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-primary/30 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
                                     <div className="w-8 h-8 flex items-center justify-center bg-white rounded-lg border border-slate-200 shrink-0 shadow-sm text-primary group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-colors">
                                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                     </div>
                                     <div>
                                         <div className="text-[10px] font-bold text-slate-400 uppercase leading-none mb-1">Email Numérique</div>
-                                        <div className="text-sm font-extrabold text-slate-600 group-hover:text-primary transition-colors">contact@risemanager.dz</div>
+                                        <div className="text-sm font-extrabold text-slate-600 group-hover:text-primary transition-colors">contact@rise.dz</div>
                                     </div>
                                 </a>
                                 <a href="tel:+213555123456" className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-emerald-500/30 hover:bg-white hover:shadow-lg hover:shadow-emerald-100/50 transition-all group">
@@ -131,7 +131,7 @@ const Footer = () => {
                 {/* Footnotes */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-[11px] font-bold text-slate-400">
-                        &copy; {new Date().getFullYear()} RiseManager. Propulsé par Rise infrastructure Afrique.
+                        &copy; {new Date().getFullYear()} RiseManager. Propulsé par RiseGroup Algérie.
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
                         <a href="/mentions-legales" className="text-[11px] font-black text-slate-400 hover:text-primary transition-colors uppercase tracking-[0.1em]">Mentions Légales</a>
