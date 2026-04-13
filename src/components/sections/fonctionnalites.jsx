@@ -1,5 +1,54 @@
 import React, { useState } from 'react';
 
+const DetailSidebar = ({ selectedOrder, isMobile, onClose }) => (
+    <div className={`${isMobile ? 'flex flex-col h-full pointer-events-auto' : 'hidden lg:block w-70 border-l border-slate-50 bg-[#fbfcfd] overflow-auto custom-scrollbar'} p-5 space-y-6 animate-slide-up`} key={`${selectedOrder.id}-${isMobile}`}>
+        <div className="flex justify-between items-center pb-4 border-b border-slate-100 shrink-0">
+            <div className="text-[10px] font-extrabold text-primary uppercase">DÉTAIL CMD #{selectedOrder.id}</div>
+            {isMobile && (
+                <button onClick={onClose} className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" strokeWidth={2.5} /></svg>
+                </button>
+            )}
+        </div>
+
+        <div className={`space-y-5 ${isMobile ? 'overflow-y-auto flex-1 custom-scrollbar pr-1' : ''}`}>
+            {selectedOrder.assignee && (
+                <div className="space-y-2">
+                    <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Assignation</div>
+                    <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-[9px] font-bold">{selectedOrder.assignee.initial}</div>
+                        <span className="text-[11px] font-bold text-heading">{selectedOrder.assignee.name}</span>
+                    </div>
+                </div>
+            )}
+
+            {selectedOrder.note && (
+                <div className="space-y-2">
+                    <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Dernière Note</div>
+                    <p className="text-[10px] text-slate-500 bg-white p-3 border border-slate-100 rounded-xl italic leading-relaxed shadow-sm">
+                        {selectedOrder.note}
+                    </p>
+                </div>
+            )}
+
+            {selectedOrder.history && (
+                <div className="space-y-4">
+                    <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Historique de vie</div>
+                    <div className="space-y-4 pl-2 border-l border-slate-100 ml-1 pb-4">
+                        {selectedOrder.history.map((event, i) => (
+                            <div key={i} className="relative pl-5">
+                                <div className={`absolute top-1 -left-[5.5px] w-2.5 h-2.5 rounded-full border-2 border-white ${event.status === 'complete' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.3)]' : 'bg-slate-200'}`} />
+                                <div className={`text-[9px] font-bold uppercase tracking-tight ${event.status === 'complete' ? 'text-heading' : 'text-slate-500'}`}>{event.title}</div>
+                                <div className="text-[8px] text-slate-400 font-medium">{event.time}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    </div>
+);
+
 const Features = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [statusFilter, setStatusFilter] = useState('Tous');
@@ -91,57 +140,9 @@ const Features = () => {
         return matchesSearch && matchesStatus;
     });
 
-    const selectedOrder = orders.find(o => o.id === selectedOrderId) || orders[0];
-
-    const DetailSidebar = ({ isMobile }) => (
-        <div className={`${isMobile ? 'flex flex-col h-full pointer-events-auto' : 'hidden lg:block w-70 border-l border-slate-50 bg-[#fbfcfd] overflow-auto custom-scrollbar'} p-5 space-y-6 animate-slide-up`} key={`${selectedOrderId}-${isMobile}`}>
-            <div className="flex justify-between items-center pb-4 border-b border-slate-100 shrink-0">
-                <div className="text-[10px] font-extrabold text-primary uppercase">DÉTAIL CMD #{selectedOrder.id}</div>
-                {isMobile && (
-                    <button onClick={() => setIsDetailOpenMobile(false)} className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors">
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" strokeWidth={2.5} /></svg>
-                    </button>
-                )}
-            </div>
-
-            <div className={`space-y-5 ${isMobile ? 'overflow-y-auto flex-1 custom-scrollbar pr-1' : ''}`}>
-                {selectedOrder.assignee && (
-                    <div className="space-y-2">
-                        <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Assignation</div>
-                        <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-[9px] font-bold">{selectedOrder.assignee.initial}</div>
-                            <span className="text-[11px] font-bold text-heading">{selectedOrder.assignee.name}</span>
-                        </div>
-                    </div>
-                )}
-
-                {selectedOrder.note && (
-                    <div className="space-y-2">
-                        <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Dernière Note</div>
-                        <p className="text-[10px] text-slate-500 bg-white p-3 border border-slate-100 rounded-xl italic leading-relaxed shadow-sm">
-                            {selectedOrder.note}
-                        </p>
-                    </div>
-                )}
-
-                {selectedOrder.history && (
-                    <div className="space-y-4">
-                        <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Historique de vie</div>
-                        <div className="space-y-4 pl-2 border-l border-slate-100 ml-1 pb-4">
-                            {selectedOrder.history.map((event, i) => (
-                                <div key={i} className="relative pl-5">
-                                    <div className={`absolute top-1 -left-[5.5px] w-2.5 h-2.5 rounded-full border-2 border-white ${event.status === 'complete' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.3)]' : 'bg-slate-200'}`} />
-                                    <div className={`text-[9px] font-bold uppercase tracking-tight ${event.status === 'complete' ? 'text-heading' : 'text-slate-500'}`}>{event.title}</div>
-                                    <div className="text-[8px] text-slate-400 font-medium">{event.time}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-            
-        </div>
-    );
+    const selectedOrder = filteredOrders.some(order => order.id === selectedOrderId)
+        ? orders.find(o => o.id === selectedOrderId)
+        : filteredOrders[0] || null;
 
     return (
         <section className="py-24 lg:py-32 bg-white overflow-hidden">
@@ -171,7 +172,29 @@ const Features = () => {
                             <p className="text-body leading-relaxed">
                                 Centralisez tous vos canaux de vente. De la réception à la confirmation finale, chaque étape est structurée.
                             </p>
-                            <div className="p-4 bg-blue-50/50 rounded-2xl border-l-[3px] border-primary">
+                            
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mt-2">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Divisez votre temps de traitement par 2.</span>
+                            </div>
+
+                            {/* Carrier Integrations */}
+                            <div className="mt-8 border-t border-slate-100 pt-6">
+                                <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">Intégrés nativement pour l'Afrique :</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {['Yalidine', 'ZR Express', 'Maystro', 'Guepex'].map(carrier => (
+                                        <span key={carrier} className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-[11px] font-bold text-slate-600 shadow-sm flex items-center gap-1.5">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_5px_rgba(34,197,94,0.5)]" />
+                                            {carrier}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <div className="p-4 bg-blue-50/50 rounded-2xl border-l-[3px] border-primary mt-8">
                                 <p className="text-sm italic text-blue-700 font-medium">
                                     "Chaque commande a un statut, un historique et une logique."
                                 </p>
@@ -277,7 +300,7 @@ const Features = () => {
                                                                 <div className="text-[12px] font-bold text-heading group-hover/row:text-primary transition-colors">{order.name}</div>
                                                             </td>
                                                             <td className="p-4 sm:p-5">
-                                                                <span className={`px-2.5 py-1 rounded-lg text-[9px] font-extrabold uppercase ${order.color} shadow-sm border border-transparent group-hover/row:border-current/10`}>
+                                                                <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-[9px] font-extrabold uppercase ${order.color} shadow-sm border border-transparent group-hover/row:border-current/10`}>
                                                                     {order.status}
                                                                 </span>
                                                             </td>
@@ -294,12 +317,18 @@ const Features = () => {
                                     </div>
 
                                     {/* Sidebar Detail (Desktop) */}
-                                    <DetailSidebar isMobile={false} />
+                                    {selectedOrder ? (
+                                        <DetailSidebar selectedOrder={selectedOrder} isMobile={false} onClose={() => setIsDetailOpenMobile(false)} />
+                                    ) : (
+                                        <div className="hidden lg:flex w-70 border-l border-slate-50 bg-[#fbfcfd] p-5 items-center justify-center text-slate-400 text-sm font-medium">
+                                            Aucun ordre sélectionné.
+                                        </div>
+                                    )}
 
                                     {/* Mobile Detail Overlay */}
-                                    {isDetailOpenMobile && (
+                                    {isDetailOpenMobile && selectedOrder && (
                                         <div className="absolute inset-0 z-50 bg-white flex flex-col lg:hidden animate-slide-up">
-                                            <DetailSidebar isMobile={true} />
+                                            <DetailSidebar selectedOrder={selectedOrder} isMobile={true} onClose={() => setIsDetailOpenMobile(false)} />
                                         </div>
                                     )}
                                 </div>
@@ -319,31 +348,41 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Gestion de stock 2.0</h3>
                             </div>
-                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm mb-10">
-                                <div className="flex justify-between items-center mb-6">
+                            
+                            <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-md mb-8 hover:shadow-lg transition-transform hover:-translate-y-1">
+                                <div className="flex justify-between items-center mb-8">
                                     <div>
-                                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">PRODUIT : Basket modèle X</div>
-                                        <div className="text-xs font-bold text-heading">Variante Noir / 42</div>
+                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">PRODUIT : Basket modèle X</div>
+                                        <div className="text-base lg:text-lg font-bold text-heading">Variante Noir / 42</div>
                                     </div>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-6">
                                         <div className="text-center">
-                                            <div className="text-sm font-extrabold text-blue-600">7</div>
-                                            <div className="text-[8px] font-bold text-slate-400 uppercase">DISPO</div>
+                                            <div className="text-xl lg:text-2xl font-extrabold text-blue-600">7</div>
+                                            <div className="text-[10px] font-bold text-slate-400 uppercase">DISPO</div>
                                         </div>
                                         <div className="text-center">
-                                            <div className="text-sm font-extrabold text-orange-600">2</div>
-                                            <div className="text-[8px] font-bold text-slate-400 uppercase">RÉSERVÉ</div>
+                                            <div className="text-xl lg:text-2xl font-extrabold text-orange-600">2</div>
+                                            <div className="text-[10px] font-bold text-slate-400 uppercase">RÉSERVÉ</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pt-4 border-t border-slate-50">
-                                    <div className="flex items-center gap-2 text-[10px] text-red-500 font-bold bg-red-50 px-3 py-1 rounded-full w-fit">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                                        Alerte : Ruture imminente sur 1 variantes
+                                <div className="pt-5 border-t border-slate-50">
+                                    <div className="flex items-center gap-2 text-xs text-red-500 font-bold bg-red-50 px-4 py-2 rounded-full w-fit">
+                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                        Alerte : Rupture imminente (1 variante)
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-sm italic text-cyan-700 font-medium">
+                            
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mb-6">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Réduisez vos ruptures surprises de 99%.</span>
+                            </div>
+
+                            <p className="text-[13px] italic text-cyan-700 font-medium">
                                 "Une variante n'est pas un détail. C'est une unité de vérité."
                             </p>
                         </div>
@@ -358,27 +397,40 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Le scan de la vérité</h3>
                             </div>
-                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm mb-10 font-mono">
-                                <div className="flex justify-between items-center text-[10px] mb-4">
-                                    <span className="text-primary font-bold">SCANNER ACTIF</span>
-                                    <span className="text-green-500 font-bold">SUCCÈS</span>
+                            
+                            <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-md mb-8 font-mono hover:shadow-lg transition-transform hover:-translate-y-1">
+                                <div className="flex justify-between items-center text-xs mb-6">
+                                    <span className="text-primary font-bold flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 bg-primary rounded-full animate-ping" />
+                                        SCANNER ACTIF
+                                    </span>
+                                    <span className="text-green-500 font-bold bg-green-50 px-2 py-1 rounded">SUCCÈS</span>
                                 </div>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between items-center text-xs">
-                                        <span className="text-slate-400 uppercase tracking-widest text-[9px]">Colis</span>
-                                        <span className="text-heading font-bold">#2843-984</span>
+                                <div className="space-y-5">
+                                    <div className="flex justify-between items-center text-sm lg:text-base">
+                                        <span className="text-slate-400 uppercase tracking-widest text-[11px]">Colis</span>
+                                        <span className="text-heading font-extrabold">#2843-984</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs">
-                                        <span className="text-slate-400 uppercase tracking-widest text-[9px]">Status</span>
-                                        <span className="text-blue-600 font-bold">REÇU AU DÉPÔT</span>
+                                    <div className="flex justify-between items-center text-sm lg:text-base">
+                                        <span className="text-slate-400 uppercase tracking-widest text-[11px]">Status</span>
+                                        <span className="text-blue-600 font-extrabold bg-blue-50 px-2.5 py-1 rounded-lg">REÇU AU DÉPÔT</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs">
-                                        <span className="text-slate-400 uppercase tracking-widest text-[9px]">Agent</span>
-                                        <span className="text-heading font-semibold">Bachir V.</span>
+                                    <div className="flex justify-between items-center text-sm lg:text-base">
+                                        <span className="text-slate-400 uppercase tracking-widest text-[11px]">Agent</span>
+                                        <span className="text-slate-800 font-bold">Bachir V.</span>
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-sm italic text-indigo-700 font-medium">
+
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mb-6">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Réduisez les erreurs d'expédition de 30%.</span>
+                            </div>
+
+                            <p className="text-[13px] italic text-indigo-700 font-medium">
                                 "Chaque scan met le système face à la réalité."
                             </p>
                         </div>
@@ -401,6 +453,14 @@ const Features = () => {
                                     </svg>
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Suivi des équipes</h3>
+                            </div>
+
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mb-8">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Améliorez la productivité de vos agents de 30%.</span>
                             </div>
 
                             <div className="bg-white rounded-[24px] border border-slate-100 shadow-xl overflow-hidden mb-10">
@@ -482,20 +542,29 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-xl font-extrabold text-heading">Gestion du risque</h3>
                             </div>
-                            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm mb-10 overflow-hidden relative">
-                                <div className="absolute top-0 right-0 px-3 py-1 bg-red-600 text-[8px] font-extrabold text-white rounded-bl-xl tracking-widest">RISQUE ÉLEVÉ</div>
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
-                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mb-8">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Évitez les pertes inutiles sur les frais de colis.</span>
+                            </div>
+
+                            <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-md mb-10 overflow-hidden relative hover:shadow-lg transition-transform hover:-translate-y-1">
+                                <div className="absolute top-0 right-0 px-4 py-1.5 bg-red-600 text-[10px] font-extrabold text-white rounded-bl-2xl tracking-widest">RISQUE ÉLEVÉ</div>
+                                <div className="flex items-center gap-4 mb-8 mt-2">
+                                    <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
+                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                                     </div>
                                     <div>
-                                        <div className="text-xs font-bold text-heading">Yassine M.</div>
-                                        <div className="text-[10px] text-slate-400">0772 122 3XX</div>
+                                        <div className="text-sm lg:text-base font-bold text-heading">Yassine M.</div>
+                                        <div className="text-xs text-slate-400">0772 122 3XX</div>
                                     </div>
                                 </div>
-                                <div className="flex justify-between items-center text-[10px] font-bold">
-                                    <div className="text-red-600 tracking-wider">COMMANDE PASSÉE : 3</div>
-                                    <div className="text-red-700 tracking-wider uppercase">SURVEILLANCE ACTIVE</div>
+                                <div className="flex justify-between items-center text-xs font-bold">
+                                    <div className="text-red-600 tracking-wider">CMD ANNULÉES : 3</div>
+                                    <div className="text-red-700 tracking-wider uppercase bg-red-50 px-2 py-1 rounded inline-block">SURVEILLANCE</div>
                                 </div>
                             </div>
                             <p className="text-sm italic text-red-700 font-medium">
@@ -517,6 +586,13 @@ const Features = () => {
                                 <p className="text-body leading-relaxed">
                                     Ne devinez plus votre rentabilité. Nous intégrons tous les coûts pour vous donner un chiffre net quotidien et précis.
                                 </p>
+                                {/* Mini Benefit */}
+                                <div className="flex items-start gap-3 mt-2">
+                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                    </div>
+                                    <span className="text-sm font-bold text-heading">Prenez 100% de vos décisions basées sur du net.</span>
+                                </div>
                             </div>
 
                             {/* Arguments Checklist */}
@@ -627,6 +703,15 @@ const Features = () => {
                             <p className="text-body leading-relaxed">
                                 Transformez vos données en décisions. Suivez l'évolution de vos ventes, identifiez vos produits stars et mesurez la rentabilité de chaque source publicitaire.
                             </p>
+                            
+                            {/* Mini Benefit */}
+                            <div className="flex items-start gap-3 mt-2 mb-6">
+                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0 mt-0.5">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span className="text-sm font-bold text-heading">Repérez vos best-sellers réels en 3 secondes.</span>
+                            </div>
+
                             <div className="p-4 bg-slate-900 rounded-2xl border-l-[3px] border-primary shadow-lg shadow-slate-200/50">
                                 <p className="text-sm italic text-slate-300 font-medium font-outfit">
                                     "Ce que tu ne mesures pas finit toujours par te coûter cher."

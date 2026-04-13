@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import DropDown from '../ui/DropDown';
+import Logo from '../ui/Logo';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,44 +37,55 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 sm:px-6">
-        <div 
-          className={`container mx-auto px-4 lg:px-6 py-3 bg-white rounded-[24px] border border-slate-100 shadow-sm transition-all duration-300 flex items-center justify-between ${
-            isScrolled ? 'shadow-md' : ''
-          }`}
+        <div
+          className={`container mx-auto px-4 lg:px-6 py-3 bg-white rounded-[24px] border border-slate-100 shadow-sm transition-all duration-300 flex items-center justify-between ${isScrolled ? 'shadow-md' : ''
+            }`}
         >
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shrink-0 shadow-sm">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-heading tracking-tight hidden xs:block">RiseManager</span>
-          </div>
+          <Logo 
+            className="flex items-center gap-2 shrink-0 cursor-pointer"
+            iconClassName="w-8 h-8 lg:w-9 lg:h-9"
+            textClassName="text-xl lg:text-2xl font-black text-heading tracking-tight hidden sm:block"
+          />
 
           {/* Navigation - Desktop */}
           <nav className="hidden lg:flex items-center gap-6">
             <NavLink href="#" active>Accueil</NavLink>
             <DropDown title="Fonctionnalités" items={featuresItems} columns={2} />
-            <NavLink href="#">Tarifs</NavLink>
             <DropDown title="Écosystème" items={ecoItems} columns={1} />
+            <NavLink href="#">Tarifs</NavLink>
             <NavLink href="#">FAQ</NavLink>
             <NavLink href="#">Contact</NavLink>
           </nav>
 
           {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-4">
-            {/* Lang Switcher - Desktop Only */}
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 border border-slate-50 rounded-full bg-slate-50/50 shadow-inner">
-              <button className="text-[10px] font-black text-primary">FR</button>
-              <div className="w-[1px] h-2 bg-slate-200" />
-              <button className="text-[10px] font-black text-slate-400 hover:text-primary transition-colors">AR</button>
+            {/* Lang Switcher Dropdown - Desktop Only */}
+            <div className="hidden md:block relative group">
+              <button className="flex items-center gap-1.5 px-3 py-1.5 border border-slate-50 rounded-full bg-slate-50/50 shadow-inner hover:bg-slate-100 transition-colors">
+                <span className="text-[10px] font-black text-primary">FR</span>
+                <svg className="w-3 h-3 text-slate-400 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="bg-white border border-slate-100 shadow-xl shadow-slate-200/50 rounded-2xl py-2 flex flex-col min-w-[120px]">
+                  <button className="px-4 py-2.5 text-xs font-black text-primary bg-blue-50/50 text-left w-full flex items-center justify-between">
+                    Français
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  </button>
+                  <button className="px-4 py-2.5 text-xs font-bold text-slate-500 hover:text-primary hover:bg-slate-50 text-left w-full transition-colors flex items-center justify-between">
+                    English
+                  </button>
+                  <button className="px-4 py-2.5 text-xs font-bold text-slate-500 hover:text-primary hover:bg-slate-50 text-left w-full transition-colors flex items-center justify-between">
+                    العربية
+                  </button>
+                </div>
+              </div>
             </div>
 
             <button className="hidden lg:block text-sm font-bold text-heading hover:text-primary transition-colors border border-slate-100 px-5 py-2.5 rounded-full">
               Se connecter
             </button>
-            
+
             {/* Action Button - Size adapted to terminal */}
             <button className="hidden sm:flex px-5 py-2.5 lg:px-6 lg:py-3 bg-primary hover:bg-primary-hover text-white text-xs lg:text-sm font-extrabold rounded-full transition-all active:scale-95 whitespace-nowrap shadow-lg shadow-primary/20 items-center justify-center">
               <span className="lg:hidden">Démarrer</span>
@@ -81,7 +93,7 @@ const Header = () => {
             </button>
 
             {/* Mobile Menu Toggle */}
-            <button 
+            <button
               className="lg:hidden p-2 text-heading transition-transform active:scale-90"
               onClick={() => setIsMenuOpen(true)}
             >
@@ -99,15 +111,15 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           {/* Overlay */}
-          <div 
+          <div
             className="absolute inset-0 bg-heading/20 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           />
-          
+
           {/* Menu Card */}
           <div className="relative w-full max-w-sm bg-white rounded-[32px] p-8 shadow-2xl border border-slate-50 animate-fade-in text-center">
             {/* Close Button */}
-            <button 
+            <button
               className="absolute top-6 right-6 p-2 text-slate-400 hover:text-heading bg-slate-50 rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -118,12 +130,11 @@ const Header = () => {
 
             {/* Logo in Menu */}
             <div className="flex flex-col items-center gap-3 mb-10">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-heading">RiseManager</span>
+              <Logo 
+                showText={false}
+                iconClassName="w-12 h-12"
+              />
+              <span className="text-xl font-black text-heading">RiseManager</span>
             </div>
 
             {/* Links */}
@@ -137,10 +148,17 @@ const Header = () => {
 
             {/* Actions */}
             <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-center gap-4 mb-2">
-                <button className="text-xs font-extrabold text-primary">FR</button>
-                <div className="w-[1px] h-3 bg-slate-100" />
-                <button className="text-xs font-extrabold text-slate-400">AR</button>
+              <div className="flex flex-col gap-2 mb-4 bg-slate-50/50 p-2 rounded-2xl border border-slate-100">
+                <button className="w-full py-2.5 text-xs font-black text-primary bg-white shadow-sm rounded-xl flex items-center justify-center gap-2">
+                  Français
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                </button>
+                <button className="w-full py-2 text-xs font-bold text-slate-500 hover:text-primary transition-colors">
+                  English
+                </button>
+                <button className="w-full py-2 text-xs font-bold text-slate-500 hover:text-primary transition-colors">
+                  العربية
+                </button>
               </div>
               <button className="w-full py-4 text-sm font-bold text-heading border border-slate-100 rounded-2xl">
                 Se connecter
@@ -157,23 +175,21 @@ const Header = () => {
 };
 
 const NavLink = ({ href, children, active = false }) => (
-  <a 
-    href={href} 
-    className={`text-[13px] font-bold transition-colors hover:text-primary ${
-      active ? 'text-primary' : 'text-slate-400'
-    }`}
+  <a
+    href={href}
+    className={`text-[13px] font-bold transition-colors hover:text-primary ${active ? 'text-primary' : 'text-slate-400'
+      }`}
   >
     {children}
   </a>
 );
 
 const MobileNavLink = ({ href, children, active = false, onClick }) => (
-  <a 
-    href={href} 
+  <a
+    href={href}
     onClick={onClick}
-    className={`text-sm font-bold transition-colors ${
-      active ? 'text-primary' : 'text-slate-500 hover:text-primary'
-    }`}
+    className={`text-sm font-bold transition-colors ${active ? 'text-primary' : 'text-slate-500 hover:text-primary'
+      }`}
   >
     {children}
   </a>

@@ -5,8 +5,8 @@ const FAQ = () => {
 
     const questions = [
         {
-            q: "Est-ce que RiseManager est adapté au marché algérien ?",
-            a: "Absolument. RiseManager a été construit spécifiquement pour le COD (Cash on Delivery) en Algérie. Nous gérons les Wilayas, les communes, les spécificités logistiques locales et même les blacklists partagées entre marchands algériens."
+            q: "Est-ce que RiseManager est adapté au marché africain ?",
+            a: "Absolument. RiseManager a été construit spécifiquement pour le COD (Cash on Delivery) en Afrique. Nous gérons les Wilayas, les communes, les spécificités logistiques locales et même les blacklists partagées entre marchands africains."
         },
         {
             q: "Est-ce que je peux gérer plusieurs agents ?",
@@ -30,11 +30,23 @@ const FAQ = () => {
         },
         {
             q: "Est-ce qu’il y a un accompagnement ?",
-            a: "Nous ne vendons pas qu'un logiciel. Notre équipe basée en Algérie vous accompagne pour le paramétrage initial et nos experts sont disponibles par WhatsApp et téléphone pour vous aider à optimiser vos processus."
+            a: "Nous ne vendons pas qu'un logiciel. Notre équipe basée en Afrique vous accompagne pour le paramétrage initial et nos experts sont disponibles par WhatsApp et téléphone pour vous aider à optimiser vos processus."
         },
         {
             q: "Est-ce que RiseManager fonctionne avec les autres services Rise ?",
             a: "RiseManager est le cœur de l'écosystème. Il se synchronise nativement avec RiseCart (boutique), RiseConfirm (outsourcing) et FBR (data collective) pour créer une infrastructure e-commerce imbattable."
+        },
+        {
+            q: "RiseManager s'intègre-t-il avec les sociétés de livraison en Afrique ?",
+            a: "Oui ! RiseManager est connecté via API aux principaux transporteurs locaux (Yalidine, ZR Express, Maystro, Guepex...). Générez vos bordereaux, expédiez vos commandes et suivez tous les statuts en temps réel, sans jamais quitter la plateforme."
+        },
+        {
+            q: "Comment garantissez-vous la sécurité de mes données (clients, CA) ?",
+            a: "La confidentialité est absolue. Vos données sont chiffrées et stockées sur des serveurs cloud hautement sécurisés. De plus, notre système de rôles granulaires empêche vos agents de faire des exports non autorisés (ex: téléchargement de base de données) et bloque l'accès à vos chiffres financiers."
+        },
+        {
+            q: "Comment fonctionne votre support client ?",
+            a: "Nous assurons un suivi Premium avec une équipe totalement basée en Afrique. Oubliez les adresses mails lentes : vous avez un accès direct à vos conseillers par WhatsApp ou téléphone pour résoudre n'importe qu'elle situation en un temps record."
         }
     ];
 

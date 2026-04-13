@@ -77,13 +77,25 @@ const Problem = () => {
                             </span>
                         </div>
 
-                        <div className="flex items-center gap-3 mb-10">
+                        <div className="flex items-center gap-3 mb-8 lg:mb-10">
                             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 transition-transform group-hover:scale-110">
                                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
                             <h3 className="text-xl font-extrabold text-heading">Avec RiseManager</h3>
+                        </div>
+
+                        <div className="mb-10 xl:mb-0 xl:absolute xl:top-[30%] xl:-right-16 bg-white/90 backdrop-blur-md p-4 lg:p-5 rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 xl:border-white/50 animate-float flex items-center gap-4 lg:gap-5 z-20 min-w-[200px] xl:w-[280px]">
+                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-50 shrink-0 rounded-2xl flex items-center justify-center border border-green-100 shadow-sm p-10">
+                                <span className="text-xl lg:text-2xl font-extrabold text-green-600">-40%</span>
+                            </div>
+                            <div>
+                                <div className="text-[9px] lg:text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1">Moyenne Constatée</div>
+                                <p className="text-[13px] lg:text-sm text-heading font-bold leading-snug">
+                                    De colis retournés <br className="hidden xl:block"/>et 3x de temps gagné.
+                                </p>
+                            </div>
                         </div>
 
                         <div className="space-y-6">
@@ -130,24 +142,42 @@ const Problem = () => {
                 </div>
 
             </div>
+
+            <style>{`
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-10px) rotate(0.5deg); }
+                }
+                .animate-float { animation: float 6s ease-in-out infinite; }
+            `}</style>
         </section>
     );
 };
 
 const ProblemItem = ({ icon, title, description, isNegative = false }) => (
-    <div className="flex items-start gap-5 group/item transition-all">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${isNegative
-                ? 'bg-slate-100 border-slate-200 text-slate-400 group-hover/item:bg-slate-200 group-hover/item:text-slate-500'
-                : 'bg-blue-50 border-blue-100 text-primary group-hover/item:bg-primary group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-primary/30'
-            }`}>
-            {icon}
+    <div className="flex items-start gap-4 lg:gap-5 group/item transition-all">
+        <div className="relative shrink-0">
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 ${isNegative
+                    ? 'bg-red-50 border-red-100 text-red-500 group-hover/item:bg-red-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-red-500/30'
+                    : 'bg-green-50 border-green-100 text-green-600 group-hover/item:bg-green-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-green-500/30'
+                }`}>
+                {icon}
+            </div>
+            {/* Visual Indicator (Cross/Check) */}
+            <div className={`absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full border-2 border-white flex items-center justify-center shadow-sm z-10 transition-transform group-hover/item:scale-110 ${isNegative ? 'bg-red-500' : 'bg-green-500'}`}>
+                {isNegative ? (
+                    <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                ) : (
+                    <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                )}
+            </div>
         </div>
         <div className="space-y-1">
-            <h4 className={`text-base font-bold transition-all duration-300 ${isNegative ? 'text-slate-500 group-hover/item:text-slate-700' : 'text-heading group-hover/item:text-primary'
+            <h4 className={`text-[15px] font-bold transition-all duration-300 ${isNegative ? 'text-slate-600 group-hover/item:text-red-600' : 'text-slate-800 group-hover/item:text-green-600'
                 }`}>
                 {title}
             </h4>
-            <p className={`text-[13px] leading-relaxed transition-all duration-300 ${isNegative ? 'text-slate-400 group-hover/item:text-slate-500' : 'text-body group-hover/item:text-slate-600'
+            <p className={`text-[13px] leading-relaxed transition-all duration-300 ${isNegative ? 'text-slate-400 group-hover/item:text-slate-500' : 'text-slate-500 group-hover/item:text-slate-600'
                 }`}>
                 {description}
             </p>

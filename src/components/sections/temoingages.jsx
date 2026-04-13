@@ -39,7 +39,7 @@ const Testimonials = () => {
         {
             name: "Karim Djebbar",
             role: "E-commerçant indépendant",
-            content: "Le support local est ultra-réactif. Ils comprennent le marché algérien et les défis de la livraison. Je recommande à 100% pour ceux qui veulent du sérieux.",
+            content: "Le support local est ultra-réactif. Ils comprennent le marché africain et les défis de la livraison. Je recommande à 100% pour ceux qui veulent du sérieux.",
             result: "Support 24/7",
             avatar: "KD"
         }
@@ -66,7 +66,7 @@ const Testimonials = () => {
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-extrabold text-heading leading-tight animate-slide-up">
                         Ils construisent le futur du <br />
-                        <span className="text-primary italic">COD en Algérie</span> avec nous.
+                        <span className="text-primary italic">COD en Afrique</span> avec nous.
                     </h2>
                 </div>
 

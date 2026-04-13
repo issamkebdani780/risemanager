@@ -3,8 +3,8 @@ import React from 'react';
 const Differentiation = () => {
     const reasons = [
         {
-            title: "Pensé pour le marché algérien",
-            description: "On ne plaque pas un modèle étranger. On a construit RiseManager avec les réalités de l'Algérie, pas d'ailleurs.",
+            title: "Pensé pour le marché africain",
+            description: "On ne plaque pas un modèle étranger. On a construit RiseManager avec les réalités de l'Afrique, pas d'ailleurs.",
             icon: (
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -88,7 +88,7 @@ const Differentiation = () => {
                         Pourquoi RiseManager n’est pas un <span className="text-primary italic">simple</span> outil de gestion
                     </h2>
                     <p className="text-lg text-body leading-relaxed animate-slide-up max-w-2xl mx-auto" style={{ animationDelay: '0.2s' }}>
-                        Nous avons construit une infrastructure robuste qui répond aux défis précis de la vente à distance en Algérie.
+                        Nous avons construit une infrastructure robuste qui répond aux défis précis de la vente à distance en Afrique.
                     </p>
                 </div>
 

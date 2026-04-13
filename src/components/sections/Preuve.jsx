@@ -60,8 +60,21 @@ const Preuve = () => {
             <span className="text-primary tracking-tight">votre croissance.</span>
           </h2>
           <p className="text-lg text-body leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Chaque chiffre raconte une histoire d'optimisation et de réussite <br className="hidden lg:block" /> sur le terrain algérien.
+            Chaque chiffre raconte une histoire d'optimisation et de réussite <br className="hidden lg:block" /> sur le terrain africain.
           </p>
+        </div>
+
+        {/* Logos Clients / Partenaires */}
+        <div className="max-w-5xl mx-auto mb-20 animate-slide-up" style={{ animationDelay: '0.15s' }}>
+          <p className="text-center text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.2em] mb-8">Plus de 200 marques e-commerce locales gèrent leur flux via notre plateforme</p>
+          <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-20 opacity-50 grayscale hover:grayscale-0 transition-opacity duration-300 pointer-events-none">
+             {/* Text-based generic logos to reinforce credibility */}
+             <div className="text-xl font-black text-slate-800 tracking-tighter flex items-center gap-1"><div className="w-5 h-5 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px]">D</div>DZ<span className="text-blue-600">Shop</span></div>
+             <div className="text-xl font-extrabold text-slate-800 font-serif italic">Cosmetica<span className="text-rose-500">.</span></div>
+             <div className="flex items-center gap-1.5 text-xl font-bold text-slate-800"><div className="w-4 h-4 bg-emerald-500 rotate-45 rounded-sm" />TechStore</div>
+             <div className="text-xl font-bold text-slate-800 tracking-wider">LIFESTYLE<sup className="text-xs">TM</sup></div>
+             <div className="text-xl font-black text-slate-800 uppercase flex flex-col leading-none"><span>Trend</span><span className="text-[10px] font-bold tracking-widest">Afrique</span></div>
+          </div>
         </div>
 
         {/* Bento Grid */}
@@ -171,8 +184,81 @@ const Preuve = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-12 animate-slide-up" style={{ animationDelay: '0.7s' }}>
-           <div className="w-1 h-24 bg-gradient-to-b from-blue-50 to-transparent" />
+          
+
+        {/* Cas Client Détaillé */}
+        <div className="max-w-6xl mx-auto mt-20 animate-slide-up relative z-10" style={{ animationDelay: '0.7s' }}>
+           <div className="bg-white rounded-[40px] p-8 lg:p-14 border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] overflow-hidden relative cursor-default group">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-transform duration-700 group-hover:scale-110" />
+              
+              <div className="flex items-center gap-3 mb-10 relative z-10">
+                 <div className="px-4 py-1.5 bg-blue-50 rounded-full border border-blue-100 text-[10px] font-extrabold text-primary uppercase tracking-widest">Étude de Cas</div>
+                 <div className="text-sm font-bold text-slate-400">Grosse Marque Mode E-com (800+ CMD/Jour)</div>
+              </div>
+              
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+                 <div>
+                    <h3 className="text-2xl lg:text-4xl font-extrabold text-heading mb-6 leading-tight">"Comment ils ont augmenté leur taux de livraison de 28% en 60 jours."</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed mb-10 font-medium">
+                       La gestion sur Google Sheets devenait un goulot d'étranglement majeur. Entre les erreurs de saisie, le double appel client et la déconnexion totale avec l'inventaire, le taux de retour engloutissait leur marge nette.
+                    </p>
+                    
+                    <div className="space-y-6">
+                       <div className="flex gap-4 p-4 rounded-3xl bg-slate-50 border border-slate-100 group/avant transition-colors hover:bg-slate-100/50">
+                          <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center shrink-0 border border-red-100 text-red-500 mt-0.5">
+                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+                          </div>
+                          <div>
+                             <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1.5">Avant RiseManager</div>
+                             <p className="text-[13px] font-semibold text-slate-600 leading-snug">Taux de livraison bloqué à 54%, retours injustifiés et aucune visibilité sur les performances des téléopérateurs ou livreurs.</p>
+                          </div>
+                       </div>
+                       <div className="flex gap-4 p-4 rounded-3xl bg-green-50 border border-green-100 shadow-sm relative overflow-hidden group/apres">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/20 blur-2xl rounded-full" />
+                          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 border border-green-200 text-green-600 mt-0.5 shadow-sm relative z-10">
+                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                          </div>
+                          <div className="relative z-10">
+                             <div className="text-[10px] font-extrabold text-green-600 uppercase tracking-widest mb-1.5">Avec RiseManager</div>
+                             <p className="text-[13px] font-bold text-slate-800 leading-snug">Taux propulsé à 82% grâce au workflow de confirmation natif, et un blocage intelligent des numéros à risque.</p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+
+                 <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div className="bg-slate-50 hover:bg-white transition-colors duration-500 rounded-[32px] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-200/20 flex flex-col justify-center">
+                       <div className="text-4xl lg:text-5xl font-extrabold text-[#0f172a] mb-2 tracking-tighter">
+                          +28<span className="text-2xl text-slate-400">%</span>
+                       </div>
+                       <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-2">Taux Livraison</div>
+                       <div className="w-10 h-1 bg-green-500 rounded-full" />
+                    </div>
+                    <div className="bg-slate-50 hover:bg-white transition-colors duration-500 rounded-[32px] p-8 border border-slate-100 hover:shadow-2xl hover:shadow-blue-200/20 flex flex-col justify-center relative overflow-hidden">
+                       <div className="text-4xl lg:text-5xl font-extrabold text-[#0f172a] mb-2 tracking-tighter relative z-10">
+                          -40<span className="text-2xl text-slate-400">%</span>
+                       </div>
+                       <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-0.5 relative z-10">D'Erreurs Colis</div>
+                       <div className="text-[9px] text-slate-400 italic relative z-10">À la préparation</div>
+                    </div>
+                    
+                    <a href="#demo" className="col-span-2 block bg-primary text-white rounded-[32px] p-8 lg:p-10 shadow-xl shadow-primary/30 flex items-center justify-between overflow-hidden relative group/action transition-transform hover:-translate-y-1">
+                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 translate-x-[-100%] group-hover/action:translate-x-[100%] transition-transform duration-1000" />
+                       <div className="relative z-10">
+                          <div className="text-[10px] font-extrabold text-blue-200 uppercase tracking-widest mb-2">Passez au niveau supérieur</div>
+                          <div className="text-2xl lg:text-3xl font-extrabold">Exigez vous aussi <br className="hidden sm:block"/>ces résultats.</div>
+                       </div>
+                       <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm relative z-10 group-hover/action:scale-110 transition-transform">
+                          <svg className="w-6 h-6 lg:w-8 lg:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                       </div>
+                    </a>
+                 </div>
+              </div>
+           </div>
+        </div>
+
+        <div className="flex justify-center mt-20 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+           <div className="w-1 h-32 bg-gradient-to-b from-slate-200 to-transparent rounded-full" />
         </div>
 
       </div>

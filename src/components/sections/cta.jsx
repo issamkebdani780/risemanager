@@ -26,14 +26,29 @@ const FinalCTA = () => {
                             </p>
                         </div>
 
-                        {/* Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 items-center">
-                            <button className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95">
-                                Démarrer l'essai gratuit
-                            </button>
-                            <button className="px-10 py-5 bg-white hover:bg-slate-50 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 border border-slate-100 transition-all hover:-translate-y-1 active:scale-95">
-                                Réserver une démo
-                            </button>
+                        {/* Buttons & Friction Reduction */}
+                        <div className="flex flex-col items-center gap-5">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center">
+                                <button className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
+                                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                                    Essai gratuit de 7 jours
+                                </button>
+                                <button className="px-10 py-5 bg-white hover:bg-slate-50 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 border border-slate-100 transition-all hover:-translate-y-1 active:scale-95">
+                                    Réserver une démo
+                                </button>
+                            </div>
+                            
+                            <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-bold text-slate-500">
+                                <div className="flex items-center gap-1.5 text-green-600 bg-green-50 px-2.5 py-1 rounded-md">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                                    Sans engagement
+                                </div>
+                                <span className="hidden sm:block text-slate-300">•</span>
+                                <div className="flex items-center gap-1.5">
+                                    <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                                    Aucune carte bancaire requise
+                                </div>
+                            </div>
                         </div>
 
                         {/* Horizontal Reassurance Bar */}

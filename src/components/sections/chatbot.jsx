@@ -19,7 +19,7 @@ const ChatBot = () => {
 
   const context = `
     RISEMANAGER PROJECT SPECIFICATIONS:
-    - Target: Algerian e-commerce businesses scaling up, managing volume, variants (shoes/clothes), and COD teams.
+    - Target: African e-commerce businesses scaling up, managing volume, variants (shoes/clothes), and COD teams.
     - Core Value: "Pilote ton e-commerce avec un vrai système, pas des fichiers dispersés."
     
     MODULES & ECOSYSTEM:
@@ -33,15 +33,15 @@ const ChatBot = () => {
        - Shipping Audit: Tracking every dinar lost in deliveries and returns.
     
     2. The Ecosystem:
-       - RiseCart: Local Shopify-alternative optimized for Algerian COD.
+       - RiseCart: Local Shopify-alternative optimized for African COD.
        - RiseConfirm: Professional call center outsourcing for e-merchants.
        - FBR (Fulfillment By Rise): Logistics, warehousing, and delivery network.
-       - RiseAcademy: Training for e-commerce entrepreneurs in Algeria.
+       - RiseAcademy: Training for e-commerce entrepreneurs in Africa.
        - RisePay: Financial infrastructure and cash flow management.
 
     BUSINESS GOALS:
     - Conversion items: 14-day Free Trial (No credit card), Demo Reservation.
-    - Trust signals: Support based in Algeria (Local DZ), Native integrations, Secure data.
+    - Trust signals: Support based in Africa, Native integrations, Secure data.
   `;
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const ChatBot = () => {
       setMessages([
         {
           role: "assistant",
-          content: "Salam ! 👋 Je suis l'assistant RiseManager. Je peux vous aider à structurer votre business e-commerce ou vous expliquer comment notre écosystème peut automatiser votre croissance en Algérie. Que souhaitez-vous savoir ?"
+          content: "Salam ! 👋 Je suis l'assistant RiseManager. Je peux vous aider à structurer votre business e-commerce ou vous expliquer comment notre écosystème peut automatiser votre croissance en Afrique. Que souhaitez-vous savoir ?"
         }
       ]);
     }
@@ -74,10 +74,10 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      const systemPrompt = `Tu es l'assistant concierge intelligent de RiseManager (Algérie).
+      const systemPrompt = `Tu es l'assistant concierge intelligent de RiseManager (Afrique).
       
       TON RÔLE :
-      - Tu es un expert en e-commerce COD spécialisé sur le marché algérien.
+      - Tu es un expert en e-commerce COD spécialisé sur le marché africain.
       - Tu aides les entrepreneurs à comprendre comment RiseManager remplace leurs fichiers Excel.
       - Tu expliques les bénéfices de l'écosystème (RiseCart, RiseConfirm, FBR).
       - Tu es proactif, professionnel et tu utilises un ton "Executive" mais chaleureux.

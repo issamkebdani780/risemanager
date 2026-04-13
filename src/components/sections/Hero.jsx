@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -26,23 +26,34 @@ const Hero = () => {
 
           {/* Left Content */}
           <div className="w-full lg:w-1/2 space-y-8 text-reveal-container">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-primary font-medium text-sm animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 text-[10px]">
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
-              </span>
-              Conçu pour le marché algérien
+            {/* Badge & Social Proof */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-primary font-medium text-sm">
+                <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 text-[10px]">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
+                </span>
+                Conçu pour le marché africain
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm shadow-sm backdrop-blur-sm">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-green-50 text-green-600 border border-green-100">
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <span className="text-slate-600 font-medium">
+                  <span className="font-bold text-slate-900">+12 000</span> commandes traitées chaque jour
+                </span>
+              </div>
             </div>
 
             {/* Heading */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Pilote ton e-commerce <br />
-                <span className="text-heading">avec un vrai système.</span> <br />
-                <span className="text-primary tracking-tight">Pas avec des fichiers <br /> dispersés.</span>
+                Pilote ton <br /> e-commerce  <br />
+                <span className="text-primary tracking-tight">avec un vrai système.</span>
               </h1>
               <p className="text-lg lg:text-xl text-body max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                RiseManager centralise commandes, stock, logistique, équipe et rentabilité dans une seule interface pensée pour le terrain algérien.
+                La plateforme tout-en-un pour gérer, confirmer et livrer vos commandes COD.
               </p>
             </div>
 
@@ -61,7 +72,7 @@ const Hero = () => {
               {[
                 "Sans carte bancaire",
                 "Mise en route rapide",
-                "Support basé en Algérie"
+                "Support basé en Afrique"
               ].map((point, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm font-medium text-slate-600">
                   <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
