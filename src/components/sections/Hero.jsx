@@ -13,13 +13,13 @@ const Hero = () => {
 
   return (
     <section
-      className="relative pt-32 pb-20 lg:pt-32 lg:pb-40 overflow-x-clip"
+      className="relative pt-32 pb-20 lg:pt-32 lg:pb-40 overflow-x-clip dark:bg-slate-950 transition-colors duration-500"
       onMouseMove={handleMouseMove}
     >
       {/* Background Blobs for that premium feel */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -28,31 +28,31 @@ const Hero = () => {
           <div className="w-full lg:w-1/2 space-y-8 text-reveal-container">
             {/* Badge & Social Proof */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-primary font-medium text-sm">
-                <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 text-[10px]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-full text-primary dark:text-primary-light font-medium text-sm transition-colors">
+                <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 dark:bg-blue-800 text-[10px]">
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
                 </span>
                 Conçu pour le marché africain
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-600 font-medium text-sm shadow-sm backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded-full text-emerald-600 dark:text-emerald-400 font-medium text-sm shadow-sm backdrop-blur-sm transition-colors">
                 <div className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white">
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
                 <span>
-                  <span className="font-extrabold text-emerald-700">+12 000</span> commandes traitées chaque jour
+                  <span className="font-extrabold text-emerald-700 dark:text-emerald-400">+12 000</span> commandes traitées chaque jour
                 </span>
               </div>
             </div>
 
             {/* Heading */}
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading dark:text-white animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 Pilote ton <br /> e-commerce  <br />
                 <span className="text-primary tracking-tight">avec un vrai système.</span>
               </h1>
-              <p className="text-lg lg:text-xl text-body max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <p className="text-lg lg:text-xl text-body dark:text-slate-400 max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
                 La plateforme tout-en-un pour gérer, confirmer et livrer vos commandes COD.
               </p>
             </div>
@@ -62,7 +62,7 @@ const Hero = () => {
               <button className="px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-2xl font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
                 Démarrer l'essai gratuit
               </button>
-              <button className="px-8 py-4 bg-white hover:bg-slate-50 text-primary border border-slate-100 rounded-2xl font-semibold transition-all hover:-translate-y-1">
+              <button className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1">
                 Voir une démo &rarr;
               </button>
             </div>
@@ -74,8 +74,8 @@ const Hero = () => {
                 "Mise en route rapide",
                 "Support basé en Afrique"
               ].map((point, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm font-medium text-slate-600">
-                  <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
+                <div key={index} className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400">
+                  <div className="w-5 h-5 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center border border-blue-100 dark:border-blue-800">
                     <svg className="w-3 h-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
@@ -96,7 +96,7 @@ const Hero = () => {
 
             {/* Dashboard Container */}
             <div
-              className="relative w-full max-w-[500px] lg:max-w-[550px] aspect-[4/3] bg-gradient-to-br from-blue-50/50 to-white rounded-[32px] lg:rounded-[40px] border border-blue-100/50 shadow-2xl p-6 lg:p-10 animate-float mx-auto lg:mx-0"
+              className="relative w-full max-w-[500px] lg:max-w-[550px] aspect-[4/3] bg-gradient-to-br from-blue-50/50 to-white dark:from-slate-900 dark:to-slate-950 rounded-[32px] lg:rounded-[40px] border border-blue-100/50 dark:border-slate-800 shadow-2xl p-6 lg:p-10 animate-float mx-auto lg:mx-0"
               style={{ transform: `translate(${mousePos.x * -0.2}px, ${mousePos.y * -0.2}px)` }}
             >
 
@@ -109,11 +109,11 @@ const Hero = () => {
                 {/* Sub Cards */}
                 <div className="grid grid-cols-2 gap-4 lg:gap-6">
                   <div className="space-y-1">
-                    <div className="text-[10px] lg:text-[11px] text-slate-500 font-medium">Ventes Aujourd'hui</div>
+                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Ventes Aujourd'hui</div>
                     <div className="text-xl lg:text-2xl font-bold text-primary">42,500 DA</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-[10px] lg:text-[11px] text-slate-500 font-medium">Retours</div>
+                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Retours</div>
                     <div className="text-xl lg:text-2xl font-bold text-red-500">12%</div>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ const Hero = () => {
                   {[40, 65, 55, 95, 80, 70].map((h, i) => (
                     <div
                       key={i}
-                      className={`flex-1 rounded-t-lg transition-all duration-1000 ${i === 3 ? 'bg-primary' : 'bg-blue-100'}`}
+                      className={`flex-1 rounded-t-lg transition-all duration-1000 ${i === 3 ? 'bg-primary' : 'bg-blue-100 dark:bg-slate-800'}`}
                       style={{ height: `${h}%`, transitionDelay: `${i * 0.1}s` }}
                     />
                   ))}
@@ -134,49 +134,49 @@ const Hero = () => {
 
               {/* Orders Card */}
               <div
-                className="absolute -top-6 -left-4 lg:-top-10 lg:-left-20 glass p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 animate-float-delayed flex items-center gap-3 lg:gap-4 min-w-[140px] lg:min-w-[180px] z-20"
+                className="absolute -top-6 -left-4 lg:-top-10 lg:-left-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-delayed flex items-center gap-3 lg:gap-4 min-w-[140px] lg:min-w-[180px] z-20"
                 style={{ transform: `translate(${mousePos.x * -0.8}px, ${mousePos.y * -0.8}px)` }}
               >
-                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-blue-100 rounded-xl lg:rounded-2xl flex items-center justify-center">
+                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl lg:rounded-2xl flex items-center justify-center">
                   <svg className="w-4 h-4 lg:w-6 lg:h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Commandes</div>
-                  <div className="text-sm lg:text-xl font-bold text-heading">1,247</div>
+                  <div className="text-sm lg:text-xl font-bold text-heading dark:text-white">1,247</div>
                 </div>
               </div>
 
               {/* Stock Card */}
               <div
-                className="absolute top-1/2 -right-4 lg:-right-16 -translate-y-1/2 glass p-3 lg:p-4 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 animate-float-slow flex items-center gap-3 lg:gap-4 min-w-[120px] lg:min-w-[160px] z-20"
+                className="absolute top-1/2 -right-4 lg:-right-16 -translate-y-1/2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-4 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-slow flex items-center gap-3 lg:gap-4 min-w-[120px] lg:min-w-[160px] z-20"
                 style={{ transform: `translate(${mousePos.x * -0.5}px, ${mousePos.y * -0.5}px)` }}
               >
-                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-purple-50 rounded-lg lg:rounded-xl flex items-center justify-center">
+                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-purple-50 dark:bg-purple-900/20 rounded-lg lg:rounded-xl flex items-center justify-center">
                   <svg className="w-4 h-4 lg:w-5 lg:h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Stock</div>
-                  <div className="text-sm lg:text-lg font-bold text-heading">98%</div>
+                  <div className="text-sm lg:text-lg font-bold text-heading dark:text-white">98%</div>
                 </div>
               </div>
 
               {/* Profit Card */}
               <div
-                className="absolute -bottom-6 right-2 lg:-bottom-10 lg:-right-8 glass p-3 lg:p-5 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 animate-float flex items-center gap-3 lg:gap-5 min-w-[160px] lg:min-w-[220px] z-20"
+                className="absolute -bottom-6 right-2 lg:-bottom-10 lg:-right-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-5 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float flex items-center gap-3 lg:gap-5 min-w-[160px] lg:min-w-[220px] z-20"
                 style={{ transform: `translate(${mousePos.x * -1.2}px, ${mousePos.y * -1.2}px)` }}
               >
-                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-teal-50 rounded-xl lg:rounded-2xl flex items-center justify-center">
+                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-teal-50 dark:bg-teal-900/20 rounded-xl lg:rounded-2xl flex items-center justify-center">
                   <svg className="w-4 h-4 lg:w-6 lg:h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Profit</div>
-                  <div className="text-sm lg:text-xl font-bold text-heading">284,500 DA</div>
+                  <div className="text-sm lg:text-xl font-bold text-heading dark:text-white">284,500 DA</div>
                 </div>
               </div>
 

@@ -17,22 +17,22 @@ const DropDown = ({ title, items, columns = 2 }) => {
 
       {/* Dropdown Card */}
       <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
-        <div className={`bg-white rounded-[24px] border border-slate-100 shadow-2xl p-6 min-w-[320px] lg:min-w-[500px] grid gap-4 ${columns === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+        <div className={`bg-white dark:bg-slate-900 rounded-[24px] border border-slate-100 dark:border-slate-800 shadow-2xl dark:shadow-none p-6 min-w-[320px] lg:min-w-[500px] grid gap-4 ${columns === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
           {items.map((item, index) => (
             <a 
               key={index}
               href={item.href || "#"} 
-              className="flex items-start gap-4 p-3 rounded-2xl hover:bg-blue-50/50 transition-colors group/item"
+              className="flex items-start gap-4 p-3 rounded-2xl hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-colors group/item"
             >
-              <div className="w-10 h-10 bg-slate-50 group-hover/item:bg-white rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-colors text-slate-400 group-hover/item:text-primary">
+              <div className="w-10 h-10 bg-slate-50 dark:bg-slate-800 group-hover/item:bg-white dark:group-hover/item:bg-slate-700 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-colors text-slate-400 dark:text-slate-500 group-hover/item:text-primary">
                 {item.icon}
               </div>
               <div className="space-y-1">
-                <div className="text-[13px] font-bold text-heading group-hover/item:text-primary transition-colors">
+                <div className="text-[13px] font-bold text-heading dark:text-white group-hover/item:text-primary transition-colors">
                   {item.title}
                 </div>
                 {item.description && (
-                  <div className="text-[11px] text-slate-400 leading-tight">
+                  <div className="text-[11px] text-slate-400 dark:text-slate-500 leading-tight">
                     {item.description}
                   </div>
                 )}

@@ -156,28 +156,28 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[calc(100vw-3rem)] sm:w-[440px] max-w-[440px] h-[640px] max-h-[85vh] bg-white rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 duration-500">
+        <div className="w-[calc(100vw-3rem)] sm:w-[440px] max-w-[440px] h-[640px] max-h-[85vh] bg-white dark:bg-slate-900 rounded-[32px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 dark:border-slate-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 duration-500">
           {/* Header */}
-          <div className="p-6 sm:p-8 bg-white border-b border-slate-50 flex items-center justify-between">
+          <div className="p-6 sm:p-8 bg-white dark:bg-slate-900 border-b border-slate-50 dark:border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="size-12 rounded-2xl bg-blue-50 flex items-center justify-center border border-blue-100">
+              <div className="size-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center border border-blue-100 dark:border-blue-800">
                 <Sparkles className="size-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="font-black text-slate-900 text-sm uppercase tracking-wider">Rise Concierge</h3>
+                <h3 className="font-black text-slate-900 dark:text-white text-sm uppercase tracking-wider">Rise Concierge</h3>
                 <div className="flex items-center gap-1.5">
                   <div className="size-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">AI Expert Online</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">AI Expert Online</p>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-1">
-              <button onClick={handleClearHistory} className="p-2.5 text-slate-300 hover:text-red-500 transition-colors" title="Réinitialiser">
+              <button onClick={handleClearHistory} className="p-2.5 text-slate-300 dark:text-slate-600 hover:text-red-500 transition-colors" title="Réinitialiser">
                 <Trash2 className="size-4" />
               </button>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="p-2.5 text-slate-300 hover:text-slate-900 bg-slate-50 rounded-xl transition-all"
+                className="p-2.5 text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-50 dark:bg-slate-800 rounded-xl transition-all"
               >
                 <X className="size-5" />
               </button>
@@ -185,7 +185,7 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-6 sm:p-8 overflow-y-auto space-y-6 bg-white custom-scrollbar">
+          <div className="flex-1 p-6 sm:p-8 overflow-y-auto space-y-6 bg-white dark:bg-slate-900 custom-scrollbar">
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -200,7 +200,7 @@ const ChatBot = () => {
                   className={`max-w-[85%] rounded-[24px] px-5 py-4 text-sm leading-relaxed ${
                     message.role === "user"
                       ? "bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/10"
-                      : "bg-slate-50 text-slate-700 font-medium border border-slate-100/50"
+                      : "bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium border border-slate-100/50 dark:border-slate-700/50"
                   } ${message.role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'}`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
@@ -212,7 +212,7 @@ const ChatBot = () => {
                 <div className="size-8 rounded-xl bg-blue-600 text-white flex items-center justify-center flex-shrink-0">
                   <Bot className="size-4" />
                 </div>
-                <div className="bg-slate-50 border border-slate-100/50 rounded-[24px] rounded-tl-none px-6 py-4">
+                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100/50 dark:border-slate-700/50 rounded-[24px] rounded-tl-none px-6 py-4">
                   <div className="flex gap-1.5">
                     <div className="size-1.5 bg-blue-600/40 rounded-full animate-bounce"></div>
                     <div className="size-1.5 bg-blue-600/40 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
@@ -225,7 +225,7 @@ const ChatBot = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="px-6 sm:px-8  bg-white flex gap-2 overflow-x-auto no-scrollbar">
+          <div className="px-6 sm:px-8 bg-white dark:bg-slate-900 flex gap-2 overflow-x-auto no-scrollbar pb-2">
             {[
               "Comment automatiser mon COD ?",
               "RiseCart vs Shopify",
@@ -235,7 +235,7 @@ const ChatBot = () => {
               <button
                 key={i}
                 onClick={() => setInput(action)}
-                className="whitespace-nowrap px-5 py-2.5 rounded-full bg-slate-50 text-slate-600 text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all border border-slate-100"
+                className="whitespace-nowrap px-5 py-2.5 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all border border-slate-100 dark:border-slate-700"
               >
                 {action}
               </button>
@@ -243,7 +243,7 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSendMessage} className="p-6 sm:p-8  bg-white">
+          <form onSubmit={handleSendMessage} className="p-6 sm:p-8 bg-white dark:bg-slate-900 border-t border-slate-50 dark:border-slate-800">
             <div className="relative">
               <input
                 type="text"
@@ -251,7 +251,7 @@ const ChatBot = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Posez votre question à Rise..."
                 disabled={isLoading}
-                className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/50 transition-all pr-14"
+                className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/50 transition-all pr-14"
               />
               <button
                 type="submit"
@@ -261,7 +261,7 @@ const ChatBot = () => {
                 {isLoading ? <Loader2 className="size-5 animate-spin" /> : <Send className="size-5" />}
               </button>
             </div>
-            <p className="text-[9px] text-center text-slate-300 font-bold uppercase tracking-[0.2em] mt-4">
+            <p className="text-[9px] text-center text-slate-300 dark:text-slate-600 font-bold uppercase tracking-[0.2em] mt-4">
               Intelligence Artificielle Rise v1.0
             </p>
           </form>

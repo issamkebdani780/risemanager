@@ -12,16 +12,16 @@ const FinalCTA = () => {
     return (
         <section className="py-24 lg:py-40 overflow-hidden" id="cta">
             <div className="container mx-auto px-4 sm:px-6">
-                <div className="relative max-w-6xl mx-auto p-4 lg:p-6 rounded-[56px]  shadow-2xl shadow-primary/20">
-                    <div className="relative w-full h-full bg-gradient-to-br from-blue-50/50 to-white rounded-[44px] p-10 lg:p-24 flex flex-col items-center text-center space-y-12">
+                <div className="relative max-w-6xl mx-auto p-4 lg:p-6 rounded-[56px] shadow-2xl shadow-primary/20 dark:shadow-primary/5">
+                    <div className="relative w-full h-full bg-gradient-to-br from-blue-50/50 to-white dark:from-slate-900 dark:to-slate-950 rounded-[44px] p-10 lg:p-24 flex flex-col items-center text-center space-y-12 border border-slate-100 dark:border-slate-800 transition-colors duration-500">
                         
                         {/* Header Text */}
                         <div className="max-w-3xl space-y-4">
-                            <h2 className="text-3xl lg:text-5xl font-black text-slate-900 leading-tight">
+                            <h2 className="text-3xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
                                 Arrête de subir ton activité. <br />
                                 <span className="text-primary">Reprends le contrôle.</span>
                             </h2>
-                            <p className="text-sm lg:text-base text-slate-500 font-medium max-w-xl mx-auto">
+                            <p className="text-sm lg:text-base text-slate-500 dark:text-slate-400 font-medium max-w-xl mx-auto">
                                 Rejoignez les centaines d'entreprises qui ont déjà automatisé leur croissance avec RiseManager.
                             </p>
                         </div>
@@ -33,19 +33,19 @@ const FinalCTA = () => {
                                     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                                     Essai gratuit de 7 jours
                                 </button>
-                                <button className="px-10 py-5 bg-white hover:bg-slate-50 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 border border-slate-100 transition-all hover:-translate-y-1 active:scale-95">
+                                <button className="px-10 py-5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all hover:-translate-y-1 active:scale-95">
                                     Réserver une démo
                                 </button>
                             </div>
                             
-                            <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-bold text-slate-500">
-                                <div className="flex items-center gap-1.5 text-green-600 bg-green-50 px-2.5 py-1 rounded-md">
+                             <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-bold text-slate-500 dark:text-slate-400">
+                                <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2.5 py-1 rounded-md">
                                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                     Sans engagement
                                 </div>
-                                <span className="hidden sm:block text-slate-300">•</span>
+                                <span className="hidden sm:block text-slate-300 dark:text-slate-700">•</span>
                                 <div className="flex items-center gap-1.5">
-                                    <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                                    <svg className="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
                                     Aucune carte bancaire requise
                                 </div>
                             </div>

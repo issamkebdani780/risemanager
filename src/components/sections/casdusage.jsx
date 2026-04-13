@@ -39,8 +39,8 @@ const UseCases = () => {
             solution: "Impression en masse et scan.",
             benefit: "Expéditions 3x plus rapides.",
             icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-            color: "text-slate-900",
-            bg: "bg-slate-100",
+            color: "text-slate-900 dark:text-slate-100",
+            bg: "bg-slate-100 dark:bg-slate-800",
             cta: "Voir les fonctionnalités"
         },
         {
@@ -66,18 +66,18 @@ const UseCases = () => {
     ];
 
     return (
-        <section className="py-24 lg:py-32 bg-white overflow-hidden">
+        <section className="py-24 lg:py-32 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-500">
             <div className="container mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full border border-slate-100">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full border border-slate-100 dark:border-slate-800">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest leading-none">Scénarios d'Excellence</span>
+                        <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">Scénarios d'Excellence</span>
                     </div>
-                    <h2 className="text-3xl lg:text-5xl font-extrabold text-heading leading-tight animate-slide-up">
+                    <h2 className="text-3xl lg:text-5xl font-extrabold text-heading dark:text-white leading-tight animate-slide-up">
                         RiseManager s'adapte à <span className="text-primary italic">votre</span> réalité
                     </h2>
-                    <p className="text-lg text-body leading-relaxed max-w-2xl mx-auto font-medium animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                    <p className="text-lg text-body dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium animate-slide-up" style={{ animationDelay: '0.1s' }}>
                         Que vous lanciez votre premier produit ou que vous gériez un entrepôt complet, nous avons la réponse à vos défis.
                     </p>
                 </div>
@@ -87,7 +87,7 @@ const UseCases = () => {
                     {cases.map((useCase, i) => (
                         <div 
                             key={i} 
-                            className={`relative flex flex-col p-8 rounded-[40px] border ${useCase.recommended ? 'border-primary/50 shadow-xl shadow-primary/5 bg-white' : 'border-slate-50 bg-[#fbfcfd]'} hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-1 hover:border-primary/20 transition-all duration-500 group animate-slide-up`}
+                            className={`relative flex flex-col p-8 rounded-[40px] border ${useCase.recommended ? 'border-primary/50 dark:border-primary/30 shadow-xl shadow-primary/5 bg-white dark:bg-slate-900' : 'border-slate-50 dark:border-slate-800 bg-[#fbfcfd] dark:bg-slate-900/50'} hover:bg-white dark:hover:bg-slate-800 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20 transition-all duration-500 group animate-slide-up`}
                             style={{ animationDelay: `${0.2 + i * 0.1}s` }}
                         >
                             {useCase.recommended && (
@@ -98,34 +98,34 @@ const UseCases = () => {
                             )}
 
                             <div className="flex items-center gap-4 mb-6">
-                                <div className={`w-12 h-12 shrink-0 ${useCase.bg} ${useCase.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                                <div className={`w-12 h-12 shrink-0 ${useCase.bg} dark:bg-slate-800/50 ${useCase.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-sm border border-current/5`}>
                                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={useCase.icon} />
                                     </svg>
                                 </div>
-                                <h3 className="text-lg font-bold text-heading leading-tight">{useCase.title}</h3>
+                                <h3 className="text-lg font-bold text-heading dark:text-white leading-tight">{useCase.title}</h3>
                             </div>
 
                             <div className="space-y-5 flex-1 mb-6 mt-2">
                                 <div className="space-y-1.5">
                                     <div className="text-[10px] font-extrabold text-red-500/80 uppercase tracking-widest flex items-center gap-1.5">Avant</div>
-                                    <p className="text-[14px] text-slate-500 font-medium leading-snug">{useCase.problem}</p>
+                                    <p className="text-[14px] text-slate-500 dark:text-slate-400 font-medium leading-snug">{useCase.problem}</p>
                                 </div>
 
                                 <div className="space-y-1.5">
                                     <div className="text-[10px] font-extrabold text-emerald-500 uppercase tracking-widest flex items-center gap-1.5">Avec RiseManager</div>
-                                    <p className="text-[14px] text-slate-800 font-bold leading-snug">{useCase.solution}</p>
+                                    <p className="text-[14px] text-slate-800 dark:text-slate-200 font-bold leading-snug">{useCase.solution}</p>
                                 </div>
                             </div>
 
-                            <div className="mt-2 pt-6 border-t border-slate-100 flex items-center justify-between mb-8">
-                                <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Bénéfice Net</div>
-                                <div className={`text-[11px] font-extrabold ${useCase.color} bg-white shadow-sm border border-slate-50 px-3 py-1 rounded-full whitespace-nowrap`}>
+                             <div className="mt-2 pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between mb-8">
+                                <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Bénéfice Net</div>
+                                <div className={`text-[11px] font-extrabold ${useCase.color} bg-white dark:bg-slate-800 shadow-sm border border-slate-50 dark:border-slate-700 px-3 py-1 rounded-full whitespace-nowrap font-outfit`}>
                                     {useCase.benefit}
                                 </div>
                             </div>
 
-                            <button className={`w-full group/btn inline-flex justify-center items-center gap-2 px-4 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${useCase.recommended ? 'bg-primary text-white hover:bg-primary-hover shadow-md hover:shadow-lg' : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-100'}`}>
+                             <button className={`w-full group/btn inline-flex justify-center items-center gap-2 px-4 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${useCase.recommended ? 'bg-primary text-white hover:bg-primary-hover shadow-md hover:shadow-lg' : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700 font-outfit'}`}>
                                 {useCase.cta}
                                 <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

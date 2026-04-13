@@ -16,7 +16,7 @@ import ChatBot from '../../components/sections/chatbot';
 
 const Accueil = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500">
       <Header />
       <main>
         <Hero />

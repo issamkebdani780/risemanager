@@ -2,16 +2,17 @@ import React from 'react';
 
 const Problem = () => {
     return (
-        <section className="py-24 lg:py-32 bg-[#f8fbff] overflow-hidden">
+        <section className="py-24 lg:py-32 bg-[#f8fbff] dark:bg-slate-950 overflow-hidden transition-colors duration-500">
             <div className="container mx-auto px-6">
 
                 {/* Header - Intro */}
-                <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24 space-y-6">
-                    <h2 className="text-3xl lg:text-5xl font-extrabold text-heading leading-tight animate-slide-up">
-                        Beaucoup pilotent encore leur <br className="hidden lg:block" /> activité à l’aveugle.
+                <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24 space-y-4">
+                    <h2 className="text-3xl lg:text-5xl font-extrabold text-heading dark:text-white leading-tight animate-slide-up">
+                        Des résultats concrets pour <br />
+                        <span className="text-primary tracking-tight">votre croissance.</span>
                     </h2>
-                    <p className="text-lg lg:text-xl text-body leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                        Commandes dispersées, stock approximatif, équipes peu suivies, <br className="hidden lg:block" /> marges floues, retours mal contrôlés.
+                    <p className="text-lg text-body dark:text-slate-400 leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                        Chaque chiffre raconte une histoire d'optimisation et de réussite <br className="hidden lg:block" /> sur le terrain africain.
                     </p>
                 </div>
 
@@ -19,14 +20,14 @@ const Problem = () => {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
 
                     {/* Card: Sans RiseManager */}
-                    <div className="group relative bg-white rounded-[40px] p-8 lg:p-14 border border-slate-100 transition-all duration-500 hover:shadow-xl hover:shadow-slate-200/50 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                    <div className="group relative bg-white dark:bg-slate-900/50 rounded-[40px] p-8 lg:p-14 border border-slate-100 dark:border-slate-800 transition-all duration-500 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none animate-slide-up" style={{ animationDelay: '0.2s' }}>
                         <div className="flex items-center gap-3 mb-10 opacity-60">
-                            <div className="w-10 h-10 bg-slate-200 rounded-xl flex items-center justify-center">
-                                <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div className="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-xl flex items-center justify-center">
+                                <svg className="w-6 h-6 text-slate-500 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-extrabold text-slate-500">Sans RiseManager</h3>
+                            <h3 className="text-xl font-extrabold text-slate-500 dark:text-slate-400">Sans RiseManager</h3>
                         </div>
 
                         <div className="space-y-6">
@@ -70,9 +71,9 @@ const Problem = () => {
                     </div>
 
                     {/* Card: Avec RiseManager */}
-                    <div className="group relative bg-white rounded-[40px] p-8 lg:p-14 border border-blue-50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-200/30 animate-slide-up shadow-premium" style={{ animationDelay: '0.3s' }}>
+                    <div className="group relative bg-white dark:bg-slate-900 rounded-[40px] p-8 lg:p-14 border border-blue-50 dark:border-blue-900/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-200/30 dark:hover:shadow-blue-900/10 animate-slide-up shadow-premium" style={{ animationDelay: '0.3s' }}>
                         <div className="absolute top-8 right-8 hidden sm:block">
-                            <span className="px-4 py-1.5 bg-blue-100 text-primary text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-blue-200 shadow-sm">
+                            <span className="px-4 py-1.5 bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-blue-200 dark:border-blue-800 shadow-sm">
                                 Solution Optimale
                             </span>
                         </div>
@@ -83,16 +84,16 @@ const Problem = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-extrabold text-heading">Avec RiseManager</h3>
+                            <h3 className="text-xl font-extrabold text-heading dark:text-white">Avec RiseManager</h3>
                         </div>
 
-                        <div className="mb-10 xl:mb-0 xl:absolute xl:top-[30%] xl:-right-16 bg-white/90 backdrop-blur-md p-4 lg:p-5 rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 xl:border-white/50 animate-float flex items-center gap-4 lg:gap-5 z-20 min-w-[200px] xl:w-[280px]">
-                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-50 shrink-0 rounded-2xl flex items-center justify-center border border-green-100 shadow-sm p-10">
-                                <span className="text-xl lg:text-2xl font-extrabold text-green-600">-40%</span>
+                        <div className="mb-10 xl:mb-0 xl:absolute xl:top-[30%] xl:-right-16 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 lg:p-5 rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 dark:border-slate-700 xl:border-white/50 animate-float flex items-center gap-4 lg:gap-5 z-20 min-w-[200px] xl:w-[280px]">
+                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-50 dark:bg-green-900/20 shrink-0 rounded-2xl flex items-center justify-center border border-green-100 dark:border-green-800 shadow-sm">
+                                <span className="text-xl lg:text-2xl font-extrabold text-green-600 dark:text-green-400">-40%</span>
                             </div>
                             <div>
-                                <div className="text-[9px] lg:text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1">Moyenne Constatée</div>
-                                <p className="text-[13px] lg:text-sm text-heading font-bold leading-snug">
+                                <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Moyenne Constatée</div>
+                                <p className="text-[13px] lg:text-sm text-heading dark:text-white font-bold leading-snug">
                                     De colis retournés <br className="hidden xl:block"/>et 3x de temps gagné.
                                 </p>
                             </div>
@@ -135,11 +136,14 @@ const Problem = () => {
                 </div>
 
                 {/* Transition / Call to action text */}
-                <div className="mt-20 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                    <p className="text-xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                        Arrête de deviner ton activité. Commence à la mesurer proprement.
-                    </p>
-                </div>
+                {/* <div className="max-w-5xl mx-auto mt-20 animate-slide-up" style={{ animationDelay: '0.15s' }}>
+                    <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14 opacity-60 dark:opacity-40 transition-all duration-500 grayscale dark:invert">
+                        <img src="/confiance/conf1.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 dark:brightness-125 hover:brightness-100 transition-all cursor-default" />
+                        <img src="/confiance/conf2.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 dark:brightness-125 hover:brightness-100 transition-all cursor-default" />
+                        <img src="/confiance/conf3.webp" alt="Client Logo" className="h-8 lg:h-11 w-auto object-contain brightness-75 dark:brightness-125 hover:brightness-100 transition-all cursor-default" />
+                        <img src="/confiance/conf4.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 dark:brightness-125 hover:brightness-100 transition-all cursor-default" />
+                    </div>
+                </div> */}
 
             </div>
 
@@ -158,13 +162,13 @@ const ProblemItem = ({ icon, title, description, isNegative = false }) => (
     <div className="flex items-start gap-4 lg:gap-5 group/item transition-all">
         <div className="relative shrink-0">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 ${isNegative
-                    ? 'bg-red-50 border-red-100 text-red-500 group-hover/item:bg-red-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-red-500/30'
-                    : 'bg-green-50 border-green-100 text-green-600 group-hover/item:bg-green-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-green-500/30'
+                    ? 'bg-red-50 border-red-100 text-red-500 dark:bg-red-900/20 dark:border-red-900/40 dark:text-red-400 group-hover/item:bg-red-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-red-500/30'
+                    : 'bg-green-50 border-green-100 text-green-600 dark:bg-green-900/20 dark:border-green-900/40 dark:text-green-400 group-hover/item:bg-green-500 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-green-500/30'
                 }`}>
                 {icon}
             </div>
             {/* Visual Indicator (Cross/Check) */}
-            <div className={`absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full border-2 border-white flex items-center justify-center shadow-sm z-10 transition-transform group-hover/item:scale-110 ${isNegative ? 'bg-red-500' : 'bg-green-500'}`}>
+            <div className={`absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-800 flex items-center justify-center shadow-sm z-10 transition-transform group-hover/item:scale-110 ${isNegative ? 'bg-red-500' : 'bg-green-500'}`}>
                 {isNegative ? (
                     <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 ) : (
@@ -173,11 +177,11 @@ const ProblemItem = ({ icon, title, description, isNegative = false }) => (
             </div>
         </div>
         <div className="space-y-1">
-            <h4 className={`text-[15px] font-bold transition-all duration-300 ${isNegative ? 'text-slate-600 group-hover/item:text-red-600' : 'text-slate-800 group-hover/item:text-green-600'
+            <h4 className={`text-[15px] font-bold transition-all duration-300 ${isNegative ? 'text-slate-600 dark:text-slate-400 group-hover/item:text-red-600 dark:group-hover/item:text-red-400' : 'text-slate-800 dark:text-slate-200 group-hover/item:text-green-600 dark:group-hover/item:text-green-400'
                 }`}>
                 {title}
             </h4>
-            <p className={`text-[13px] leading-relaxed transition-all duration-300 ${isNegative ? 'text-slate-400 group-hover/item:text-slate-500' : 'text-slate-500 group-hover/item:text-slate-600'
+            <p className={`text-[13px] leading-relaxed transition-all duration-300 ${isNegative ? 'text-slate-400 dark:text-slate-500 group-hover/item:text-slate-500 dark:group-hover/item:text-slate-400' : 'text-slate-500 dark:text-slate-500 group-hover/item:text-slate-600 dark:group-hover/item:text-slate-400'
                 }`}>
                 {description}
             </p>

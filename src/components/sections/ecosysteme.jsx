@@ -11,24 +11,24 @@ const Ecosystem = () => {
     ];
 
     return (
-        <section className="py-24 lg:py-40 bg-white overflow-hidden relative">
+        <section className="py-24 lg:py-40 bg-white dark:bg-slate-950 overflow-hidden relative transition-colors duration-500">
             {/* Grid Pattern Background */}
-            <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#00a2ff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+            <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-24 lg:mb-32 space-y-8">
                     <div className="flex justify-center animate-slide-up">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full border border-slate-100">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full border border-slate-100 dark:border-slate-800 shadow-sm transition-colors">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest leading-none">L'ÉCOSYSTÈME RISE</span>
+                            <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">L'ÉCOSYSTÈME RISE</span>
                         </div>
                     </div>
-                    <h2 className="text-4xl lg:text-6xl font-extrabold text-heading leading-[1.1] animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                    <h2 className="text-4xl lg:text-6xl font-extrabold text-heading dark:text-white leading-[1.1] animate-slide-up" style={{ animationDelay: '0.1s' }}>
                         Bien plus qu'un logiciel : <br />
                         Une <span className="text-primary">infrastructure</span> complète.
                     </h2>
-                    <p className="text-xl text-body leading-relaxed max-w-2xl mx-auto font-medium animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                    <p className="text-xl text-body dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium animate-slide-up" style={{ animationDelay: '0.2s' }}>
                         Tu n’achètes pas juste un outil. Tu rentres dans un environnement conçu pour porter chaque étape de ta croissance.
                     </p>
                 </div>
@@ -36,22 +36,22 @@ const Ecosystem = () => {
                 {/* Ecosystem Visualized */}
                 <div className="relative max-w-5xl mx-auto py-10 px-4 sm:px-0">
                     {/* Connecting lines (Desktop) */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent hidden lg:block" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-gradient-to-b from-transparent via-slate-200 to-transparent hidden lg:block" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent hidden lg:block" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-gradient-to-b from-transparent via-slate-200 dark:via-slate-800 to-transparent hidden lg:block" />
 
                     {/* Connecting line (Mobile) */}
-                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-transparent via-slate-200 to-transparent lg:hidden" />
+                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-transparent via-slate-200 dark:via-slate-800 to-transparent lg:hidden" />
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-12 relative">
                         {modules.map((module, i) => (
                             <div key={i} className="relative">
                                 {/* Connection Node (Mobile) */}
                                 {i > 0 && (
-                                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-slate-200 bg-white z-10 lg:hidden shadow-sm" />
+                                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 z-10 lg:hidden shadow-sm" />
                                 )}
 
                                 <div
-                                    className={`group relative p-8 bg-white rounded-[40px] border transition-all duration-500 animate-slide-up ${module.active ? 'border-primary shadow-2xl shadow-primary/10' : 'border-slate-50 shadow-xl shadow-slate-100/50 hover:border-slate-200 hover:shadow-2xl'}`}
+                                    className={`group relative p-8 bg-white dark:bg-slate-900 rounded-[40px] border transition-all duration-500 animate-slide-up ${module.active ? 'border-primary dark:border-primary/50 shadow-2xl shadow-primary/10 dark:shadow-primary/5' : 'border-slate-50 dark:border-slate-800 shadow-xl shadow-slate-100/50 dark:shadow-none hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-2xl'}`}
                                     style={{ animationDelay: `${0.3 + i * 0.1}s` }}
                                 >
                                     <div className="flex flex-col items-center sm:items-start">
@@ -61,8 +61,8 @@ const Ecosystem = () => {
                                             </svg>
                                         </div>
                                         <div className="space-y-2 text-center sm:text-left w-full">
-                                            <div className="text-xl font-bold text-heading group-hover:text-primary transition-colors">{module.name}</div>
-                                            <div className="text-sm font-medium text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-widest text-[10px]">{module.desc}</div>
+                                            <div className="text-xl font-bold text-heading dark:text-white group-hover:text-primary transition-colors">{module.name}</div>
+                                            <div className="text-sm font-medium text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors uppercase tracking-widest text-[10px]">{module.desc}</div>
                                         </div>
                                     </div>
 
