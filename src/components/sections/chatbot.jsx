@@ -6,7 +6,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -141,14 +141,14 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] font-sans flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-[9999] font-sans flex flex-col items-end ">
       {/* Chat Toggle Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="size-16 rounded-2xl bg-blue-600 text-white shadow-[0_20px_40px_-10px_rgba(0,162,255,0.5)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden"
+          className="size-16 cursor-pointer rounded-2xl bg-blue-600 text-white shadow-[0_20px_40px_-10px_rgba(0,162,255,0.5)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden"
         >
-          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+          
           <MessageCircle className="size-8 relative z-10" />
           <div className="absolute top-3 right-3 size-2.5 bg-emerald-400 border-2 border-blue-600 rounded-full animate-pulse"></div>
         </button>
@@ -175,8 +175,8 @@ const ChatBot = () => {
               <button onClick={handleClearHistory} className="p-2.5 text-slate-300 dark:text-slate-600 hover:text-red-500 transition-colors" title="Réinitialiser">
                 <Trash2 className="size-4" />
               </button>
-              <button 
-                onClick={() => setIsOpen(false)} 
+              <button
+                onClick={() => setIsOpen(false)}
                 className="p-2.5 text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-50 dark:bg-slate-800 rounded-xl transition-all"
               >
                 <X className="size-5" />
@@ -197,11 +197,10 @@ const ChatBot = () => {
                   </div>
                 )}
                 <div
-                  className={`max-w-[85%] rounded-[24px] px-5 py-4 text-sm leading-relaxed ${
-                    message.role === "user"
-                      ? "bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/10"
-                      : "bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium border border-slate-100/50 dark:border-slate-700/50"
-                  } ${message.role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'}`}
+                  className={`max-w-[85%] rounded-[24px] px-5 py-4 text-sm leading-relaxed ${message.role === "user"
+                    ? "bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/10"
+                    : "bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium border border-slate-100/50 dark:border-slate-700/50"
+                    } ${message.role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'}`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
                 </div>

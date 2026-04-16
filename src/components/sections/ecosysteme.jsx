@@ -2,12 +2,12 @@ import React from 'react';
 
 const Ecosystem = () => {
     const modules = [
-        { name: "RiseManager", desc: "Le Cerveau Opérationnel", active: true, color: "bg-primary", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
-        { name: "RiseCart", desc: "Storefront & Conversion", active: false, color: "bg-emerald-500", icon: "M16 11V7a4 4 0 11-8 0m8 4v2a2 2 0 11-4 0m4-2V9m-8 2V7a4 4 0 118 0m-8 4v2a2 2 0 114 0m-4-2V9m-4 12h16a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2z" },
-        { name: "RiseConfirm", desc: "Automation & Rappels", active: false, color: "bg-indigo-500", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
-        { name: "FBR", desc: "La Data Community", active: false, color: "bg-rose-500", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
-        { name: "RiseAcademy", desc: "Formations & Expertise", active: false, color: "bg-amber-500", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
-        { name: "RisePay", desc: "Solutions de Paiement", active: false, color: "bg-cyan-500", icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" }
+        { name: "RiseManager", desc: "Le Cerveau Opérationnel", active: true, color: "bg-primary", icon: "/logo.png" },
+        { name: "RiseCart", desc: "Storefront & Conversion", active: false, color: "bg-emerald-500", icon: "/ecosystem/risecart.jpg" },
+        { name: "RiseConfirm", desc: "Automation & Rappels", active: false, color: "bg-indigo-500", icon: "/ecosystem/riseconfirem.jpg" },
+        { name: "FBR", desc: "La Data Community", active: false, color: "bg-rose-500", icon: "/ecosystem/fbr.jpg" },
+        { name: "RiseAcademy", desc: "Formations & Expertise", active: false, color: "bg-amber-500", icon: "/ecosystem/riseacademy.png" },
+        { name: "RisePay", desc: "Solutions de Paiement", active: false, color: "bg-cyan-500", icon: "/ecosystem/risepay.jpg" }
     ];
 
     return (
@@ -47,7 +47,7 @@ const Ecosystem = () => {
                             <div key={i} className="relative">
                                 {/* Connection Node (Mobile) */}
                                 {i > 0 && (
-                                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 z-10 lg:hidden shadow-sm" />
+                                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-slate-200 dark:border-slate-800  dark:bg-slate-900 z-10 lg:hidden shadow-sm" />
                                 )}
 
                                 <div
@@ -55,10 +55,8 @@ const Ecosystem = () => {
                                     style={{ animationDelay: `${0.3 + i * 0.1}s` }}
                                 >
                                     <div className="flex flex-col items-center sm:items-start">
-                                        <div className={`w-14 h-14 ${module.active ? 'bg-primary' : module.color} text-white rounded-[20px] flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                                            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={module.icon} />
-                                            </svg>
+                                        <div className={`w-14 h-14  rounded-[20px] flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500 overflow-hidden`}>
+                                            <img src={module.icon} alt={module.name} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="space-y-2 text-center sm:text-left w-full">
                                             <div className="text-xl font-bold text-heading dark:text-white group-hover:text-primary transition-colors">{module.name}</div>

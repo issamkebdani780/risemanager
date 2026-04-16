@@ -29,10 +29,13 @@ const FinalCTA = () => {
                         {/* Buttons & Friction Reduction */}
                         <div className="flex flex-col items-center gap-5">
                             <div className="flex flex-col sm:flex-row gap-6 items-center">
-                                <button className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95 relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                                    Essai gratuit de 7 jours
-                                </button>
+                                <a 
+                                  href="https://admin.risemanager.com/register"
+                                  className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95 relative overflow-hidden group text-center"
+                                >
+                                     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                                     Essai gratuit de 7 jours
+                                 </a>
                                 <button className="px-10 py-5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all hover:-translate-y-1 active:scale-95">
                                     Réserver une démo
                                 </button>

@@ -9,6 +9,7 @@ import Differentiation from '../../components/sections/differenciation';
 import Ecosystem from '../../components/sections/ecosysteme';
 import WhatsAppAI from '../../components/sections/whatsapp';
 import Testimonials from '../../components/sections/temoingages';
+import Pricing from '../../components/sections/pricing';
 import FAQ from '../../components/sections/faq';
 import FinalCTA from '../../components/sections/cta';
 import Footer from '../../components/layout/Footer';
@@ -29,6 +30,7 @@ const Accueil = () => {
         <UseCases />
         <Demo />
         <Testimonials />
+        <Pricing />
         <FAQ />
         <FinalCTA />
         <Footer />
