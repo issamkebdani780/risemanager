@@ -44,11 +44,11 @@ const Footer = () => {
                             <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Plateforme</div>
                             <ul className="space-y-4">
                                 {[
-                                    { name: 'Fonctionnalités', to: '#fonctionnalites' },
+                                    { name: 'Fonctionnalités', to: '/#fonctionnalites' },
                                     { name: 'Tarifs', to: '/tarifs' },
-                                    { name: 'Démonstration', to: '#demo' },
-                                    { name: 'Ecosystème', to: '#ecosysteme' },
-                                    { name: 'Témoignages', to: '#temoignages' }
+                                    { name: 'Démonstration', to: '/#demo' },
+                                    { name: 'Ecosystème', to: '/#ecosysteme' },
+                                    { name: 'Témoignages', to: '/#temoignages' }
                                 ].map(link => (
                                     <li key={link.name}>
                                         <Link to={link.to} className="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors uppercase tracking-tight">{link.name}</Link>

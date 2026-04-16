@@ -146,7 +146,7 @@ const Features = () => {
         : filteredOrders[0] || null;
 
     return (
-        <section className="py-24 lg:py-32 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-500">
+        <section id="fonctionnalites" className="py-24 lg:py-32 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-500">
             <div className="container mx-auto px-4 sm:px-6">
 
                 {/* Header */}
@@ -187,11 +187,11 @@ const Features = () => {
                             {/* Integration Ecosystem */}
                             <div className="mt-12 border-t border-slate-100 dark:border-slate-800 pt-8 relative">
                                 <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-10 text-center lg:text-left">Écosystème d'intégration complet :</p>
-                                
+
                                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 relative">
                                     {/* Vertical Integrated Flow */}
                                     <div className="flex flex-col items-center gap-6 w-full max-w-[280px] mx-auto lg:mx-0">
-                                        
+
                                         {/* Top: Sales Channels */}
                                         <div className="flex flex-col items-center gap-3">
                                             <div className="flex -space-x-4 group/icons">
@@ -202,9 +202,9 @@ const Features = () => {
                                                     { name: 'YouCan', logo: '/vente/youcan.png' }
                                                 ].map((vente, i) => (
                                                     <div key={vente.name} className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-700 shadow-lg flex items-center justify-center p-2.5 hover:translate-y-[-4px] transition-all">
-                                                        <img 
-                                                            src={vente.logo} 
-                                                            alt={vente.name} 
+                                                        <img
+                                                            src={vente.logo}
+                                                            alt={vente.name}
                                                             className="w-full h-full object-contain dark:brightness-110"
                                                             onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${vente.name}&background=f3f4f6&color=94a3b8&bold=true&length=2&font-size=0.33`; }}
                                                         />
@@ -223,7 +223,7 @@ const Features = () => {
                                                 <Logo showText={false} iconClassName="w-12 h-12" />
                                                 <div className="absolute inset-0 bg-primary/5 dark:bg-primary/10 rounded-3xl animate-pulse -z-10" />
                                             </div>
-                                           
+
                                         </div>
 
                                         {/* Connection Line 2 */}
@@ -582,7 +582,7 @@ const Features = () => {
                                 </div>
                             </div>
 
-                             <p className="text-sm italic text-violet-700 dark:text-violet-400 font-medium font-outfit">
+                            <p className="text-sm italic text-violet-700 dark:text-violet-400 font-medium font-outfit">
                                 "Tu ne pilotes pas une équipe au ressenti. Tu la pilotes avec des chiffres."
                             </p>
                         </div>

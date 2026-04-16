@@ -60,7 +60,7 @@ const Pricing = () => {
     ];
 
     return (
-        <section className="py-24 lg:py-40 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden" id="pricing">
+        <section className="py-24 lg:py-40 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden" id="tarifs">
             <div className="container mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
