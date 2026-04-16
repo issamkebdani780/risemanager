@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (showVideo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [showVideo]);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -16,6 +27,36 @@ const Hero = () => {
       className="relative pt-32 pb-20 lg:pt-32 lg:pb-40 overflow-x-clip dark:bg-slate-950 transition-colors duration-500"
       onMouseMove={handleMouseMove}
     >
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-slate-950/80 backdrop-blur-xl animate-fade-in"
+            onClick={() => setShowVideo(false)}
+          />
+          <div className="relative w-full max-w-lg aspect-[9/16] max-h-[90vh] bg-black rounded-[32px] overflow-hidden shadow-2xl border border-white/10 animate-scale-in">
+            {/* Close Button */}
+            <button 
+              onClick={() => setShowVideo(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all active:scale-95"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/acrPDoF6i8E?autoplay=1"
+              title="RiseManager Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+
       {/* Background Blobs for that premium feel */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -65,7 +106,10 @@ const Hero = () => {
               >
                 Démarrer l'essai gratuit
               </a>
-              <button className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1">
+              <button 
+                onClick={() => setShowVideo(true)}
+                className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1"
+              >
                 Voir une démo &rarr;
               </button>
             </div>
@@ -212,6 +256,16 @@ const Hero = () => {
           opacity: 0;
           animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.9) translateY(20px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-scale-in { animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
       `}</style>
     </section>
   );
