@@ -90,7 +90,7 @@ const Hero = () => {
             {/* Heading */}
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading dark:text-white animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Pilote ton <br /> e-commerce  <br />
+                Pilote ton <br /> E-commerce  <br />
                 <span className="text-primary tracking-tight">avec un vrai système.</span>
               </h1>
               <p className="text-lg lg:text-xl text-body dark:text-slate-400 max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
