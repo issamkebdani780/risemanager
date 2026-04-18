@@ -114,15 +114,15 @@ const Header = () => {
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none rounded-2xl py-2 flex flex-col min-w-[120px]">
-                  <button onClick={() => i18n.changeLanguage('fr')} className={`px-4 py-2.5 text-xs font-bold text-left w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('fr') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
+                  <button onClick={() => i18n.changeLanguage('fr')} className={`px-4 py-2.5 text-xs font-bold text-left rtl:text-right w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('fr') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
                     Français
                     {i18n.language?.startsWith('fr') && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
                   </button>
-                  <button onClick={() => i18n.changeLanguage('en')} className={`px-4 py-2.5 text-xs font-bold text-left w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('en') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
+                  <button onClick={() => i18n.changeLanguage('en')} className={`px-4 py-2.5 text-xs font-bold text-left rtl:text-right w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('en') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
                     English
                     {i18n.language?.startsWith('en') && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
                   </button>
-                  <button onClick={() => i18n.changeLanguage('ar')} className={`px-4 py-2.5 text-xs font-bold text-left w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('ar') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
+                  <button onClick={() => i18n.changeLanguage('ar')} className={`px-4 py-2.5 text-xs font-bold text-left rtl:text-right w-full transition-colors flex items-center justify-between ${i18n.language?.startsWith('ar') ? 'text-primary bg-blue-50/50 dark:bg-blue-900/20' : 'text-slate-500 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800'}`}>
                     العربية
                     {i18n.language?.startsWith('ar') && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
                   </button>
@@ -151,7 +151,7 @@ const Header = () => {
               className="lg:hidden p-2 text-heading dark:text-white transition-transform active:scale-90"
               onClick={() => setIsMenuOpen(true)}
             >
-              <div className="flex flex-col gap-1.5 border-l pl-3 border-slate-100 dark:border-slate-800">
+              <div className="flex flex-col gap-1.5 border-l rtl:border-l-0 rtl:border-r pl-3 rtl:pl-0 rtl:pr-3 border-slate-100 dark:border-slate-800">
                 <div className="w-6 h-0.5 bg-heading dark:bg-white rounded-full" />
                 <div className="w-4 h-0.5 bg-heading dark:bg-white rounded-full self-end" />
                 <div className="w-5 h-0.5 bg-heading dark:bg-white rounded-full self-end" />
@@ -174,7 +174,7 @@ const Header = () => {
           <div className="relative w-full max-w-sm bg-white dark:bg-slate-900 rounded-[32px] p-8 shadow-2xl border border-slate-50 dark:border-slate-800 animate-fade-in text-center">
             {/* Close Button */}
             <button
-              className="absolute top-6 right-6 p-2 text-slate-400 hover:text-heading bg-slate-50 rounded-full"
+              className="absolute top-6 right-6 rtl:right-auto rtl:left-6 p-2 text-slate-400 hover:text-heading bg-slate-50 rounded-full"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -68,7 +68,7 @@ const Problem = () => {
 
                     {/* Card: Avec RiseManager */}
                     <div className="group relative bg-white dark:bg-slate-900 rounded-[40px] p-8 lg:p-14 border border-blue-50 dark:border-blue-900/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-200/30 dark:hover:shadow-blue-900/10 animate-slide-up shadow-premium" style={{ animationDelay: '0.3s' }}>
-                        <div className="absolute top-8 right-8 hidden sm:block">
+                        <div className="absolute top-8 right-8 rtl:right-auto rtl:left-8 hidden sm:block">
                             <span className="px-4 py-1.5 bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-blue-200 dark:border-blue-800 shadow-sm">
                                 {t('Solution Optimale')}
                             </span>
@@ -83,7 +83,7 @@ const Problem = () => {
                             <h3 className="text-xl font-extrabold text-heading dark:text-white">{t('Avec RiseManager')}</h3>
                         </div>
 
-                        <div className="mb-10 xl:mb-0 xl:absolute xl:top-[30%] xl:-right-16 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 lg:p-5 rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 dark:border-slate-700 xl:border-white/50 animate-float flex items-center gap-4 lg:gap-5 z-20 min-w-[200px] xl:w-[280px]">
+                        <div className="mb-10 xl:mb-0 xl:absolute xl:top-[30%] xl:-right-16 rtl:xl:right-auto rtl:xl:-left-16 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 lg:p-5 rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-slate-100 dark:border-slate-700 xl:border-white/50 animate-float flex items-center gap-4 lg:gap-5 z-20 min-w-[200px] xl:w-[280px]">
                             <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-50 dark:bg-green-900/20 shrink-0 rounded-2xl flex items-center justify-center border border-green-100 dark:border-green-800 shadow-sm">
                                 <span className="text-xl lg:text-2xl font-extrabold text-green-600 dark:text-green-400">-40%</span>
                             </div>
@@ -164,7 +164,7 @@ const ProblemItem = ({ icon, title, description, isNegative = false }) => (
                 {icon}
             </div>
             {/* Visual Indicator (Cross/Check) */}
-            <div className={`absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-800 flex items-center justify-center shadow-sm z-10 transition-transform group-hover/item:scale-110 ${isNegative ? 'bg-red-500' : 'bg-green-500'}`}>
+            <div className={`absolute -top-1.5 -right-1.5 rtl:right-auto rtl:-left-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-slate-800 flex items-center justify-center shadow-sm z-10 transition-transform group-hover/item:scale-110 ${isNegative ? 'bg-red-500' : 'bg-green-500'}`}>
                 {isNegative ? (
                     <svg className="w-2 h-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 ) : (

@@ -84,7 +84,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <span>
-                  <span className="font-extrabold text-emerald-700 dark:text-emerald-400">+12 000</span> {t('commandes traitées chaque jour')}
+                  <span dir="ltr" className="font-extrabold text-emerald-700 dark:text-emerald-400 inline-block">+12 000</span> {t('commandes traitées chaque jour')}
                 </span>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Hero = () => {
                 onClick={() => setShowVideo(true)}
                 className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >
-                {t('Voir une démo')} &rarr;
+                {t('Voir une démo')} <span className="rtl:rotate-180 inline-block">&rarr;</span>
               </button>
             </div>
 
@@ -183,7 +183,7 @@ const Hero = () => {
 
               {/* Orders Card */}
               <div
-                className="absolute -top-6 -left-4 lg:-top-10 lg:-left-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-delayed flex items-center gap-3 lg:gap-4 min-w-[140px] lg:min-w-[180px] z-20"
+                className="absolute -top-6 -left-4 lg:-top-10 lg:-left-20 rtl:left-auto rtl:-right-4 rtl:lg:-right-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-delayed flex items-center gap-3 lg:gap-4 min-w-[140px] lg:min-w-[180px] z-20"
                 style={{ transform: `translate(${mousePos.x * -0.8}px, ${mousePos.y * -0.8}px)` }}
               >
                 <div className="w-8 h-8 lg:w-12 lg:h-12 bg-blue-100 dark:bg-blue-900/40 rounded-xl lg:rounded-2xl flex items-center justify-center">
@@ -199,7 +199,7 @@ const Hero = () => {
 
               {/* Stock Card */}
               <div
-                className="absolute top-1/2 -right-4 lg:-right-16 -translate-y-1/2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-4 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-slow flex items-center gap-3 lg:gap-4 min-w-[120px] lg:min-w-[160px] z-20"
+                className="absolute top-1/2 -right-4 lg:-right-16 rtl:right-auto rtl:-left-4 rtl:lg:-left-16 -translate-y-1/2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-4 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float-slow flex items-center gap-3 lg:gap-4 min-w-[120px] lg:min-w-[160px] z-20"
                 style={{ transform: `translate(${mousePos.x * -0.5}px, ${mousePos.y * -0.5}px)` }}
               >
                 <div className="w-8 h-8 lg:w-10 lg:h-10 bg-purple-50 dark:bg-purple-900/20 rounded-lg lg:rounded-xl flex items-center justify-center">
@@ -215,7 +215,7 @@ const Hero = () => {
 
               {/* Profit Card */}
               <div
-                className="absolute -bottom-6 right-2 lg:-bottom-10 lg:-right-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-5 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float flex items-center gap-3 lg:gap-5 min-w-[160px] lg:min-w-[220px] z-20"
+                className="absolute -bottom-6 right-2 lg:-bottom-10 lg:-right-8 rtl:right-auto rtl:left-2 rtl:lg:left-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-3 lg:p-5 rounded-2xl lg:rounded-3xl shadow-premium border border-white/50 dark:border-slate-800 animate-float flex items-center gap-3 lg:gap-5 min-w-[160px] lg:min-w-[220px] z-20"
                 style={{ transform: `translate(${mousePos.x * -1.2}px, ${mousePos.y * -1.2}px)` }}
               >
                 <div className="w-8 h-8 lg:w-12 lg:h-12 bg-teal-50 dark:bg-teal-900/20 rounded-xl lg:rounded-2xl flex items-center justify-center">

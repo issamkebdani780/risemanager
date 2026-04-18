@@ -5,7 +5,7 @@ import Logo from '../ui/Logo';
 const DetailSidebar = ({ selectedOrder, isMobile, onClose }) => {
     const { t } = useTranslation();
     return (
-        <div className={`${isMobile ? 'flex flex-col h-full pointer-events-auto bg-white dark:bg-slate-900' : 'hidden lg:block w-70 border-l border-slate-50 dark:border-slate-800 bg-[#fbfcfd] dark:bg-slate-900/50 overflow-auto custom-scrollbar'} p-5 space-y-6 animate-slide-up`} key={`${selectedOrder.id}-${isMobile}`}>
+        <div className={`${isMobile ? 'flex flex-col h-full pointer-events-auto bg-white dark:bg-slate-900' : 'hidden lg:block w-70 border-l rtl:border-l-0 rtl:border-r border-slate-50 dark:border-slate-800 bg-[#fbfcfd] dark:bg-slate-900/50 overflow-auto custom-scrollbar'} p-5 space-y-6 animate-slide-up`} key={`${selectedOrder.id}-${isMobile}`}>
             <div className="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800 shrink-0">
                 <div className="text-[10px] font-extrabold text-primary dark:text-primary-light uppercase">{t('feat_order_detail_short')} #{selectedOrder.id}</div>
                 {isMobile && (
@@ -38,10 +38,10 @@ const DetailSidebar = ({ selectedOrder, isMobile, onClose }) => {
                 {selectedOrder.history && (
                     <div className="space-y-4">
                         <div className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{t('feat_life_history')}</div>
-                        <div className="space-y-4 pl-2 border-l border-slate-100 dark:border-slate-800 ml-1 pb-4">
+                        <div className="space-y-4 pl-2 rtl:pl-0 rtl:pr-2 border-l rtl:border-l-0 rtl:border-r border-slate-100 dark:border-slate-800 ml-1 rtl:ml-0 rtl:mr-1 pb-4">
                             {selectedOrder.history.map((event, i) => (
-                                <div key={i} className="relative pl-5">
-                                    <div className={`absolute top-1 -left-[5.5px] w-2.5 h-2.5 rounded-full border-2 border-white dark:border-slate-900 ${event.status === 'complete' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.3)]' : 'bg-slate-200 dark:bg-slate-700'}`} />
+                                <div key={i} className="relative pl-5 rtl:pl-0 rtl:pr-5">
+                                    <div className={`absolute top-1 -left-[5.5px] rtl:left-auto rtl:-right-[5.5px] w-2.5 h-2.5 rounded-full border-2 border-white dark:border-slate-900 ${event.status === 'complete' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.3)]' : 'bg-slate-200 dark:bg-slate-700'}`} />
                                     <div className={`text-[9px] font-bold uppercase tracking-tight ${event.status === 'complete' ? 'text-heading dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>{event.title}</div>
                                     <div className="text-[8px] text-slate-400 dark:text-slate-500 font-medium">{event.time}</div>
                                 </div>
@@ -254,7 +254,7 @@ const Features = () => {
                                 </div>
                             </div>
 
-                            <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border-l-[3px] border-primary mt-8 shadow-sm">
+                            <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border-l-[3px] rtl:border-l-0 rtl:border-r-[3px] border-primary mt-8 shadow-sm">
                                 <p className="text-sm italic text-blue-700 dark:text-blue-300 font-medium font-outfit">
                                     {t('feat_orders_quote')}
                                 </p>
@@ -262,7 +262,7 @@ const Features = () => {
                         </div>
                         <div className="w-full lg:w-3/5 relative group/dashboard">
                             {/* Interactivity Indicator */}
-                            <div className="absolute -top-4 -right-2 z-20 bg-primary text-white text-[9px] font-extrabold px-4 py-2 rounded-full shadow-xl shadow-primary/20 dark:shadow-none flex items-center gap-2 animate-bounce-subtle cursor-default pointer-events-none whitespace-nowrap">
+                            <div className="absolute -top-4 -right-2 rtl:right-auto rtl:-left-2 z-20 bg-primary text-white text-[9px] font-extrabold px-4 py-2 rounded-full shadow-xl shadow-primary/20 dark:shadow-none flex items-center gap-2 animate-bounce-subtle cursor-default pointer-events-none whitespace-nowrap">
                                 <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                                 {t('feat_demo_badge')}
                             </div>
@@ -311,7 +311,7 @@ const Features = () => {
                                             </button>
 
                                             {isFilterOpen && (
-                                                <div className="absolute top-full right-0 sm:left-0 mt-2 w-[160px] sm:w-[180px] bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-2xl z-50 overflow-hidden animate-slide-up" style={{ animationDuration: '0.2s' }}>
+                                                <div className="absolute top-full right-0 rtl:right-auto rtl:left-0 sm:left-0 rtl:sm:left-auto rtl:sm:right-0 mt-2 w-[160px] sm:w-[180px] bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-2xl z-50 overflow-hidden animate-slide-up" style={{ animationDuration: '0.2s' }}>
                                                     {[t('feat_status_all'), t('feat_status_confirmed'), t('feat_status_waiting'), t('feat_status_delivery'), t('feat_status_return')].map((status) => (
                                                         <div
                                                             key={status}
@@ -335,7 +335,7 @@ const Features = () => {
                                 <div className="flex flex-1 overflow-hidden relative">
                                     {/* Table Content */}
                                     <div className="flex-1 overflow-auto custom-scrollbar bg-white dark:bg-slate-900/50">
-                                        <table className="w-full text-left border-collapse">
+                                        <table className="w-full text-left rtl:text-right border-collapse">
                                             <thead className="sticky top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-10 shadow-sm shadow-slate-100 dark:shadow-slate-800">
                                                 <tr className="border-b border-slate-50 dark:border-slate-800">
                                                     <th className="hidden sm:table-cell p-4 sm:p-5 text-[10px] sm:text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{t('feat_order_id')}</th>
@@ -380,7 +380,7 @@ const Features = () => {
                                     {selectedOrder ? (
                                         <DetailSidebar selectedOrder={selectedOrder} isMobile={false} onClose={() => setIsDetailOpenMobile(false)} />
                                     ) : (
-                                        <div className="hidden lg:flex w-70 border-l border-slate-50 dark:border-slate-800 bg-[#fbfcfd] dark:bg-slate-900/50 p-5 items-center justify-center text-slate-400 dark:text-slate-500 text-sm font-medium">
+                                        <div className="hidden lg:flex w-70 border-l rtl:border-l-0 rtl:border-r border-slate-50 dark:border-slate-800 bg-[#fbfcfd] dark:bg-slate-900/50 p-5 items-center justify-center text-slate-400 dark:text-slate-500 text-sm font-medium">
                                             {t('feat_orders_selected_none')}
                                         </div>
                                     )}
@@ -399,7 +399,7 @@ const Features = () => {
                     {/* 2 & 3: Stock & Scan - Grid 2 columns */}
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
                         {/* Stock 2.0 */}
-                        <div className="bg-slate-50/50 dark:bg-slate-900/40 rounded-[40px] p-8 lg:p-12 border border-slate-100 dark:border-slate-800 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                        <div className="bg-slate-50/50 dark:bg-slate-900/40 rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 lg:p-12 border border-slate-100 dark:border-slate-800 animate-slide-up" style={{ animationDelay: '0.3s' }}>
                             <div className="flex items-center gap-4 mb-10">
                                 <div className="w-10 h-10 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl flex items-center justify-center text-cyan-600 dark:text-cyan-400 border border-cyan-100 dark:border-cyan-800 shadow-sm">
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -409,13 +409,13 @@ const Features = () => {
                                 <h3 className="text-xl font-extrabold text-heading dark:text-white">{t('feat_stock_20')}</h3>
                             </div>
 
-                            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-6 lg:p-8 shadow-md mb-8 hover:shadow-lg transition-transform hover:-translate-y-1">
-                                <div className="flex justify-between items-center mb-8">
-                                    <div>
-                                        <div className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">{t('feat_stock_product')} Basket modèle X</div>
-                                        <div className="text-base lg:text-lg font-bold text-heading dark:text-white">{t('feat_stock_variant')} Noir / 42</div>
+                            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-5 sm:p-6 lg:p-8 shadow-md mb-8 hover:shadow-lg transition-transform hover:-translate-y-1">
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
+                                    <div className="min-w-0">
+                                        <div className="text-[10px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 truncate sm:whitespace-normal">{t('feat_stock_product')} Basket modèle X</div>
+                                        <div className="text-sm sm:text-base lg:text-lg font-bold text-heading dark:text-white">{t('feat_stock_variant')} Noir / 42</div>
                                     </div>
-                                    <div className="flex gap-6">
+                                    <div className="flex gap-6 shrink-0">
                                         <div className="text-center">
                                             <div className="text-xl lg:text-2xl font-extrabold text-blue-600 dark:text-blue-400">7</div>
                                             <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">{t('feat_stock_available_short')}</div>
@@ -448,7 +448,7 @@ const Features = () => {
                         </div>
 
                         {/* Scan de la vérité */}
-                        <div className="bg-slate-50/50 dark:bg-slate-900/40 rounded-[40px] p-8 lg:p-12 border border-slate-100 dark:border-slate-800 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                        <div className="bg-slate-50/50 dark:bg-slate-900/40 rounded-[32px] sm:rounded-[40px] p-6 sm:p-8 lg:p-12 border border-slate-100 dark:border-slate-800 animate-slide-up" style={{ animationDelay: '0.4s' }}>
                             <div className="flex items-center gap-4 mb-10">
                                 <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 shadow-sm">
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -458,7 +458,7 @@ const Features = () => {
                                 <h3 className="text-xl font-extrabold text-heading dark:text-white">{t('feat_scan_title')}</h3>
                             </div>
 
-                            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-6 lg:p-8 shadow-md mb-8 font-mono hover:shadow-lg transition-transform hover:-translate-y-1">
+                            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-5 sm:p-6 lg:p-8 shadow-md mb-8 font-mono hover:shadow-lg transition-transform hover:-translate-y-1">
                                 <div className="flex justify-between items-center text-xs mb-6">
                                     <span className="text-primary dark:text-primary-light font-bold flex items-center gap-2">
                                         <div className="w-1.5 h-1.5 bg-primary rounded-full animate-ping" />
@@ -589,7 +589,7 @@ const Features = () => {
                             </div>
 
                             <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-6 lg:p-8 shadow-md mb-10 overflow-hidden relative hover:shadow-lg transition-transform hover:-translate-y-1">
-                                <div className="absolute top-0 right-0 px-4 py-1.5 bg-red-600 text-[10px] font-extrabold text-white rounded-bl-2xl tracking-widest">{t('feat_risk_high')}</div>
+                                <div className="absolute top-0 right-0 rtl:right-auto rtl:left-0 px-4 py-1.5 bg-red-600 text-[10px] font-extrabold text-white rounded-bl-2xl rtl:rounded-bl-none rtl:rounded-br-2xl tracking-widest">{t('feat_risk_high')}</div>
                                 <div className="flex items-center gap-4 mb-8 mt-2">
                                     <div className="w-12 h-12 bg-slate-100 dark:bg-slate-900 rounded-full flex items-center justify-center text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700">
                                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
@@ -622,7 +622,7 @@ const Features = () => {
                                 </div>
                                 <h3 className="text-2xl lg:text-3xl font-extrabold text-heading dark:text-white">{t('feat_finance_title')}</h3>
                                 <p className="text-body dark:text-slate-400 leading-relaxed">
-                                    {t('feat_finance_desc')}
+                                    {t('feat_finance_desc_long')}
                                 </p>
                                 {/* Mini Benefit */}
                                 <div className="flex items-start gap-3 mt-2">
@@ -651,7 +651,7 @@ const Features = () => {
                                 ))}
                             </div>
 
-                            <div className="p-4 bg-emerald-50/50 dark:bg-emerald-900/10 rounded-2xl border-l-[3px] border-emerald-500 shadow-sm">
+                            <div className="p-4 bg-emerald-50/50 dark:bg-emerald-900/10 rounded-2xl border-l-[3px] rtl:border-l-0 rtl:border-r-[3px] border-emerald-500 shadow-sm">
                                 <p className="text-sm italic text-emerald-700 dark:text-emerald-400 font-medium font-outfit">
                                     {t('feat_finance_quote')}
                                 </p>
@@ -660,7 +660,7 @@ const Features = () => {
 
                         <div className="w-full lg:w-3/5">
                             <div className="relative bg-white dark:bg-slate-900 rounded-[32px] border border-slate-100 dark:border-slate-800 shadow-2xl p-6 lg:p-10 overflow-hidden transition-colors duration-500">
-                                <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-10 text-center sm:text-left">{t('feat_finance_graph_title')}</div>
+                                <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-10 text-center sm:text-start">{t('feat_finance_graph_title')}</div>
 
                                 <div className="relative">
                                     {/* Main Flow: Vente to Net */}
@@ -683,7 +683,7 @@ const Features = () => {
                                         <div className="flex flex-row gap-4 sm:gap-2 lg:gap-4 z-10 py-4 sm:py-0">
                                             {[
                                                 { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M16 11V7a4 4 0 11-8 0m8 4v2a2 2 0 11-4 0m4-2V9m-8 2V7a4 4 0 118 0m-8 4v2a2 2 0 114 0m-4-2V9m-4 12h16a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>, bg: 'bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400' },
-                                                { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /></svg>, bg: 'bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-orange-400' }, // Corrected color for alignment if needed
+                                                { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /></svg>, bg: 'bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-orange-400' },
                                                 { icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7" /></svg>, bg: 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400' }
                                             ].map((item, i) => (
                                                 <div key={i} className="text-center opacity-80 sm:opacity-40 group-hover:opacity-100 transition-all hover:scale-110">
@@ -720,7 +720,7 @@ const Features = () => {
                                             </div>
                                             <div className="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 bg-white dark:bg-slate-800 px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-800 shadow-sm animate-pulse-slow">{t('feat_finance_active')}</div>
                                         </div>
-                                        <div className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 border-emerald-200 dark:border-emerald-800 pl-3">
+                                        <div className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed italic border-l-2 rtl:border-l-0 rtl:border-r-2 border-emerald-200 dark:border-emerald-800 pl-3 rtl:pl-0 rtl:pr-3">
                                             {t('feat_finance_audit_note')}
                                         </div>
                                     </div>
@@ -739,7 +739,7 @@ const Features = () => {
                             </div>
                             <h3 className="text-2xl lg:text-3xl font-extrabold text-heading dark:text-white">{t('feat_analytics_title')}</h3>
                             <p className="text-body dark:text-slate-400 leading-relaxed">
-                                {t('feat_analytics_desc')}
+                                {t('feat_analytics_desc_long')}
                             </p>
 
                             {/* Mini Benefit */}
@@ -750,7 +750,7 @@ const Features = () => {
                                 <span className="text-sm font-bold text-heading dark:text-slate-200">{t('feat_analytics_benefit')}</span>
                             </div>
 
-                            <div className="p-4 bg-slate-900 dark:bg-slate-800 rounded-2xl border-l-[3px] border-primary shadow-lg shadow-slate-200/50 dark:shadow-none transition-colors">
+                            <div className="p-4 bg-slate-900 dark:bg-slate-800 rounded-2xl border-l-[3px] rtl:border-l-0 rtl:border-r-[3px] border-primary shadow-lg shadow-slate-200/50 dark:shadow-none transition-colors">
                                 <p className="text-sm italic text-slate-300 dark:text-slate-400 font-medium font-outfit">
                                     {t('feat_analytics_quote')}
                                 </p>
@@ -767,7 +767,7 @@ const Features = () => {
                                 </div>
                                 <div className="p-6 flex-1 bg-white dark:bg-slate-900/50 overflow-hidden space-y-8">
                                     {/* Small KPI Cards */}
-                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         {[
                                             { label: t('feat_analytics_conv'), val: '4.2%', trend: '+0.8%' },
                                             { label: t('feat_analytics_basket'), val: '14,200 DA', trend: '+12%' },

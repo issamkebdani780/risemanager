@@ -92,7 +92,7 @@ const Preuve = () => {
             </div>
 
             <div className="absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center animate-float">
+            <div className="absolute right-12 rtl:right-auto rtl:left-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center animate-float">
               <div className="w-16 h-16 bg-white dark:bg-slate-700 rounded-2xl shadow-xl border border-blue-50 dark:border-slate-600 flex items-center justify-center rotate-12">
                 <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 002-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />

@@ -60,14 +60,14 @@ const Ecosystem = () => {
                                         <div className={`w-14 h-14  rounded-[20px] flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500 overflow-hidden`}>
                                             <img src={module.icon} alt={module.name} className="w-full h-full object-cover" />
                                         </div>
-                                        <div className="space-y-2 text-center sm:text-left w-full">
+                                        <div className="space-y-2 text-center sm:text-start w-full">
                                             <div className="text-xl font-bold text-heading dark:text-white group-hover:text-primary transition-colors">{module.name}</div>
                                             <div className="text-sm font-medium text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors uppercase tracking-widest text-[10px]">{module.desc}</div>
                                         </div>
                                     </div>
 
                                     {module.active && (
-                                        <div className="absolute top-6 right-8">
+                                        <div className="absolute top-6 end-8">
                                             <div className="flex h-3 w-3">
                                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>

@@ -143,7 +143,7 @@ const UseCases = () => {
 
                                     {/* Absolute Centered Arrow (Desktop Only for clarity) */}
                                     <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                        <div className="p-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-800 text-slate-200 dark:text-slate-700 group-hover:text-primary group-hover:scale-110 transition-all duration-500">
+                                        <div className="p-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-800 text-slate-200 dark:text-slate-700 group-hover:text-primary group-hover:scale-110 transition-all duration-500 rtl:rotate-180">
                                             <ArrowRight className="w-5 h-5" />
                                         </div>
                                     </div>

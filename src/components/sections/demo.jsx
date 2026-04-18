@@ -108,13 +108,13 @@ const Demo = () => {
                     <div className="space-y-4 animate-fadeIn">
                         <div className="flex items-center justify-between gap-4">
                             <div className="relative flex-1">
-                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                                <span className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 text-slate-400">
                                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                 </span>
                                  <input
                                     type="text"
                                     placeholder={t('demo_search_orders')}
-                                    className="w-full pl-9 pr-4 py-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl text-[11px] text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm placeholder:text-slate-400 dark:placeholder:text-slate-500"
+                                    className="w-full pl-9 pr-4 rtl:pl-4 rtl:pr-9 py-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl text-[11px] text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm placeholder:text-slate-400 dark:placeholder:text-slate-500"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
@@ -124,13 +124,13 @@ const Demo = () => {
                             </button>
                         </div>
                         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden transition-colors">
-                            <table className="w-full text-left text-[11px]">
+                            <table className="w-full text-left rtl:text-right text-[11px]">
                                 <thead className="bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-500 font-bold uppercase tracking-widest text-[9px]">
                                     <tr>
                                         <th className="p-4">{t('demo_table_id')}</th>
                                         <th className="p-4">{t('demo_table_client')}</th>
                                         <th className="p-4">{t('demo_table_status')}</th>
-                                        <th className="p-4 text-right">{t('demo_table_action')}</th>
+                                        <th className="p-4 text-right rtl:text-left">{t('demo_table_action')}</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-50 dark:divide-slate-800">
@@ -141,7 +141,7 @@ const Demo = () => {
                                             <td className="p-4 text-[10px]">
                                                 <span className={`px-2 py-0.5 rounded-md font-bold ${row.color} dark:bg-opacity-20`}>{t(row.statusKey)}</span>
                                             </td>
-                                            <td className="p-4 text-right">
+                                            <td className="p-4 text-right rtl:text-left">
                                                 <button
                                                     onClick={() => deleteOrder(row.id)}
                                                     className="text-rose-400 hover:text-rose-600 p-1.5 hover:bg-rose-50 dark:hover:bg-rose-900/30 rounded-lg transition-all"
@@ -192,13 +192,13 @@ const Demo = () => {
                 return (
                     <div className="space-y-4 animate-fadeIn">
                         <div className="relative">
-                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                            <span className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 text-slate-400">
                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             </span>
                              <input
                                 type="text"
                                 placeholder={t('demo_search_clients')}
-                                className="w-full pl-9 pr-4 py-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl text-[11px] text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm placeholder:text-slate-400"
+                                className="w-full pl-9 pr-4 rtl:pl-4 rtl:pr-9 py-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl text-[11px] text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-primary/30 shadow-sm placeholder:text-slate-400"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                             />
@@ -386,7 +386,7 @@ const Demo = () => {
                                 </div>
 
                                 {/* Floating UI element for depth */}
-                                <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-3xl shadow-2xl shadow-primary/30 hidden lg:block animate-bounce-subtle">
+                                <div className="absolute -bottom-6 -right-6 rtl:right-auto rtl:-left-6 bg-primary text-white p-6 rounded-3xl shadow-2xl shadow-primary/30 hidden lg:block animate-bounce-subtle">
                                     <div className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-1">{t('demo_system_status')}</div>
                                     <div className="text-xl font-black">{t('demo_system_operational')}</div>
                                 </div>
