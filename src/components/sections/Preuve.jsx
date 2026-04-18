@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const AnimatedCounter = ({ end, duration = 2000, suffix = '', prefix = '', decimals = 0 }) => {
   const [count, setCount] = useState(0);
@@ -49,6 +50,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '', prefix = '', decim
 };
 
 const Preuve = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-24 lg:py-32 bg-[#f8fbff] dark:bg-slate-950 overflow-hidden transition-colors duration-500">
       <div className="container mx-auto px-6">
@@ -56,17 +58,16 @@ const Preuve = () => {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24 space-y-4">
           <h2 className="text-3xl lg:text-5xl font-extrabold text-heading dark:text-white leading-tight animate-slide-up">
-            Des résultats concrets pour <br />
-            <span className="text-primary tracking-tight">votre croissance.</span>
+            {t('Des résultats concrets')}
           </h2>
           <p className="text-lg text-body dark:text-slate-400 leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Chaque chiffre raconte une histoire d'optimisation et de réussite <br className="hidden lg:block" /> sur le terrain africain.
+            {t('Chaque chiffre')}
           </p>
         </div>
 
         {/* Logos Clients / Partenaires */}
         <div className="max-w-5xl mx-auto mb-20 animate-slide-up" style={{ animationDelay: '0.15s' }}>
-          <p className="text-center text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-8">Plus de 200 marques e-commerce locales gèrent leur flux via notre plateforme</p>
+          <p className="text-center text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-8">{t('Plus de 200 marques')}</p>
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14 opacity-60 dark:opacity-40 transition-all duration-500 grayscale dark:invert">
             <img src="/confiance/conf1.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 dark:brightness-100 hover:brightness-100 transition-all cursor-default" />
             <img src="/confiance/conf2.webp" alt="Client Logo" className="h-7 lg:h-10 w-auto object-contain brightness-75 dark:brightness-100 hover:brightness-100 transition-all cursor-default" />
@@ -84,9 +85,9 @@ const Preuve = () => {
               <div className="text-5xl lg:text-7xl font-extrabold text-primary dark:text-primary-light tracking-tighter">
                 <AnimatedCounter end={1.2} decimals={1} prefix="+" suffix="M" />
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold text-heading dark:text-white">Commandes suivies</h3>
+              <h3 className="text-xl lg:text-2xl font-bold text-heading dark:text-white">{t('Commandes suivies')}</h3>
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm lg:text-base">
-                Centralisez chaque étape, du panier à la livraison, avec une traçabilité totale et sans failles.
+                {t('desc_cmdsuivies')}
               </p>
             </div>
 
@@ -110,9 +111,9 @@ const Preuve = () => {
             <div className="text-4xl lg:text-5xl font-extrabold text-heading dark:text-white mb-2">
               <AnimatedCounter end={540} suffix="k" />
             </div>
-            <div className="text-[10px] font-extrabold text-primary dark:text-primary-light tracking-[0.2em] uppercase mb-4">Variantes gérées</div>
+            <div className="text-[10px] font-extrabold text-primary dark:text-primary-light tracking-[0.2em] uppercase mb-4">{t('Variantes gérées')}</div>
             <p className="text-xs text-slate-400 dark:text-slate-500 italic leading-relaxed">
-              "Tailles, couleurs, pointures. Chaque unité de stock est tracée avec une précision chirurgicale."
+              "{t('desc_variantes')}"
             </p>
           </div>
 
@@ -122,14 +123,14 @@ const Preuve = () => {
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
-              Rentabilité en temps réel
+              {t('Rentabilité en temps réel')}
             </div>
             <div className="text-6xl font-extrabold text-[#0f172a] dark:text-white mb-2 leading-none">
               <AnimatedCounter end={28} suffix="%" />
             </div>
-            <h3 className="text-xl font-bold text-heading dark:text-white mb-3">Hausse du profit net</h3>
+            <h3 className="text-xl font-bold text-heading dark:text-white mb-3">{t('Hausse du profit net')}</h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">
-              L'automatisation du calcul des marges après livraison réduit les fuites financières.
+              {t('desc_hausse')}
             </p>
           </div>
 
@@ -139,19 +140,19 @@ const Preuve = () => {
               <div className="text-4xl font-extrabold text-heading dark:text-white">
                 <AnimatedCounter end={4200} />
               </div>
-              <div className="text-[10px] font-extrabold text-blue-600 dark:text-blue-400 tracking-wider uppercase">Agents suivis</div>
+              <div className="text-[10px] font-extrabold text-blue-600 dark:text-blue-400 tracking-wider uppercase">{t('Agents suivis')}</div>
             </div>
             <div className="my-8">
               <div className="flex justify-between text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-2">
-                <span>Productivité</span>
-                <span className="text-blue-600 dark:text-blue-400">85% Optimisé</span>
+                <span>{t('Productivité')}</span>
+                <span className="text-blue-600 dark:text-blue-400">85% {t('Optimisé')}</span>
               </div>
               <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div className="h-full bg-blue-600 dark:bg-blue-400 rounded-full w-[85%] transition-all duration-1000" />
               </div>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              Mesurez la performance de chaque agent de confirmation.
+              {t('desc_agents')}
             </p>
           </div>
 
@@ -162,9 +163,9 @@ const Preuve = () => {
               <div className="text-3xl font-extrabold text-heading dark:text-white">
                 <AnimatedCounter end={12} suffix="h" />
               </div>
-              <div className="text-[9px] font-extrabold text-primary dark:text-primary-light tracking-wider uppercase mb-2">Temps gagné / semaine</div>
+              <div className="text-[9px] font-extrabold text-primary dark:text-primary-light tracking-wider uppercase mb-2">{t('Temps gagné / semaine')}</div>
               <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-relaxed">
-                Grâce à l'automatisation des tâches répétitives et manuelles.
+                {t('desc_temps')}
               </p>
             </div>
             {/* Card 6: Retours tracés */}
@@ -178,7 +179,7 @@ const Preuve = () => {
                 <div className="text-xl font-bold text-heading dark:text-white leading-tight">
                   <AnimatedCounter end={100} suffix="%" />
                 </div>
-                <div className="text-[9px] text-slate-400 dark:text-slate-500 uppercase font-extrabold">Retours tracés</div>
+                <div className="text-[9px] text-slate-400 dark:text-slate-500 uppercase font-extrabold">{t('Retours tracés')}</div>
               </div>
             </div>
           </div>
@@ -192,15 +193,15 @@ const Preuve = () => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-transform duration-700 group-hover:scale-110" />
 
             <div className="flex items-center gap-3 mb-10 relative z-10">
-              <div className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/40 rounded-full border border-blue-100 dark:border-blue-800 text-[10px] font-extrabold text-primary dark:text-primary-light uppercase tracking-widest">Étude de Cas</div>
-              <div className="text-sm font-bold text-slate-400 dark:text-slate-500">Grosse Marque Mode E-com (800+ CMD/Jour)</div>
+              <div className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/40 rounded-full border border-blue-100 dark:border-blue-800 text-[10px] font-extrabold text-primary dark:text-primary-light uppercase tracking-widest">{t('Étude de Cas')}</div>
+              <div className="text-sm font-bold text-slate-400 dark:text-slate-500">{t('Grosse Marque Mode')}</div>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
               <div>
-                <h3 className="text-2xl lg:text-4xl font-extrabold text-heading dark:text-white mb-6 leading-tight">"Comment ils ont augmenté leur taux de livraison de 28% en 60 jours."</h3>
+                <h3 className="text-2xl lg:text-4xl font-extrabold text-heading dark:text-white mb-6 leading-tight">{t("preuve_case_title")}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-10 font-medium">
-                  La gestion sur Google Sheets devenait un goulot d'étranglement majeur. Entre les erreurs de saisie, le double appel client et la déconnexion totale avec l'inventaire, le taux de retour engloutissait leur marge nette.
+                  {t("preuve_case_desc")}
                 </p>
 
                 <div className="space-y-6">
@@ -209,8 +210,8 @@ const Preuve = () => {
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
                     </div>
                     <div>
-                      <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5">Avant RiseManager</div>
-                      <p className="text-[13px] font-semibold text-slate-600 dark:text-slate-400 leading-snug">Taux de livraison bloqué à 54%, retours injustifiés et aucune visibilité sur les performances des téléopérateurs ou livreurs.</p>
+                      <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5">{t('Avant RiseManager')}</div>
+                      <p className="text-[13px] font-semibold text-slate-600 dark:text-slate-400 leading-snug">{t("preuve_before_desc")}</p>
                     </div>
                   </div>
                   <div className="flex gap-4 p-4 rounded-3xl bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 shadow-sm relative overflow-hidden group/apres">
@@ -219,8 +220,8 @@ const Preuve = () => {
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <div className="relative z-10">
-                      <div className="text-[10px] font-extrabold text-green-600 uppercase tracking-widest mb-1.5">Avec RiseManager</div>
-                      <p className="text-[13px] font-bold text-slate-800 dark:text-slate-100 leading-snug">Taux propulsé à 82% grâce au workflow de confirmation natif, et un blocage intelligent des numéros à risque.</p>
+                      <div className="text-[10px] font-extrabold text-green-600 uppercase tracking-widest mb-1.5">{t('Avec RiseManager')}</div>
+                      <p className="text-[13px] font-bold text-slate-800 dark:text-slate-100 leading-snug">{t("preuve_after_desc")}</p>
                     </div>
                   </div>
                 </div>
@@ -231,22 +232,22 @@ const Preuve = () => {
                   <div className="text-4xl lg:text-5xl font-extrabold text-[#0f172a] dark:text-white mb-2 tracking-tighter">
                     +28<span className="text-2xl text-slate-400">%</span>
                   </div>
-                  <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">Taux Livraison</div>
+                  <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">{t('Taux Livraison')}</div>
                   <div className="w-10 h-1 bg-green-500 rounded-full" />
                 </div>
                 <div className="bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-slate-850 transition-colors duration-500 rounded-[32px] p-8 border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:shadow-blue-200/20 flex flex-col justify-center relative overflow-hidden">
                   <div className="text-4xl lg:text-5xl font-extrabold text-[#0f172a] dark:text-white mb-2 tracking-tighter relative z-10">
                     -40<span className="text-2xl text-slate-400">%</span>
                   </div>
-                  <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-0.5 relative z-10">D'Erreurs Colis</div>
-                  <div className="text-[9px] text-slate-400 italic relative z-10">À la préparation</div>
+                  <div className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-0.5 relative z-10">{t('D\'Erreurs Colis')}</div>
+                  <div className="text-[9px] text-slate-400 italic relative z-10">{t('À la préparation')}</div>
                 </div>
 
                 <a href="#demo" className="col-span-2 block bg-primary text-white rounded-[32px] p-8 lg:p-10 shadow-xl shadow-primary/30 flex items-center justify-between overflow-hidden relative group/action transition-transform hover:-translate-y-1">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 translate-x-[-100%] group-hover/action:translate-x-[100%] transition-transform duration-1000" />
                   <div className="relative z-10">
-                    <div className="text-[10px] font-extrabold text-blue-200 uppercase tracking-widest mb-2">Passez au niveau supérieur</div>
-                    <div className="text-2xl lg:text-3xl font-extrabold">Exigez vous aussi <br className="hidden sm:block" />ces résultats.</div>
+                    <div className="text-[10px] font-extrabold text-blue-200 uppercase tracking-widest mb-2">{t('Passez au niveau supérieur')}</div>
+                    <div className="text-2xl lg:text-3xl font-extrabold">{t('Exigez vous aussi ces résultats.')}</div>
                   </div>
                   <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm relative z-10 group-hover/action:scale-110 transition-transform">
                     <svg className="w-6 h-6 lg:w-8 lg:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>

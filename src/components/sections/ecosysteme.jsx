@@ -1,13 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Ecosystem = () => {
+    const { t } = useTranslation();
     const modules = [
-        { name: "RiseManager", desc: "Le Cerveau Opérationnel", active: true, color: "bg-primary", icon: "/logo.png" },
-        { name: "RiseCart", desc: "Storefront & Conversion", active: false, color: "bg-emerald-500", icon: "/ecosystem/risecart.jpg" },
-        { name: "RiseConfirm", desc: "Automation & Rappels", active: false, color: "bg-indigo-500", icon: "/ecosystem/riseconfirem.jpg" },
-        { name: "FBR", desc: "La Data Community", active: false, color: "bg-rose-500", icon: "/ecosystem/fbr.jpg" },
-        { name: "RiseAcademy", desc: "Formations & Expertise", active: false, color: "bg-amber-500", icon: "/ecosystem/riseacademy.png" },
-        { name: "RisePay", desc: "Solutions de Paiement", active: false, color: "bg-cyan-500", icon: "/ecosystem/risepay.jpg" }
+        { name: "RiseManager", desc: t("Le Cerveau Opérationnel"), active: true, color: "bg-primary", icon: "/logo.png" },
+        { name: "RiseCart", desc: t("Storefront & Conversion"), active: false, color: "bg-emerald-500", icon: "/ecosystem/risecart.jpg" },
+        { name: "RiseConfirm", desc: t("Automation & Rappels"), active: false, color: "bg-indigo-500", icon: "/ecosystem/riseconfirem.jpg" },
+        { name: "FBR", desc: t("La Data Community"), active: false, color: "bg-rose-500", icon: "/ecosystem/fbr.jpg" },
+        { name: "RiseAcademy", desc: t("Formations & Expertise"), active: false, color: "bg-amber-500", icon: "/ecosystem/riseacademy.png" },
+        { name: "RisePay", desc: t("Solutions de Paiement"), active: false, color: "bg-cyan-500", icon: "/ecosystem/risepay.jpg" }
     ];
 
     return (
@@ -21,15 +23,15 @@ const Ecosystem = () => {
                     <div className="flex justify-center animate-slide-up">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full border border-slate-100 dark:border-slate-800 shadow-sm transition-colors">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">L'ÉCOSYSTÈME RISE</span>
+                            <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">{t("L'ÉCOSYSTÈME RISE")}</span>
                         </div>
                     </div>
                     <h2 className="text-4xl lg:text-6xl font-extrabold text-heading dark:text-white leading-[1.1] animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                        Bien plus qu'un logiciel : <br />
-                        Une <span className="text-primary">infrastructure</span> complète.
+                        {t("Bien plus qu'un logiciel")} <br />
+                        {t('eco_title_prefix')} <span className="text-primary">{t('eco_title_infrastructure')}</span> {t('eco_title_complete')}
                     </h2>
                     <p className="text-xl text-body dark:text-slate-400 leading-relaxed max-w-2xl mx-auto font-medium animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                        Tu n’achètes pas juste un outil. Tu rentres dans un environnement conçu pour porter chaque étape de ta croissance.
+                        {t("Tu n'achètes pas juste un outil")}
                     </p>
                 </div>
 

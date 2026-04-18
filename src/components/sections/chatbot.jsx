@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Send, Bot, Loader2, Trash2, X, MessageCircle, Sparkles } from 'lucide-react';
 
 const ChatBot = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -52,11 +54,11 @@ const ChatBot = () => {
       setMessages([
         {
           role: "assistant",
-          content: "Salam ! 👋 Je suis l'assistant RiseManager. Je peux vous aider à structurer votre business e-commerce ou vous expliquer comment notre écosystème peut automatiser votre croissance en Afrique. Que souhaitez-vous savoir ?"
+          content: t("chat_welcome")
         }
       ]);
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (messages.length > 0) {
@@ -81,6 +83,7 @@ const ChatBot = () => {
       - Tu aides les entrepreneurs à comprendre comment RiseManager remplace leurs fichiers Excel.
       - Tu expliques les bénéfices de l'écosystème (RiseCart, RiseConfirm, FBR).
       - Tu es proactif, professionnel et tu utilises un ton "Executive" mais chaleureux.
+      - La langue actuelle du site est : ${i18n.language === 'ar' ? 'Arabe' : i18n.language === 'en' ? 'Anglais' : 'Français'}.
 
       DONNÉES DE RÉFÉRENCE :
       ${context}
@@ -88,7 +91,7 @@ const ChatBot = () => {
       CONSIGNES :
       1. Si l'utilisateur a des problèmes de retours, explique la gestion des retours de RiseManager.
       2. Toujours encourager l'essai gratuit de 14 jours.
-      3. Réponds en Français par défaut, mais si l'utilisateur parle en Arabe (Darja ou Classique), réponds en Arabe.
+      3. Réponds dans la langue du site par défaut (${i18n.language === 'ar' ? 'Arabe' : i18n.language === 'en' ? 'Anglais' : 'Français'}), mais si l'utilisateur change de langue, adapte-toi.
       4. Ne pas inventer de prix, dire que c'est sur mesure ou demander de voir la section tarifs.
       `;
 
@@ -123,7 +126,7 @@ const ChatBot = () => {
       console.error("Error calling AI:", error);
       setMessages(prev => [...prev, {
         role: "assistant",
-        content: "Désolé, je rencontre une petite difficulté technique. Vous pouvez me contacter via WhatsApp ou réessayer dans quelques instants."
+        content: t("chat_error")
       }]);
     } finally {
       setIsLoading(false);
@@ -131,10 +134,10 @@ const ChatBot = () => {
   };
 
   const handleClearHistory = () => {
-    if (window.confirm("Voulez-vous réinitialiser la discussion ?")) {
+    if (window.confirm(t("chat_confirm_reset"))) {
       setMessages([{
         role: "assistant",
-        content: "Salam ! 👋 Je suis l'assistant RiseManager. Comment puis-je aider votre business aujourd'hui ?"
+        content: t("chat_reset_msg")
       }]);
       localStorage.removeItem('rise_chat_history');
     }
@@ -164,15 +167,15 @@ const ChatBot = () => {
                 <Sparkles className="size-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="font-black text-slate-900 dark:text-white text-sm uppercase tracking-wider">Rise Concierge</h3>
+                <h3 className="font-black text-slate-900 dark:text-white text-sm uppercase tracking-wider">{t('chat_title')}</h3>
                 <div className="flex items-center gap-1.5">
                   <div className="size-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">AI Expert Online</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">{t('chat_status')}</p>
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-1">
-              <button onClick={handleClearHistory} className="p-2.5 text-slate-300 dark:text-slate-600 hover:text-red-500 transition-colors" title="Réinitialiser">
+              <button onClick={handleClearHistory} className="p-2.5 text-slate-300 dark:text-slate-600 hover:text-red-500 transition-colors" title={t("chat_tooltip_reset")}>
                 <Trash2 className="size-4" />
               </button>
               <button
@@ -226,10 +229,10 @@ const ChatBot = () => {
           {/* Quick Actions */}
           <div className="px-6 sm:px-8 bg-white dark:bg-slate-900 flex gap-2 overflow-x-auto no-scrollbar pb-2">
             {[
-              "Comment automatiser mon COD ?",
-              "RiseCart vs Shopify",
-              "Remplacer mes fichiers Excel",
-              "Calculer mon profit"
+              t("chat_quick_1"),
+              t("chat_quick_2"),
+              t("chat_quick_3"),
+              t("chat_quick_4")
             ].map((action, i) => (
               <button
                 key={i}
@@ -248,7 +251,7 @@ const ChatBot = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Posez votre question à Rise..."
+                placeholder={t("chat_placeholder")}
                 disabled={isLoading}
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-600/5 focus:border-blue-600/50 transition-all pr-14"
               />
@@ -261,7 +264,7 @@ const ChatBot = () => {
               </button>
             </div>
             <p className="text-[9px] text-center text-slate-300 dark:text-slate-600 font-bold uppercase tracking-[0.2em] mt-4">
-              Intelligence Artificielle Rise v1.0
+              {t("chat_footer")}
             </p>
           </form>
         </div>

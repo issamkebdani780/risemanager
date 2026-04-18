@@ -7,64 +7,63 @@ import {
   RotateCcw, 
   ShoppingBag,
   ArrowRight,
-  TrendingDown,
-  CheckCircle2,
-  XCircle,
   Zap
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const UseCases = () => {
+    const { t } = useTranslation();
     const cases = [
         {
-            title: "Débutant E-commerce",
-            problem: "Perdu entre Excel et des messages WhatsApp non suivis.",
-            solution: "Interface tout-en-un centralisée pour tout gérer au même endroit.",
-            benefit: "Professionnalisme immédiat",
+            title: t("case_beginner_title"),
+            problem: t("case_beginner_problem"),
+            solution: t("case_beginner_solution"),
+            benefit: t("case_beginner_benefit"),
             icon: <Rocket className="w-5 h-5" />,
             color: "text-blue-600",
             bg: "bg-blue-50"
         },
         {
-            title: "Boutique en Croissance",
-            problem: "Ruptures de stock imprévues et erreurs de préparation.",
-            solution: "Stock intelligent avec alertes automatiques et gestion multi-variantes.",
-            benefit: "Zéro vente perdue",
+            title: t("case_growth_title"),
+            problem: t("case_growth_problem"),
+            solution: t("case_growth_solution"),
+            benefit: t("case_growth_benefit"),
             icon: <TrendingUp className="w-5 h-5" />,
             color: "text-emerald-600",
             bg: "bg-emerald-50"
         },
         {
-            title: "Équipe de Confirmation",
-            problem: "Suivi des appels chaotique et manque de visibilité sur les performances.",
-            solution: "Assignation automatique des commandes et logs d'appels détaillés.",
-            benefit: "Productivité doublée",
+            title: t("case_team_title"),
+            problem: t("case_team_problem"),
+            solution: t("case_team_solution"),
+            benefit: t("case_team_benefit"),
             icon: <Users className="w-5 h-5" />,
             color: "text-violet-600",
             bg: "bg-violet-50"
         },
         {
-            title: "Gros Volume & Logistique",
-            problem: "Préparation de colis lente et erreurs lors de l'expédition.",
-            solution: "Impression d'étiquettes en masse et contrôle par scan code-barres.",
-            benefit: "Expéditions 3x plus rapides",
+            title: t("case_volume_title"),
+            problem: t("case_volume_problem"),
+            solution: t("case_volume_solution"),
+            benefit: t("case_volume_benefit"),
             icon: <Package className="w-5 h-5" />,
             color: "text-slate-600",
             bg: "bg-slate-50"
         },
         {
-            title: "Chaussures & Vêtements",
-            problem: "Difficulté à gérer les stocks complexes par tailles et couleurs.",
-            solution: "Matrice de variantes intuitive pour un contrôle total de l'inventaire.",
-            benefit: "Inventaire 100% exact",
+            title: t("case_fashion_title"),
+            problem: t("case_fashion_problem"),
+            solution: t("case_fashion_solution"),
+            benefit: t("case_fashion_benefit"),
             icon: <ShoppingBag className="w-5 h-5" />,
             color: "text-cyan-600",
             bg: "bg-cyan-50"
         },
         {
-            title: "Activité à Hauts Retours",
-            problem: "Pertes financières énormes sur les colis non livrés ou refusés.",
-            solution: "Suivi rigoureux des statuts de livraison et blacklist client partagée.",
-            benefit: "-40% de taux de retour",
+            title: t("case_returns_title"),
+            problem: t("case_returns_problem"),
+            solution: t("case_returns_solution"),
+            benefit: t("case_returns_benefit"),
             icon: <RotateCcw className="w-5 h-5" />,
             color: "text-red-600",
             bg: "bg-red-50"
@@ -83,13 +82,13 @@ const UseCases = () => {
                     <div className="flex justify-center animate-slide-up">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-full border border-slate-100 dark:border-slate-800 shadow-sm">
                             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                            <span className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] leading-none">Scénarios d'Excellence</span>
+                        <span className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] leading-none">{t('Scénarios d\'Excellence')}</span>
                         </div>
                     </div>
                     
                     <h2 className="text-4xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.05] animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                        RiseManager s'adapte à <br />
-                        <span className="text-primary italic">votre</span> réalité.
+                        {t('RiseManager s\'adapte à')} <br />
+                        <span className="text-primary italic">{t('votre')}</span> {t('réalité.')}
                     </h2>
                 </div>
 
@@ -135,7 +134,7 @@ const UseCases = () => {
                                     <div className="space-y-1 lg:space-y-2">
                                         <div className="flex items-center gap-1.5 lg:gap-2">
                                             <div className="w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-red-400" />
-                                            <span className="text-[8px] lg:text-[10px] font-black text-red-500 uppercase tracking-widest opacity-80">Avant</span>
+                                            <span className="text-[8px] lg:text-[10px] font-black text-red-500 uppercase tracking-widest opacity-80">{t('Sans RiseManager')}</span>
                                         </div>
                                         <p className="text-[10px] lg:text-lg text-slate-500 dark:text-slate-400 font-medium italic leading-relaxed line-clamp-2 lg:line-clamp-none">
                                             "{item.problem}"
@@ -153,7 +152,7 @@ const UseCases = () => {
                                     <div className="space-y-1 lg:space-y-4 lg:pl-10">
                                         <div className="flex items-center gap-1.5 lg:gap-2">
                                             <div className="w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-emerald-400" />
-                                            <span className="text-[8px] lg:text-[10px] font-black text-emerald-500 uppercase tracking-widest">Rise</span>
+                                            <span className="text-[8px] lg:text-[10px] font-black text-emerald-500 uppercase tracking-widest">{t('Avec RiseManager')}</span>
                                         </div>
                                         <p className="text-[11px] lg:text-lg text-slate-800 dark:text-white font-bold leading-relaxed line-clamp-2 lg:line-clamp-none">
                                             {item.solution}
@@ -169,7 +168,7 @@ const UseCases = () => {
                 {/* Mobile optimization note or final link */}
                 <div className="mt-20 text-center">
                     <p className="text-slate-400 dark:text-slate-600 text-sm font-medium animate-slide-up" style={{ animationDelay: '0.6s' }}>
-                        Et bien d'autres profils... nos solutions sont modulables selon vos volumes.
+                        {t('Et bien d\'autres profils')}
                     </p>
                 </div>
             </div>

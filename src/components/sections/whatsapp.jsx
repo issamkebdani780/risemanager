@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const WhatsAppAI = () => {
+    const { t } = useTranslation();
     const [messages, setMessages] = useState([
         { role: 'assistant', content: 'Bonjour ! Comment puis-je vous aider aujourd\'hui ?' }
     ]);
@@ -142,7 +144,7 @@ const WhatsAppAI = () => {
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                                    placeholder="Posez une question à l'IA..."
+                                    placeholder={t("whatsapp_input_placeholder")}
                                     className="flex-1 bg-slate-50 dark:bg-slate-800 rounded-xl py-3 px-6 text-xs text-slate-700 dark:text-slate-200 font-bold border border-slate-100 dark:border-slate-700 focus:outline-none focus:ring-4 focus:ring-primary/5 transition-all"
                                 />
                                 <button 
@@ -159,9 +161,9 @@ const WhatsAppAI = () => {
                         <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-[24px] shadow-2xl border border-slate-50 dark:border-slate-800 animate-float max-w-[200px] z-20">
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest leading-none">Status IA Direct</span>
+                                <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest leading-none">{t("whatsapp_badge_status")}</span>
                             </div>
-                            <div className="text-xs font-extrabold text-heading dark:text-white">142 Commandes traitées cette nuit</div>
+                            <div className="text-xs font-extrabold text-heading dark:text-white">{t("whatsapp_badge_count")}</div>
                         </div>
                     </div>
 
@@ -173,11 +175,10 @@ const WhatsAppAI = () => {
                                 <span className="text-[10px] font-extrabold text-primary uppercase tracking-widest leading-none">Nouveauté Automne 2026</span>
                             </div>
                             <h2 className="text-4xl lg:text-6xl font-black text-heading dark:text-white leading-[1.1] tracking-tight">
-                                Votre boutique ne <br />
-                                <span className="text-primary tracking-tighter italic">dort jamais.</span>
+                                {t('Votre boutique ne')}
                             </h2>
                             <p className="text-lg lg:text-xl text-body dark:text-slate-400 leading-relaxed font-medium">
-                                Testez l'intelligence de RiseManager en direct. Posez une question au chatbot pour simuler une commande client. <span className="text-heading dark:text-white font-black underline decoration-primary/30 underline-offset-4">Essayez maintenant.</span>
+                                {t('Testez l\'intelligence')}
                             </p>
                         </div>
 
@@ -188,9 +189,9 @@ const WhatsAppAI = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h4 className="text-lg font-bold text-heading dark:text-white">Service 24h/7j</h4>
+                                <h4 className="text-lg font-bold text-heading dark:text-white">{t('Service 24h/7j')}</h4>
                                 <p className="text-sm text-body dark:text-slate-400 leading-relaxed font-medium">
-                                    Répondez aux messages à 3h du matin sans lever le petit doigt. Vos clients n'attendent plus.
+                                    {t('Répondez aux messages')}
                                 </p>
                             </div>
                             <div className="space-y-4 group">
@@ -199,9 +200,9 @@ const WhatsAppAI = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h4 className="text-lg font-bold text-heading dark:text-white">Sync CRM Native</h4>
+                                <h4 className="text-lg font-bold text-heading dark:text-white">{t('Sync CRM Native')}</h4>
                                 <p className="text-sm text-body dark:text-slate-400 leading-relaxed font-medium">
-                                    Chaque commande prise par l'IA apparaît instantanément dans votre tableau de bord Gestion des Commandes.
+                                    {t('Chaque commande prise')}
                                 </p>
                             </div>
                         </div>
@@ -216,8 +217,8 @@ const WhatsAppAI = () => {
                                     ))}
                                 </div>
                                 <div className="text-center sm:text-left">
-                                    <div className="text-sm font-black text-heading dark:text-white uppercase tracking-wider">+450 marchands</div>
-                                    <div className="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-tight">utilisent déjà l'automatisation Rise</div>
+                                    <div className="text-sm font-black text-heading dark:text-white uppercase tracking-wider">{t("whatsapp_merchants_count")}</div>
+                                    <div className="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-tight">{t("whatsapp_merchants_desc")}</div>
                                 </div>
                             </div>
                         </div>

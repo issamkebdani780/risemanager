@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const [showVideo, setShowVideo] = useState(false);
@@ -73,7 +75,7 @@ const Hero = () => {
                 <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 dark:bg-blue-800 text-[10px]">
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
                 </span>
-                Conçu pour le marché africain
+                {t('Conçu pour le marché africain')}
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded-full text-emerald-600 dark:text-emerald-400 font-medium text-sm shadow-sm backdrop-blur-sm transition-colors">
                 <div className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white">
@@ -82,7 +84,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <span>
-                  <span className="font-extrabold text-emerald-700 dark:text-emerald-400">+12 000</span> commandes traitées chaque jour
+                  <span className="font-extrabold text-emerald-700 dark:text-emerald-400">+12 000</span> {t('commandes traitées chaque jour')}
                 </span>
               </div>
             </div>
@@ -90,11 +92,11 @@ const Hero = () => {
             {/* Heading */}
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight lg:leading-[1.1] text-heading dark:text-white animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Pilote ton <br /> E-commerce  <br />
-                <span className="text-primary tracking-tight">avec un vrai système.</span>
+                {t('Pilote ton')} <br /> {t('E-commerce')} <br />
+                <span className="text-primary tracking-tight">{t('avec un vrai système.')}</span>
               </h1>
               <p className="text-lg lg:text-xl text-body dark:text-slate-400 max-w-xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                La plateforme tout-en-un pour gérer, confirmer et livrer vos commandes COD.
+                {t('La plateforme tout-en-un pour gérer, confirmer et livrer vos commandes COD.')}
               </p>
             </div>
 
@@ -104,13 +106,13 @@ const Hero = () => {
                 href="https://admin.risemanager.com/register"
                 className="px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-2xl font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95 text-center"
               >
-                Démarrer l'essai gratuit
+                {t("Démarrer l'essai gratuit")}
               </a>
               <button 
                 onClick={() => setShowVideo(true)}
-                className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1"
+                className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >
-                Voir une démo &rarr;
+                {t('Voir une démo')} &rarr;
               </button>
             </div>
 
@@ -127,7 +129,7 @@ const Hero = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  {point}
+                  {t(point)}
                 </div>
               ))}
             </div>
@@ -150,17 +152,17 @@ const Hero = () => {
               {/* Internal Mockup Content */}
               <div className="space-y-6 lg:space-y-8">
                 <div className="flex justify-between items-center">
-                  <div className="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-wider uppercase">Vue d'ensemble - Direct</div>
+                  <div className="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-wider uppercase">{t("Vue d'ensemble - Direct")}</div>
                 </div>
 
                 {/* Sub Cards */}
                 <div className="grid grid-cols-2 gap-4 lg:gap-6">
                   <div className="space-y-1">
-                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Ventes Aujourd'hui</div>
+                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">{t("Ventes Aujourd'hui")}</div>
                     <div className="text-xl lg:text-2xl font-bold text-primary">42,500 DA</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Retours</div>
+                    <div className="text-[10px] lg:text-[11px] text-slate-500 dark:text-slate-400 font-medium">{t("Retours")}</div>
                     <div className="text-xl lg:text-2xl font-bold text-red-500">12%</div>
                   </div>
                 </div>
@@ -190,7 +192,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Commandes</div>
+                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">{t("Commandes")}</div>
                   <div className="text-sm lg:text-xl font-bold text-heading dark:text-white">1,247</div>
                 </div>
               </div>
@@ -206,7 +208,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Stock</div>
+                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">{t("Stock")}</div>
                   <div className="text-sm lg:text-lg font-bold text-heading dark:text-white">98%</div>
                 </div>
               </div>
@@ -222,7 +224,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">Profit</div>
+                  <div className="text-[8px] lg:text-[10px] font-bold text-slate-400 uppercase">{t("Profit")}</div>
                   <div className="text-sm lg:text-xl font-bold text-heading dark:text-white">284,500 DA</div>
                 </div>
               </div>

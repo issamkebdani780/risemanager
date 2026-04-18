@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Logo from '../ui/Logo';
 
 const Footer = () => {
+    const { t } = useTranslation();
     return (
         <footer className="bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 pt-24 pb-12 overflow-hidden relative transition-colors duration-500">
             {/* Background Glows for subtle depth */}
@@ -20,7 +22,7 @@ const Footer = () => {
                             />
                         </Link>
                         <p className="text-slate-500 dark:text-slate-400 text-lg font-medium leading-relaxed max-w-md">
-                            Le système d'exploitation n°1 pour l'e-commerce en Afrique. Centralisez, automatisez et scalez votre business en toute sérénité.
+                            {t("Le système d'exploitation n°1")}
                         </p>
                         <div className="flex items-center gap-3">
                             <a href="https://www.facebook.com/risecartgroup" className="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-all border border-slate-100 dark:border-slate-800 group shadow-sm transition-all hover:-translate-y-1">
@@ -41,14 +43,14 @@ const Footer = () => {
                     <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-reveal-container">
                         {/* Plateforme Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Plateforme</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Plateforme")}</div>
                             <ul className="space-y-4">
                                 {[
-                                    { name: 'Fonctionnalités', to: '/#fonctionnalites' },
-                                    { name: 'Tarifs', to: '/tarifs' },
-                                    { name: 'Démonstration', to: '/#demo' },
-                                    { name: 'Ecosystème', to: '/#ecosysteme' },
-                                    { name: 'Témoignages', to: '/#temoignages' }
+                                    { name: t('Fonctionnalités'), to: '/#fonctionnalites' },
+                                    { name: t('Tarifs'), to: '/tarifs' },
+                                    { name: t('Démonstration'), to: '/#demo' },
+                                    { name: t('Écosystème'), to: '/#ecosysteme' },
+                                    { name: t('Témoignages'), to: '/#temoignages' }
                                 ].map(link => (
                                     <li key={link.name}>
                                         <Link to={link.to} className="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors uppercase tracking-tight">{link.name}</Link>
@@ -59,7 +61,7 @@ const Footer = () => {
 
                         {/* Ecosystème Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Ecosystème</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Écosystème")}</div>
                             <ul className="space-y-4">
                                 {['RiseCart', 'RiseConfirm', 'FBR Network', 'RiseAcademy', 'RisePay'].map(link => (
                                     <li key={link}>
@@ -74,7 +76,7 @@ const Footer = () => {
 
                         {/* Contact Direct Column */}
                         <div className="space-y-6">
-                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">Contact Direct</div>
+                            <div className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">{t("Contact Direct")}</div>
                             <div className="flex flex-col gap-4">
                                 <a
                                     href="https://maps.app.goo.gl/AZj6LiEoxejWRuq5A"
@@ -86,7 +88,7 @@ const Footer = () => {
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                     </div>
                                     <div className="min-w-0">
-                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">Siège Social</div>
+                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">{t("Siège Social")}</div>
                                         <div className="text-sm font-bold text-slate-600 dark:text-white group-hover:text-primary transition-colors truncate">Oran, Algeria</div>
                                     </div>
                                 </a>
@@ -95,7 +97,7 @@ const Footer = () => {
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z" /></svg>
                                     </div>
                                     <div className="min-w-0">
-                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">Email</div>
+                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">{t("Email")}</div>
                                         <div className="text-xs sm:text-sm font-bold text-slate-600 dark:text-white group-hover:text-primary transition-colors truncate">contact@risemanager.com</div>
                                     </div>
                                 </a>
@@ -104,7 +106,7 @@ const Footer = () => {
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                                     </div>
                                     <div className="min-w-0">
-                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">Support</div>
+                                        <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase leading-none mb-1">{t("Support_footer")}</div>
                                         <div className="text-sm font-bold text-slate-600 dark:text-white group-hover:text-emerald-500 transition-colors">0665584456</div>
                                     </div>
                                 </a>
@@ -127,7 +129,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={signal.icon} />
                                 </svg>
                             </div>
-                            <div className="text-[11px] font-black text-slate-800 dark:text-slate-200 uppercase tracking-widest text-center lg:text-left">{signal.label}</div>
+                            <div className="text-[11px] font-black text-slate-800 dark:text-slate-200 uppercase tracking-widest text-center lg:text-left">{t(signal.label)}</div>
                         </div>
                     ))}
                 </div>
@@ -135,12 +137,12 @@ const Footer = () => {
                 {/* Footnotes */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-[11px] font-bold text-slate-400 dark:text-slate-500">
-                        &copy; {new Date().getFullYear()} RiseManager. Propulsé par RiseGroup Algérie.
+                        &copy; {new Date().getFullYear()} {t("Propulsé par")}
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-                        <Link to="/mentions-legales" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">Mentions Légales</Link>
-                        <Link to="/politique-de-confidentialite" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">Politique de Confidentialité</Link>
-                        <Link to="/cgv" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">CGV</Link>
+                        <Link to="/mentions-legales" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("Mentions Légales")}</Link>
+                        <Link to="/politique-de-confidentialite" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("Politique de Confidentialité")}</Link>
+                        <Link to="/cgv" className="text-[11px] font-black text-slate-400 hover:text-primary dark:hover:text-primary-light transition-colors uppercase tracking-[0.1em]">{t("CGV")}</Link>
                     </div>
                 </div>
             </div>

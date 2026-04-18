@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const FinalCTA = () => {
+  const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
 
   // Prevent scrolling when the video modal is open
@@ -16,10 +18,10 @@ const FinalCTA = () => {
   }, [showVideo]);
 
   const reassurances = [
-    { label: "Mise en route rapide", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
-    { label: "Support local", icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
-    { label: "Accompagnement", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
-    { label: "Essai sans engagement", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-7.618 3.04" }
+    { label: t("Mise en route rapide"), icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+    { label: t("Support local"), icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
+    { label: t("Accompagnement"), icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
+    { label: t("Essai sans engagement"), icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-7.618 3.04" }
   ];
 
   return (
@@ -61,11 +63,11 @@ const FinalCTA = () => {
             {/* Header Text */}
             <div className="max-w-3xl space-y-4">
               <h2 className="text-3xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
-                Arrête de subir ton activité. <br />
-                <span className="text-primary">Reprends le contrôle.</span>
+                {t("Arrête de subir ton activité.")} <br />
+                <span className="text-primary">{t("Reprends le contrôle.")}</span>
               </h2>
               <p className="text-sm lg:text-base text-slate-500 dark:text-slate-400 font-medium max-w-xl mx-auto">
-                Rejoignez les centaines d'entreprises qui ont déjà automatisé leur croissance avec RiseManager.
+                {t("Rejoignez les centaines d'entreprises")}
               </p>
             </div>
 
@@ -77,25 +79,25 @@ const FinalCTA = () => {
                   className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95 relative overflow-hidden group text-center"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  Essai gratuit de 7 jours
+                  {t("Essai gratuit de 7 jours")}
                 </a>
                 <button 
                   onClick={() => setShowVideo(true)}
-                  className="px-10 py-5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all hover:-translate-y-1 active:scale-95"
+                  className="px-10 py-5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
                 >
-                  Réserver une démo
+                  {t("Réserver une démo")}
                 </button>
               </div>
               
               <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-bold text-slate-500 dark:text-slate-400">
                 <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2.5 py-1 rounded-md">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                  Sans engagement
+                  {t("Sans engagement")}
                 </div>
                 <span className="hidden sm:block text-slate-300 dark:text-slate-700">•</span>
                 <div className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
-                  Aucune carte bancaire requise
+                  {t("Aucune carte bancaire requise")}
                 </div>
               </div>
             </div>

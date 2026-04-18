@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CountUp = ({ end, duration = 2000, decimals = 0 }) => {
     const [count, setCount] = React.useState(0);
@@ -42,35 +43,36 @@ const CountUp = ({ end, duration = 2000, decimals = 0 }) => {
 };
 
 const Testimonials = () => {
+    const { t } = useTranslation();
     const testimonials = [
         {
             name: "Amine Rahmani",
-            role: "Fondateur, AlgerianStore",
-            content: "Passer d'Excel à RiseManager a été le tournant de notre business. On a enfin une visibilité réelle sur notre stock et nos profits. C'est l'outil qui nous manquait pour scaler.",
-            result: "+42% de croissance",
+            role: t("testi_amine_role"),
+            content: t("testi_amine_content"),
+            result: t("testi_amine_result"),
             avatar: "AR"
         },
         {
             name: "Lydia Benmadi",
-            role: "Directrice Opérations, ModWay",
-            content: "La gestion des variantes (tailles/couleurs) est un cauchemar pour le textile. Avec Rise, tout est devenu fluide. Le taux de retour a chuté grâce au suivi rigoureux.",
-            result: "-15% Taux de retour",
+            role: t("testi_lydia_role"),
+            content: t("testi_lydia_content"),
+            result: t("testi_lydia_result"),
             avatar: "LB"
         },
         {
             name: "Karim Djebbar",
-            role: "E-commerçant indépendant",
-            content: "Le support local est ultra-réactif. Ils comprennent le marché africain et les défis de la livraison. Je recommande à 100% pour ceux qui veulent du sérieux.",
-            result: "Support 24/7",
+            role: t("testi_karim_role"),
+            content: t("testi_karim_content"),
+            result: t("testi_karim_result"),
             avatar: "KD"
         }
     ];
 
     const stats = [
-        { label: "Utilisateurs Actifs", value: 500, suffix: "+", decimals: 0 },
-        { label: "Commandes Gérées", value: 2, suffix: "M+", decimals: 0 },
-        { label: "ROI Moyen Client", value: 3.5, suffix: "x", decimals: 1, prefix: "x" },
-        { label: "Taux de satisfaction", value: 98, suffix: "%", decimals: 0 }
+        { label: t("Utilisateurs Actifs"), value: 500, suffix: "+", decimals: 0 },
+        { label: t("Commandes Gérées"), value: 2, suffix: "M+", decimals: 0 },
+        { label: t("ROI Moyen Client"), value: 3.5, suffix: "x", decimals: 1, prefix: "x" },
+        { label: t("Taux de satisfaction"), value: 98, suffix: "%", decimals: 0 }
     ];
 
     return (
@@ -83,11 +85,10 @@ const Testimonials = () => {
                 <div className="max-w-3xl mx-auto text-center mb-20 space-y-6">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full border border-slate-100 dark:border-slate-800 shadow-sm transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">Confiance & Résultats</span>
+                        <span className="text-[10px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-none">{t('Confiance & Résultats')}</span>
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-extrabold text-heading dark:text-white leading-tight animate-slide-up">
-                        Ils construisent le futur du <br />
-                        <span className="text-primary italic">COD en Afrique</span> avec nous.
+                        {t('Ils construisent le futur')}
                     </h2>
                 </div>
 
@@ -143,7 +144,7 @@ const Testimonials = () => {
 
                 {/* Short Logos Section */}
                 <div className="mt-20 text-center space-y-8 animate-slide-up" style={{ animationDelay: '0.5s' }}>
-                    <div className="text-[10px] font-extrabold text-slate-300 dark:text-slate-600 uppercase tracking-[0.2em]">Ils nous font confiance</div>
+                    <div className="text-[10px] font-extrabold text-slate-300 dark:text-slate-600 uppercase tracking-[0.2em]">{t('Ils nous font confiance')}</div>
                     <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14 opacity-60 dark:opacity-40 transition-all duration-500 grayscale dark:invert">
                         <img src="/confiance/conf1.webp" alt="Client Logo" className="h-6 lg:h-8 w-auto object-contain dark:brightness-150" />
                         <img src="/confiance/conf2.webp" alt="Client Logo" className="h-6 lg:h-8 w-auto object-contain dark:brightness-150" />

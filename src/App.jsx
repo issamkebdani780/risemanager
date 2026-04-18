@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Accueil from './app/marketing/Accueil';
 import Tarifs from './app/marketing/Tarifs';
 import FAQPage from './app/marketing/FAQPage';
@@ -9,6 +11,13 @@ import Legals from './components/policy/legals';
 import Confidentialities from './components/policy/confidenialities';
 
 const App = () => {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.language && i18n.language.startsWith('ar') ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language || 'fr';
+  }, [i18n.language]);
+
   return (
     <>
       <ScrollToTop />
