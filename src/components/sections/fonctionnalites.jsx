@@ -411,11 +411,11 @@ const Features = () => {
 
                             <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-5 sm:p-6 lg:p-8 shadow-md mb-8 hover:shadow-lg transition-transform hover:-translate-y-1">
                                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
-                                    <div className="min-w-0">
-                                        <div className="text-[10px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 truncate sm:whitespace-normal">{t('feat_stock_product')} Basket modèle X</div>
-                                        <div className="text-sm sm:text-base lg:text-lg font-bold text-heading dark:text-white">{t('feat_stock_variant')} Noir / 42</div>
+                                    <div className="min-w-0 flex-1">
+                                        <div className="text-[10px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 break-words">{t('feat_stock_product')} Basket modèle X</div>
+                                        <div className="text-sm sm:text-base lg:text-lg font-bold text-heading dark:text-white break-words">{t('feat_stock_variant')} Noir / 42</div>
                                     </div>
-                                    <div className="flex gap-6 shrink-0">
+                                    <div className="flex gap-6 shrink-0 w-full sm:w-auto justify-between sm:justify-start">
                                         <div className="text-center">
                                             <div className="text-xl lg:text-2xl font-extrabold text-blue-600 dark:text-blue-400">7</div>
                                             <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">{t('feat_stock_available_short')}</div>
