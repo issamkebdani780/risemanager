@@ -183,13 +183,13 @@ const Header = () => {
             </button>
 
             {/* Logo in Menu */}
-            <div className="flex flex-col items-center gap-3 mb-10">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center gap-3 mb-10">
               <Logo
                 showText={false}
                 iconClassName="w-12 h-12"
               />
               <span className="text-xl font-black text-heading dark:text-white">RiseManager</span>
-            </div>
+            </Link>
 
             {/* Links */}
             <nav className="flex flex-col gap-6 mb-10">

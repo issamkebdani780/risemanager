@@ -20,8 +20,34 @@
   --container-padding: 1.5rem;
 }
 
-[dir="rtl"] {
+/* Arabic font overrides — Cairo Black (900) for headings */
+[dir="rtl"],
+[lang="ar"] {
   --font-sans: "Cairo", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Cairo", ui-sans-serif, system-ui, sans-serif;
+}
+
+[dir="rtl"] *,
+[lang="ar"] * {
+  font-family: "Cairo", ui-sans-serif, system-ui, sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4,
+[lang="ar"] h5,
+[lang="ar"] h6 {
+  font-family: "Cairo", ui-sans-serif, system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
 }
 
 @layer base {

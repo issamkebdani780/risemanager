@@ -267,7 +267,7 @@ const Features = () => {
                                 {t('feat_demo_badge')}
                             </div>
 
-                            <div className="relative bg-white dark:bg-slate-900 rounded-[24px] sm:rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col h-[400px] lg:h-[520px] transition-colors duration-500">
+                            <div className="relative bg-white dark:bg-slate-900 rounded-[24px] sm:rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col h-auto lg:h-[520px] transition-colors duration-500">
 
                                 {/* Top Bar: Search & Filters */}
                                 <div className="p-4 sm:p-5 border-b border-slate-50 dark:border-slate-800 flex items-center justify-between bg-slate-50/30 dark:bg-slate-800/20 gap-4">
@@ -334,7 +334,7 @@ const Features = () => {
 
                                 <div className="flex flex-1 overflow-hidden relative">
                                     {/* Table Content */}
-                                    <div className="flex-1 overflow-auto custom-scrollbar bg-white dark:bg-slate-900/50">
+                                    <div className="flex-1 overflow-auto custom-scrollbar bg-white dark:bg-slate-900/50 pb-0">
                                         <table className="w-full text-left rtl:text-right border-collapse">
                                             <thead className="sticky top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md z-10 shadow-sm shadow-slate-100 dark:shadow-slate-800">
                                                 <tr className="border-b border-slate-50 dark:border-slate-800">
@@ -757,7 +757,7 @@ const Features = () => {
                             </div>
                         </div>
                         <div className="w-full lg:w-3/5">
-                            <div className="relative bg-slate-50 dark:bg-slate-900 rounded-[32px] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col h-[400px] transition-colors duration-500">
+                            <div className="relative bg-slate-50 dark:bg-slate-900 rounded-[32px] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden flex flex-col h-auto lg:h-[480px] transition-colors duration-500">
                                 {/* Dashboard Header */}
                                 <div className="p-5 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/20 flex justify-between items-center">
                                     <div className="text-[10px] font-extrabold text-slate-800 dark:text-white uppercase tracking-widest">{t('feat_analytics_dashboard')}</div>
@@ -765,16 +765,16 @@ const Features = () => {
                                         <div className="px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[9px] font-bold text-slate-500 dark:text-slate-400">{t('feat_analytics_30days')}</div>
                                     </div>
                                 </div>
-                                <div className="p-6 flex-1 bg-white dark:bg-slate-900/50 overflow-hidden space-y-8">
+                                <div className="p-4 pb-0 sm:p-6 sm:pb-0 flex-1 bg-white dark:bg-slate-900/50 overflow-hidden space-y-4 sm:space-y-8">
                                     {/* Small KPI Cards */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div className="grid grid-cols-3 gap-2 sm:gap-4">
                                         {[
                                             { label: t('feat_analytics_conv'), val: '4.2%', trend: '+0.8%' },
                                             { label: t('feat_analytics_basket'), val: '14,200 DA', trend: '+12%' },
                                             { label: t('feat_analytics_delivery'), val: '78.2%', trend: '-2%' }
                                         ].map((kpi, i) => (
-                                            <div key={i} className="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
-                                                <div className="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">{kpi.label}</div>
+                                            <div key={i} className="p-2 sm:p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+                                                <div className="text-[7px] sm:text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">{kpi.label}</div>
                                                 <div className="flex items-end justify-between">
                                                     <div className="text-sm font-extrabold text-slate-900 dark:text-white">{kpi.val}</div>
                                                     <div className={`text-[7px] font-bold ${kpi.trend.startsWith('+') ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>{kpi.trend}</div>
@@ -784,7 +784,7 @@ const Features = () => {
                                     </div>
 
                                     {/* Main Comparison Graph Area */}
-                                    <div className="flex gap-6 h-full">
+                                    <div className="flex gap-6 h-auto sm:h-full">
                                         <div className="flex-1">
                                             <div className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-4">{t('feat_analytics_sales_evolution')}</div>
                                             <div className="relative h-28 w-full">

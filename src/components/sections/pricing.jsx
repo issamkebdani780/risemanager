@@ -57,7 +57,6 @@ const Pricing = () => {
                 { text: t("pricing_pro_team"), icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" },
                 { text: t("pricing_pro_support"), icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" }
             ],
-            doubleButton: true
         }
     ];
 
@@ -98,7 +97,7 @@ const Pricing = () => {
                             </h3>
 
                             {/* Price / Options */}
-                            <div className="mb-10 min-h-[140px] flex flex-col justify-center items-center">
+                            <div className="mb-5 flex flex-col justify-center items-center">
                                 {plan.type === 'fixed' ? (
                                     <div className="text-center">
                                         <div className="text-5xl font-black text-heading dark:text-white leading-none">
@@ -140,14 +139,6 @@ const Pricing = () => {
                                 ))}
                             </div>
 
-                            {/* Secondary CTA for Pro */}
-                            {plan.doubleButton && (
-                                <div className="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800">
-                                     <button className="w-full py-4 rounded-2xl text-sm font-black bg-slate-950 dark:bg-slate-800 text-white shadow-xl shadow-slate-900/20 dark:shadow-none transition-all hover:scale-[1.02] active:scale-[0.98]">
-                                        {t("Commencer l'Essai Gratuit")}
-                                    </button>
-                                </div>
-                            )}
                         </div>
                     ))}
                 </div>
