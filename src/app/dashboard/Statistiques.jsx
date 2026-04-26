@@ -61,8 +61,8 @@ const Statistiques = () => {
   const agentPerformance = [
     { name: 'Ahmed B.', tasks: 142, success: '92%', avatar: 'AB' },
     { name: 'Lydia M.', tasks: 128, success: '88%', avatar: 'LM' },
-    { name: 'Sami F.', tasks: 96, success: '75%', avatar: 'SF' },
-    { name: 'Karim Z.', tasks: 112, success: '82%', avatar: 'KZ' },
+    { name: 'Sami F.', tasks: 96, success: '75%', avatar: 'SF' }
+    // { name: 'Karim Z.', tasks: 112, success: '82%', avatar: 'KZ' },
   ];
 
   return (

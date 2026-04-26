@@ -49,7 +49,7 @@ const DashboardSidebar = () => {
   ];
 
   return (
-    <aside className="w-64 h-screen sticky top-0 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 flex flex-col transition-all duration-300">
+    <aside className="fixed left-4 top-4 bottom-4 w-64 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[32px] border border-slate-100 dark:border-slate-800 flex flex-col shadow-xl z-50 transition-all duration-300 hidden lg:flex">
       {/* Sidebar Header */}
       <div className="p-6">
         <Link to="/dashboard" className="flex items-center gap-3">

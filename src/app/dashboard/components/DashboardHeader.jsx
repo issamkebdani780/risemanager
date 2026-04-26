@@ -45,7 +45,7 @@ const DashboardHeader = () => {
   const currentLang = i18n.language || 'fr';
 
   return (
-    <header className="h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 sticky top-0 z-40 px-8 flex items-center justify-between">
+    <header className="fixed top-4 left-4 right-4 lg:left-72 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-100 dark:border-slate-800 rounded-[28px] shadow-lg z-40 px-6 sm:px-8 flex items-center justify-between transition-all duration-500">
       {/* Search Bar */}
       <div className="hidden md:flex items-center flex-1 max-w-md">
         <div className="relative w-full group">
