@@ -1318,7 +1318,7 @@ const resources = {
       "prob_stock_desc": "لا مزيد من النقص المفاجئ في المخزون.",
       "prob_status_title": "حالة طلبات واضحة",
       "prob_status_desc": "تتبع في الوقت الفعلي لكل خطوة.",
-      "prob_profit_title": "صافي ربح واضح",
+      "prob_profit_title": "Profit Net واضح",
       "prob_profit_desc": "حساب آلي للهوامش بعد الرسوم.",
       "prob_team_title": "تتبع الفرق والتأكيد",
       "prob_team_desc": "قس أداء كل وكيل.",
