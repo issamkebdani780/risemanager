@@ -54,7 +54,7 @@ const Header = () => {
 
   const ecoItems = [
     { title: "RiseCart", description: t("eco_risecart"), icon: <img src="/ecosystem/risecart.jpg" className="w-10 h-10 object-cover rounded-xl" alt="RiseCart" />, to: "/#ecosysteme" },
-    { title: "RiseConfirm", description: t("eco_riseconfirm"), icon: <img src="/ecosystem/RiseConfirm.jpg" className="w-10 h-10 object-cover rounded-xl" alt="RiseConfirm" />, to: "/#whatsapp" },
+    { title: "RiseConfirm", description: t("eco_riseconfirm"), icon: <img src="/ecosystem/riseconfirem.jpg" className="w-10 h-10 object-cover rounded-xl" alt="RiseConfirm" />, to: "/#whatsapp" },
     { title: "FBR", description: t("eco_fbr"), icon: <img src="/ecosystem/fbr.jpg" className="w-10 h-10 object-cover rounded-xl" alt="FBR" />, to: "/#ecosysteme" },
     { title: "RiseAcademy", description: t("eco_riseacademy"), icon: <img src="/ecosystem/riseacademy.png" className="w-10 h-10 object-cover rounded-xl" alt="RiseAcademy" />, to: "/#demo" },
     { title: "RisePay", description: t("eco_risepay"), icon: <img src="/ecosystem/risepay.jpg" className="w-10 h-10 object-cover rounded-xl" alt="RisePay" />, to: "/#ecosysteme" },

@@ -169,7 +169,7 @@ const WhatsAppAI = () => {
 
                     {/* 2. Content Side */}
                     <div className="w-full lg:w-1/2 space-y-10 lg:space-y-14 order-1 lg:order-2">
-                        <div className="space-y-6 text-center lg:text-left">
+                        <div className="space-y-6 text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-100 dark:border-blue-800">
                                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                                 <span className="text-[10px] font-extrabold text-primary uppercase tracking-widest leading-none">Nouveauté Automne 2026</span>

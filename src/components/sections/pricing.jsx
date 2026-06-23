@@ -33,7 +33,7 @@ const Pricing = () => {
             name: "RiseManager Business",
             options: [
                 { limit: "10,000", price: "37" },
-                { limit: "20,000", price: "47" }
+                { limit: "30,000", price: "59" }
             ],
             type: "variable",
             popular: true,

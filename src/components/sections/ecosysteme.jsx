@@ -6,7 +6,7 @@ const Ecosystem = () => {
     const modules = [
         { name: "RiseManager", desc: t("Le Cerveau Opérationnel"), active: true, color: "bg-primary", icon: "/logo.png" },
         { name: "RiseCart", desc: t("Storefront & Conversion"), active: false, color: "bg-emerald-500", icon: "/ecosystem/risecart.jpg" },
-        { name: "RiseConfirm", desc: t("Automation & Rappels"), active: false, color: "bg-indigo-500", icon: "/ecosystem/RiseConfirm.jpg" },
+        { name: "RiseConfirm", desc: t("Automation & Rappels"), active: false, color: "bg-indigo-500", icon: "/ecosystem/riseconfirem.jpg" },
         { name: "FBR", desc: t("La Data Community"), active: false, color: "bg-rose-500", icon: "/ecosystem/fbr.jpg" },
         { name: "RiseAcademy", desc: t("Formations & Expertise"), active: false, color: "bg-amber-500", icon: "/ecosystem/riseacademy.png" },
         { name: "RisePay", desc: t("Solutions de Paiement"), active: false, color: "bg-cyan-500", icon: "/ecosystem/risepay.jpg" }

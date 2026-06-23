@@ -24,7 +24,7 @@ const Legals = () => {
       },
       contact: [
         { type: "Email", value: "contact@risemanager.com", href: "mailto:contact@risemanager.com" },
-        { type: "Téléphone", value: "0665584456", href: "tel:0665584456" }
+        { type: "Téléphone", value: "0560800355", href: "tel:0560800355" }
       ]
     },
     {
