@@ -57,7 +57,7 @@ const DetailSidebar = ({ selectedOrder, isMobile, onClose }) => {
 const Features = () => {
     const { t } = useTranslation();
     const [searchQuery, setSearchQuery] = useState('');
-    const [statusFilter, setStatusFilter] = useState(t('feat_status_all'));
+    const [statusFilter, setStatusFilter] = useState(t('feat_filter_all'));
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [selectedOrderId, setSelectedOrderId] = useState('2843');
     const [expandedAgent, setExpandedAgent] = useState(null);
@@ -142,7 +142,7 @@ const Features = () => {
     const filteredOrders = orders.filter(order => {
         const nameMatch = order.name ? order.name.toLowerCase().includes(searchQuery.toLowerCase()) : false;
         const matchesSearch = nameMatch || order.id.includes(searchQuery);
-        const matchesStatus = statusFilter === t('feat_status_all') || order.status === statusFilter;
+        const matchesStatus = statusFilter === t('feat_filter_all') || order.status === statusFilter;
         return matchesSearch && matchesStatus;
     });
 
@@ -303,16 +303,16 @@ const Features = () => {
                                                 className="px-3 sm:px-4 py-2 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl text-[10px] sm:text-[11px] font-bold text-slate-500 dark:text-slate-400 hover:border-primary/30 transition-all flex items-center gap-2 min-w-[100px] sm:min-w-[140px] justify-between shadow-sm"
                                             >
                                                 <div className="flex items-center gap-2">
-                                                    <div className={`w-1.5 h-1.5 rounded-full ${statusFilter === t('feat_status_all') ? 'bg-slate-400 dark:bg-slate-600' : 'bg-primary'}`} />
-                                                    <span className="hidden xs:inline">{statusFilter === t('feat_status_all') ? t('feat_filter_status') : statusFilter}</span>
-                                                    <span className="xs:hidden">{statusFilter === t('feat_status_all') ? t('feat_filter_status') : (statusFilter === t('feat_status_delivery') ? 'Livr.' : (statusFilter === t('feat_status_waiting') ? 'Att.' : statusFilter))}</span>
+                                                    <div className={`w-1.5 h-1.5 rounded-full ${statusFilter === t('feat_filter_all') ? 'bg-slate-400 dark:bg-slate-600' : 'bg-primary'}`} />
+                                                    <span className="hidden xs:inline">{statusFilter === t('feat_filter_all') ? t('feat_filter_status') : statusFilter}</span>
+                                                    <span className="xs:hidden">{statusFilter === t('feat_filter_all') ? t('feat_filter_status') : (statusFilter === t('feat_status_delivery') ? 'Livr.' : (statusFilter === t('feat_status_waiting') ? 'Att.' : statusFilter))}</span>
                                                 </div>
                                                 <svg className={`w-3 h-3 transition-transform duration-300 ${isFilterOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 9l-7 7-7-7" strokeWidth={2.5} /></svg>
                                             </button>
 
                                             {isFilterOpen && (
                                                 <div className="absolute top-full right-0 rtl:right-auto rtl:left-0 sm:left-0 rtl:sm:left-auto rtl:sm:right-0 mt-2 w-[160px] sm:w-[180px] bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-2xl z-50 overflow-hidden animate-slide-up" style={{ animationDuration: '0.2s' }}>
-                                                    {[t('feat_status_all'), t('feat_status_confirmed'), t('feat_status_waiting'), t('feat_status_delivery'), t('feat_status_return')].map((status) => (
+                                                    {[t('feat_filter_all'), t('feat_status_confirmed'), t('feat_status_waiting'), t('feat_status_delivery'), t('feat_status_return')].map((status) => (
                                                         <div
                                                             key={status}
                                                             onClick={() => {
@@ -321,7 +321,7 @@ const Features = () => {
                                                             }}
                                                             className={`px-4 py-3 text-[11px] font-bold cursor-pointer transition-colors flex items-center gap-3 ${statusFilter === status ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
                                                         >
-                                                            <div className={`w-1.5 h-1.5 rounded-full ${statusFilter === status ? 'bg-white' : (status === t('feat_status_all') ? 'bg-slate-300 dark:bg-slate-600' : 'bg-primary/40')}`} />
+                                                            <div className={`w-1.5 h-1.5 rounded-full ${statusFilter === status ? 'bg-white' : (status === t('feat_filter_all') ? 'bg-slate-300 dark:bg-slate-600' : 'bg-primary/40')}`} />
                                                             {status}
                                                         </div>
                                                     ))}
