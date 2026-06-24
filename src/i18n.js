@@ -53,7 +53,7 @@ const resources = {
       "Arrête de subir ton activité.": "Arrête de subir ton activité.",
       "Reprends le contrôle.": "Reprends le contrôle.",
       "Rejoignez les centaines d'entreprises": "Rejoignez les centaines d'entreprises qui ont déjà automatisé leur croissance avec RiseManager.",
-      "Essai gratuit de 7 jours": "50 commande gratuit chaque mois",
+      "Essai gratuit de 7 jours": "50 commandes gratuites chaque mois",
       "Réserver une démo": "Réserver une démo",
       "Sans engagement": "Sans engagement",
       "Aucune carte bancaire requise": "Aucune carte bancaire requise",

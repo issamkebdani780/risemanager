@@ -10,14 +10,6 @@ import CGV from './components/policy/cgv';
 import Legals from './components/policy/legals';
 import Confidentialities from './components/policy/confidenialities';
 
-// Dashboard Imports
-import DashboardLayout from './app/dashboard/DashboardLayout';
-import DashboardHome from './app/dashboard/DashboardHome';
-import Commandes from './app/dashboard/Commandes';
-import Produits from './app/dashboard/Produits';
-import Statistiques from './app/dashboard/Statistiques';
-import Finance from './app/dashboard/Finance';
-
 const App = () => {
   const { i18n } = useTranslation();
 
@@ -39,14 +31,7 @@ const App = () => {
         <Route path="/mentions-legales" element={<Legals />} />
         <Route path="/politique-de-confidentialite" element={<Confidentialities />} />
 
-        {/* Dashboard Routes */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<DashboardHome />} />
-          <Route path="commandes" element={<Commandes />} />
-          <Route path="produits" element={<Produits />} />
-          <Route path="statistiques" element={<Statistiques />} />
-          <Route path="finance" element={<Finance />} />
-        </Route>
+
       </Routes>
     </>
   );

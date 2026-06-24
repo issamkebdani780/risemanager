@@ -12,7 +12,7 @@ const Pricing = () => {
                 { text: t("pricing_free_orders"), icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" },
                 { text: t("pricing_free_mgmt"), icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
                 { text: t("pricing_free_analytics"), icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
-                { text: t("pricing_free_support"), icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z" }
+                { text: t("pricing_free_support"), icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }
             ]
         },
         {
@@ -33,7 +33,7 @@ const Pricing = () => {
             name: "RiseManager Business",
             options: [
                 { limit: "10,000", price: "37" },
-                { limit: "30,000", price: "59" }
+                { limit: "20,000", price: "59" }
             ],
             type: "variable",
             popular: true,
@@ -118,9 +118,9 @@ const Pricing = () => {
 
                             {/* CTA */}
                             <div className="mb-8">
-                                <button className={`w-full py-4 rounded-2xl text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] ${plan.popular ? 'bg-primary text-white shadow-xl shadow-primary/20' : 'bg-slate-950 dark:bg-slate-800 text-white shadow-xl shadow-slate-900/20 dark:shadow-none'}`}>
+                                <a href="https://admin.risemanager.com/" className={`block text-center w-full py-4 rounded-2xl text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] ${plan.popular ? 'bg-primary text-white shadow-xl shadow-primary/20' : 'bg-slate-950 dark:bg-slate-800 text-white shadow-xl shadow-slate-900/20 dark:shadow-none'}`}>
                                     {t("Commencer l'Essai Gratuit")}
-                                </button>
+                                </a>
                             </div>
 
                             {/* Features */}

@@ -668,7 +668,7 @@ const Features = () => {
 
                                         {/* Start: Vente */}
                                         <div className="text-center z-10 transition-transform group-hover:scale-105 shrink-0">
-                                            <div className="w-16 h-16 sm:w-14 sm:h-14 bg-blue-500 rounded-[20px] sm:rounded-2xl flex items-center justify-center text-white font-extrabold text-base sm:text-sm shadow-xl sm:shadow-lg dark:shadow-none mb-2">{t('feat_finance_sale')}</div>
+                                            <div className="w-16 h-16 sm:w-14 sm:h-14 bg-blue-500 rounded-[20px] sm:rounded-2xl flex items-center justify-center text-white font-extrabold text-base sm:text-sm shadow-xl sm:shadow-lg dark:shadow-none mb-2">{t('feat_finance_sale_upper')}</div>
                                             <div className="text-[10px] sm:text-[9px] font-extrabold text-slate-400 dark:text-slate-500">100%</div>
                                         </div>
 
@@ -699,7 +699,7 @@ const Features = () => {
 
                                         {/* End: Net */}
                                         <div className="text-center z-10 transition-transform group-hover:scale-105 shrink-0">
-                                            <div className="w-16 h-16 sm:w-14 sm:h-14 bg-emerald-500 rounded-[20px] sm:rounded-2xl flex items-center justify-center text-white font-extrabold text-base sm:text-sm shadow-xl sm:shadow-lg dark:shadow-none shadow-emerald-200/50 mb-2">= {t('feat_finance_net')}</div>
+                                            <div className="w-16 h-16 sm:w-14 sm:h-14 bg-emerald-500 rounded-[20px] sm:rounded-2xl flex items-center justify-center text-white font-extrabold text-base sm:text-sm shadow-xl sm:shadow-lg dark:shadow-none shadow-emerald-200/50 mb-2">{t('feat_finance_net_upper')}</div>
                                             <div className="text-[10px] sm:text-[9px] font-extrabold text-emerald-600 dark:text-emerald-400 tracking-wider">32.4%</div>
                                         </div>
                                     </div>

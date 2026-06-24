@@ -32,13 +32,13 @@ const Hero = () => {
       {/* Video Modal */}
       {showVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div 
+          <div
             className="absolute inset-0 bg-slate-950/80 backdrop-blur-xl animate-fade-in"
             onClick={() => setShowVideo(false)}
           />
           <div className="relative w-full max-w-lg aspect-[9/16] max-h-[90vh] bg-black rounded-[32px] overflow-hidden shadow-2xl border border-white/10 animate-scale-in">
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setShowVideo(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all active:scale-95"
             >
@@ -46,8 +46,8 @@ const Hero = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            <iframe 
+
+            <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/acrPDoF6i8E?autoplay=1"
               title="RiseManager Demo"
@@ -102,13 +102,13 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <a 
+              <a
                 href="https://admin.risemanager.com/register"
                 className="px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-2xl font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95 text-center"
               >
                 {t("Démarrer l'essai gratuit")}
               </a>
-              <button 
+              <button
                 onClick={() => setShowVideo(true)}
                 className="px-8 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary border border-slate-100 dark:border-slate-800 rounded-2xl font-semibold transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >

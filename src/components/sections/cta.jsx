@@ -29,13 +29,13 @@ const FinalCTA = () => {
       {/* Video Modal */}
       {showVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div 
+          <div
             className="absolute inset-0 bg-slate-950/80 backdrop-blur-xl animate-fade-in"
             onClick={() => setShowVideo(false)}
           />
           <div className="relative w-full max-w-lg aspect-[9/16] max-h-[90vh] bg-black rounded-[32px] overflow-hidden shadow-2xl border border-white/10 animate-scale-in">
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setShowVideo(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all active:scale-95"
             >
@@ -43,8 +43,8 @@ const FinalCTA = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            <iframe 
+
+            <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/acrPDoF6i8E?autoplay=1"
               title="RiseManager Demo"
@@ -59,7 +59,7 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative max-w-6xl mx-auto p-4 lg:p-6 rounded-[56px] shadow-2xl shadow-primary/20 dark:shadow-primary/5">
           <div className="relative w-full h-full bg-gradient-to-br from-blue-50/50 to-white dark:from-slate-900 dark:to-slate-950 rounded-[44px] p-10 lg:p-24 flex flex-col items-center text-center space-y-12 border border-slate-100 dark:border-slate-800 transition-colors duration-500">
-            
+
             {/* Header Text */}
             <div className="max-w-3xl space-y-4">
               <h2 className="text-3xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
@@ -74,21 +74,21 @@ const FinalCTA = () => {
             {/* Buttons & Friction Reduction */}
             <div className="flex flex-col items-center gap-5">
               <div className="flex flex-col sm:flex-row gap-6 items-center">
-                <a 
+                <a
                   href="https://admin.risemanager.com/register"
                   className="px-10 py-5 bg-primary hover:bg-primary-hover text-white rounded-[24px] font-bold text-base shadow-xl shadow-primary/25 transition-all hover:-translate-y-1 active:scale-95 relative overflow-hidden group text-center"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   {t("Essai gratuit de 7 jours")}
                 </a>
-                <button 
+                <button
                   onClick={() => setShowVideo(true)}
                   className="px-10 py-5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-primary rounded-[24px] font-bold text-base shadow-lg shadow-slate-200 dark:shadow-none border border-slate-100 dark:border-slate-700 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2"
                 >
                   {t("Réserver une démo")}
                 </button>
               </div>
-              
+
               <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs lg:text-sm font-bold text-slate-500 dark:text-slate-400">
                 <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2.5 py-1 rounded-md">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
