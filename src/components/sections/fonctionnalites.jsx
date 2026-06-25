@@ -199,18 +199,18 @@ const Features = () => {
 
                                         {/* Top: Sales Channels */}
                                         <div className="flex flex-col items-center gap-3">
-                                            <div className="flex -space-x-5 group/icons">
+                                            <div className="flex -space-x-6 group/icons">
                                                 {[
                                                     { name: 'Shopify', logo: '/vente/shopify.png' },
                                                     { name: 'Lightfunnel', logo: '/vente/lightfunnel.png' },
                                                     { name: 'RiseCart', logo: '/vente/risecart.png', extraPadding: 'p-1' },
                                                     { name: 'YouCan', logo: '/vente/youcan.png' }
                                                 ].map((vente) => (
-                                                    <div key={vente.name} className="w-16 h-16 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-700 shadow-lg flex items-center justify-center p-3 hover:translate-y-[-4px] transition-all">
+                                                    <div key={vente.name} className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-700 shadow-lg flex items-center justify-center p-2 hover:translate-y-[-4px] transition-all">
                                                         <img
                                                             src={vente.logo}
                                                             alt={vente.name}
-                                                            className="w-full h-full object-contain dark:brightness-110"
+                                                            className="w-full h-full object-contain dark:brightness-110 rounded-xl"
                                                             onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${vente.name}&background=f3f4f6&color=94a3b8&bold=true&length=2&font-size=0.33`; }}
                                                         />
                                                     </div>
@@ -224,8 +224,8 @@ const Features = () => {
 
                                         {/* Middle: Core Hub */}
                                         <div className="relative group/hub">
-                                            <div className="w-28 h-28 bg-white dark:bg-slate-800 rounded-[2rem] border border-primary/10 dark:border-primary/20 shadow-2xl shadow-primary/10 flex items-center justify-center p-4 relative transition-transform duration-500 group-hover/hub:scale-105">
-                                                <Logo showText={false} iconClassName="w-16 h-16" />
+                                            <div className="w-32 h-32 bg-white dark:bg-slate-800 rounded-[2rem] border border-primary/10 dark:border-primary/20 shadow-2xl shadow-primary/10 flex items-center justify-center p-4 relative transition-transform duration-500 group-hover/hub:scale-105">
+                                                <Logo showText={false} iconClassName="w-20 h-20" />
                                                 <div className="absolute inset-0 bg-primary/5 dark:bg-primary/10 rounded-[2rem] animate-pulse -z-10" />
                                             </div>
 
@@ -236,15 +236,15 @@ const Features = () => {
 
                                         {/* Bottom: Carriers */}
                                         <div className="flex flex-col items-center gap-3">
-                                            <div className="flex -space-x-5 group/icons">
+                                            <div className="flex -space-x-6 group/icons">
                                                 {[
                                                     { name: 'Yalidine', logo: '/delivery/yalidine.jpg' },
                                                     { name: 'Maystro', logo: '/delivery/maystro.png' },
                                                     { name: 'Guepex', logo: '/delivery/guepex.png' },
                                                     { name: 'DHD', logo: '/delivery/dhd.png' }
                                                 ].map((carrier) => (
-                                                    <div key={carrier.name} className="w-16 h-16 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-700 shadow-lg flex items-center justify-center p-3 hover:translate-y-[-4px] transition-all">
-                                                        <img src={carrier.logo} alt={carrier.name} className="w-full h-full object-contain dark:brightness-110" />
+                                                    <div key={carrier.name} className="w-20 h-20 bg-white dark:bg-slate-800 rounded-full border-2 border-white dark:border-slate-700 shadow-lg  flex items-center justify-center p-2 hover:translate-y-[-4px] transition-all">
+                                                        <img src={carrier.logo} alt={carrier.name} className="w-full h-full object-contain dark:brightness-110 rounded-xl" />
                                                     </div>
                                                 ))}
                                             </div>

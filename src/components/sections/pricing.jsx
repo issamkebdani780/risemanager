@@ -33,7 +33,8 @@ const Pricing = () => {
             name: "RiseManager Business",
             options: [
                 { limit: "10,000", price: "37" },
-                { limit: "20,000", price: "59" }
+                { limit: "20,000", price: "47" },
+                { limit: "30,000", price: "59" }
             ],
             type: "variable",
             popular: true,
@@ -119,7 +120,7 @@ const Pricing = () => {
                             {/* CTA */}
                             <div className="mb-8">
                                 <a href="https://admin.risemanager.com/" className={`block text-center w-full py-4 rounded-2xl text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] ${plan.popular ? 'bg-primary text-white shadow-xl shadow-primary/20' : 'bg-slate-950 dark:bg-slate-800 text-white shadow-xl shadow-slate-900/20 dark:shadow-none'}`}>
-                                    {t("Commencer l'Essai Gratuit")}
+                                    {plan.name === "RiseManager Free" ? t("Commencer l'Essai Gratuit") : t("Commencer")}
                                 </a>
                             </div>
 
